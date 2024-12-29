@@ -10,18 +10,19 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://brett_van_tassel.github.io',
+  url: 'https://brett-van-tussel.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'brett-van-tussler', // Usually your GitHub org/user name.
-  projectName: 'brett_van_tassel.github.io', // Usually your repo name.
-  deploymentBranch: "gh-pages",
+  // GitHub Pages deployment config
+  organizationName: 'brett-van-tussler', // GitHub username
+  projectName: 'brett_van_tassel.github.io', // Repository name
+  deploymentBranch: 'gh-pages',
+  
+  // Other settings
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: false,
 
 
 
