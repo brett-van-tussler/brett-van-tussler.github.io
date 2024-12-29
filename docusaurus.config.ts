@@ -16,7 +16,7 @@ const config: Config = {
 
   // GitHub Pages deployment config
   organizationName: 'brett-van-tussler', // GitHub username
-  projectName: 'brett_van_tassel.github.io', // Repository name
+  projectName: 'brett-van-tussler.github.io', // Repository name
   deploymentBranch: 'gh-pages',
   
   // Other settings
