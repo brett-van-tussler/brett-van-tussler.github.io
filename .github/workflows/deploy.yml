@@ -23,10 +23,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build website
-        run: |
-          chmod +x ./build.sh
-          ./build.sh
-        shell: bash
+        run: yarn build
+
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
