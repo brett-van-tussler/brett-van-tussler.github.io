@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbrett_van_tassel=self.webpackChunkbrett_van_tassel||[]).push([[3187],{4067:t=>{t.exports=JSON.parse('{"metadata":{"permalink":"/brett_van_tassel.github.io/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
