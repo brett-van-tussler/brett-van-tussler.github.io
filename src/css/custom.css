@@ -39,24 +39,29 @@
 
 
 
-/* Add this to your global CSS or in a specific .scss file */
-.page-switcher {
+.page-content {
   position: relative;
   height: 100%;
+  overflow: hidden;
 }
 
-.content {
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.page.active {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transform: translateX(0);
+  z-index: 1;
 }
 
-.level1, .level2, .level3 {
-  display: none; /* Hide by default */
-}
-
-.level1.show, .level2.show, .level3.show {
-  display: block;
-}
 
 
 
