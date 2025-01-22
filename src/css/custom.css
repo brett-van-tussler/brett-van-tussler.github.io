@@ -5,8 +5,24 @@
  */
 
 /* You can override the default Infima variables here. */
+.hero__image {
+  background-image: url('/static/img/luminary_library.jpeg'); /* Adjust path to your image */
+  background-size: cover; /* Ensures the image covers the area */
+  background-position: center; /* Centers the image */
+  height: 100vh; /* Makes the image cover the full viewport height */
+}
+.heroBanner {
+  background-image: url('/img/luminary_library.jpeg'); /* Static folder is served as the root path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Set the height to 100% of the viewport */
+}
+/* Optional: Customize the content within the hero section */
+.hero__content {
+  color: white; /* Make text visible on the image */
+}
 
-:root {
+/* :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -16,7 +32,7 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {

@@ -1,7 +1,7 @@
 ---
-id: library
-title: Library
-sidebar_label: Library
+id: dictionary
+title: Dictionary
+sidebar_label: Dictionary
 ---
 
 ### Stochastic

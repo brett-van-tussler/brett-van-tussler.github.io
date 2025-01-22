@@ -5,13 +5,12 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Brett Van Tassel',
+  title: 'Brett Van Tassel\'s Luminary Library',
   tagline: 'Luminary Library',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://brett-van-tussel.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
   // GitHub Pages deployment config
@@ -24,10 +23,6 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
 
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -53,20 +48,20 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
+    
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Luminary Library',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/star.png',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Knowledge Base',
         },
         {
           href: 'https://github.com/facebook/docusaurus',
@@ -82,8 +77,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Knowledge Base',
+              to: '/docs',
             },
           ],
         },
