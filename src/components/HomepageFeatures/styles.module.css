@@ -5,7 +5,52 @@
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featureImage {
+  width: 100%;
+  max-width: 200px; 
+  height: auto;
+  cursor: pointer; 
+  transition: transform 0.3s ease; 
+}
+
+.featureImage:hover {
+  transform: scale(1.05);
+}
+
+.featureCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  text-align: center; /* Ensures all content, including the image, is centered */
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.featureImage {
+  max-width: 100%; /* Ensures the image scales responsively */
+  height: auto; /* Keeps the aspect ratio intact */
+  display: block; /* Ensures the image behaves like a block-level element */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+.featureDescription {
+  color: #555;
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+
+.featureLink {
+  text-decoration: none;
+  color: inherit;
 }

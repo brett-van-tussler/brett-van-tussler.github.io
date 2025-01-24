@@ -5,49 +5,51 @@ import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: JSX.Element;
+  image: string; // Image path
+  link: string; // URL to navigate to when the image or title is clicked
+  description: string; // Plain text for description
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Interests in Bioinformatics',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        <Link to="/docs/bioinformatics">Here will be my interests in bioinformatics</Link>
-      </>
-    ),
+    image: require('@site/static/img/bioinformatics.jpeg').default,
+    link: '/docs/bioinformatics', // Link to navigate to
+    description: 'Dive into my bioinformatics explorations and discoveries.',
   },
   {
     title: 'Math and Machine Learning',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Here will be my interests Math and Machine Learning 
-      </>
-    ),
+    image: require('@site/static/img/ml_dl.jpeg').default,
+    link: '/docs/math-machine-learning',
+    description: 'Discover my interests in math, statistics, and machine learning.',
   },
   {
     title: 'Philosophy',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Here will be my philosophical thoughts
-      </>
-    ),
+    image: require('@site/static/img/buddha.jpeg').default,
+    link: '/docs/philosophy',
+    description: 'Explore my thoughts on philosophy and its impact on problem-solving.',
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, image, link, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className={clsx('card', styles.featureCard)}>
+        <Link to={link} className={styles.featureLink}>
+          <div className="card__image">
+            <img
+              className={styles.featureImage}
+              src={image}
+              alt={title}
+            />
+          </div>
+          <div className="card__body">
+            <Heading as="h3" className={styles.featureTitle}>
+              {title}
+            </Heading>
+            <p className={styles.featureDescription}>{description}</p>
+          </div>
+        </Link>
       </div>
     </div>
   );
