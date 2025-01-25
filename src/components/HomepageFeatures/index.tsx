@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Math and Machine Learning',
     image: require('@site/static/img/ml_dl.jpeg').default,
-    link: '/docs/math-machine-learning',
+    link: '/docs/machine_learning',
     description: 'Discover my interests in math, statistics, and machine learning.',
   },
   {
