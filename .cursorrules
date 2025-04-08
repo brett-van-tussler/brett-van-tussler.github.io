@@ -1,0 +1,196 @@
+# PROJECT OVERVIEW
+-   A project to store my notes and thoughts and to demonstrate my skills
+
+# PERSONALITY
+- Intelligent and clever.
+
+#TECH STACK
+- Docusaurus, markdown, TypeScript, css, REACT
+
+# ERROR FIXING PROCESS
+
+# BUILDING PROCESS
+
+# CURRENT FILE STRUCTURE
+├── .cursorrules
+├── .docusaurus
+│   ├── DONT-EDIT-THIS-FOLDER
+│   ├── client-manifest.json
+│   ├── client-modules.js
+│   ├── codeTranslations.json
+│   ├── docusaurus-plugin-content-docs
+│   │   └── default
+│   │       ├── __plugin.json
+│   │       ├── p
+│   │       ├── site-docs-bioinformatics-index-md-103.json
+│   │       ├── site-docs-code-examples-index-md-5d7.json
+│   │       ├── site-docs-high-level-md-20f.json
+│   │       ├── site-docs-high-level-mdx-dd0.json
+│   │       ├── site-docs-index-md-c37.json
+│   │       ├── site-docs-intro-md-0e3.json
+│   │       ├── site-docs-library-index-md-77e.json
+│   │       ├── site-docs-low-level-md-bf3.json
+│   │       ├── site-docs-low-level-mdx-c97.json
+│   │       ├── site-docs-machine-learning-index-md-ac9.json
+│   │       ├── site-docs-medium-level-md-714.json
+│   │       ├── site-docs-medium-level-mdx-cbd.json
+│   │       ├── site-docs-philosophy-index-md-021.json
+│   │       ├── site-docs-set-1-index-md-06a.json
+│   │       ├── site-docs-set-1-level-1-md-ae1.json
+│   │       ├── site-docs-set-1-level-1-mdx-139.json
+│   │       ├── site-docs-set-1-level-2-md-7f5.json
+│   │       ├── site-docs-set-1-level-2-mdx-258.json
+│   │       ├── site-docs-set-1-level-3-md-c30.json
+│   │       ├── site-docs-set-1-level-3-mdx-4f0.json
+│   │       ├── site-docs-tutorial-basics-congratulations-md-822.json
+│   │       ├── site-docs-tutorial-basics-create-a-blog-post-md-533.json
+│   │       ├── site-docs-tutorial-basics-create-a-document-md-1e4.json
+│   │       ├── site-docs-tutorial-basics-create-a-page-md-5c8.json
+│   │       ├── site-docs-tutorial-basics-deploy-your-site-md-f55.json
+│   │       ├── site-docs-tutorial-basics-markdown-features-mdx-18c.json
+│   │       ├── site-docs-tutorial-extras-manage-docs-versions-md-dff.json
+│   │       └── site-docs-tutorial-extras-translate-your-site-md-e44.json
+│   ├── docusaurus-plugin-content-pages
+│   │   └── default
+│   │       ├── __plugin.json
+│   │       └── site-src-pages-markdown-page-md-393.json
+│   ├── docusaurus-plugin-debug
+│   │   └── default
+│   │       ├── __plugin.json
+│   │       └── p
+│   ├── docusaurus-theme-search-algolia
+│   │   └── default
+│   │       └── __plugin.json
+│   ├── docusaurus.config.mjs
+│   ├── globalData.json
+│   ├── i18n.json
+│   ├── registry.js
+│   ├── routes.js
+│   ├── routesChunkNames.json
+│   ├── site-metadata.json
+│   └── site-storage.json
+├── .env
+├── .github
+│   └── workflows
+│       ├── deploy.yml
+│       └── test-deploy.yml
+├── .gitignore
+├── README.md
+├── build
+│   ├── .nojekyll
+│   ├── 404.html
+│   ├── assets
+│   │   ├── css
+│   │   │   └── styles.e77786ba.css
+│   │   ├── images
+│   │   │   ├── bioinformatics-f4583910a7b15a170406533d584e9f14.jpeg
+│   │   │   ├── buddha-603fafd9639c06f8ab7b5fd29f61fbf0.jpeg
+│   │   │   ├── luminary_library-6823b1cb704685a325b7520219059f03.jpeg
+│   │   │   └── ml_dl-6a95ce72a31f3b27f5263a60be3ec8fb.jpeg
+│   │   └── js
+│   │       ├── 0058b4c6.b717594b.js
+│   │       ├── 02183e89.f75d38bf.js
+│   │       ├── 103be0c6.086a07cd.js
+│   │       ├── 158.773f9d68.js
+│   │       ├── 17896441.2fada5b2.js
+│   │       ├── 1a4e3797.155cd71d.js
+│   │       ├── 1a4e3797.155cd71d.js.LICENSE.txt
+│   │       ├── 1df93b7f.24112a48.js
+│   │       ├── 1f391b9e.a5caee8f.js
+│   │       ├── 237.f7661920.js
+│   │       ├── 393be207.1aa6059f.js
+│   │       ├── 49.0f0738e1.js
+│   │       ├── 5d7a881c.a546e485.js
+│   │       ├── 5e95c892.2c3ec5ca.js
+│   │       ├── 608.080e24f7.js
+│   │       ├── 77e86a01.75a253a9.js
+│   │       ├── 913.a5075b87.js
+│   │       ├── a7456010.fb9d3374.js
+│   │       ├── a7bd4aaa.5cef3ec3.js
+│   │       ├── a94703ab.e80b2bd0.js
+│   │       ├── aba21aa0.cc9c88bc.js
+│   │       ├── ac9d13f8.f4621ada.js
+│   │       ├── c141421f.b81f2449.js
+│   │       ├── c377a04b.d0e794d1.js
+│   │       ├── main.c4c2990d.js
+│   │       ├── main.c4c2990d.js.LICENSE.txt
+│   │       └── runtime~main.2c4fe794.js
+│   ├── docs
+│   │   ├── bioinformatics.html
+│   │   ├── code_examples.html
+│   │   ├── library.html
+│   │   ├── machine_learning.html
+│   │   └── philosophy.html
+│   ├── docs.html
+│   ├── img
+│   │   ├── bioinformatics.jpeg
+│   │   ├── buddha.jpeg
+│   │   ├── converted_image.svg
+│   │   ├── docusaurus-social-card.jpg
+│   │   ├── docusaurus.png
+│   │   ├── favicon.ico
+│   │   ├── logo.svg
+│   │   ├── luminary_library.jpeg
+│   │   ├── ml_dl.jpeg
+│   │   ├── star.png
+│   │   ├── undraw_docusaurus_mountain.svg
+│   │   ├── undraw_docusaurus_react.svg
+│   │   └── undraw_docusaurus_tree.svg
+│   ├── index.html
+│   ├── markdown-page.html
+│   ├── opensearch.xml
+│   ├── search.html
+│   └── sitemap.xml
+├── docs
+│   ├── _category_.json.json
+│   ├── bioinformatics
+│   │   └── index.md
+│   ├── code_examples
+│   │   ├── gather_soccer_schedule.py
+│   │   └── index.md
+│   ├── index.md
+│   ├── library
+│   │   └── index.md
+│   ├── machine_learning
+│   │   └── index.md
+│   └── philosophy
+│       └── index.md
+├── docusaurus.config.ts
+├── package-lock.json
+├── package.json
+├── sidebars.ts
+├── src
+│   ├── components
+│   │   └── HomepageFeatures
+│   │       ├── index.tsx
+│   │       └── styles.module.css
+│   ├── css
+│   │   └── custom.css
+│   └── pages
+│       ├── index.module.css
+│       ├── index.tsx
+│       └── markdown-page.md
+├── static
+│   ├── .nojekyll
+│   └── img
+│       ├── bioinformatics.jpeg
+│       ├── buddha.jpeg
+│       ├── converted_image.svg
+│       ├── docusaurus-social-card.jpg
+│       ├── docusaurus.png
+│       ├── favicon.ico
+│       ├── logo.svg
+│       ├── luminary_library.jpeg
+│       ├── ml_dl.jpeg
+│       ├── star.png
+│       ├── undraw_docusaurus_mountain.svg
+│       ├── undraw_docusaurus_react.svg
+│       └── undraw_docusaurus_tree.svg
+├── tsconfig.json
+└── yarn.lock
+# IMPORTANT
+- repeat the most important instructions
+
+# COMMENTS
+- make sure to ALWAYS include comments in your code
+- do not delete comments unless they are no longer needed
