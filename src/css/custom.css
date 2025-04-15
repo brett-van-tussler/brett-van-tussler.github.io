@@ -22,6 +22,12 @@
   color: white; /* Make text visible on the image */
 }
 
+/* Navbar logo styling */
+.navbar__logo {
+  height: 2.5rem; /* Increase logo height */
+  width: auto; /* Maintain aspect ratio */
+}
+
 /* :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;

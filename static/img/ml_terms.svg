@@ -1,0 +1,50 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#f5f6f7" rx="10"/>
+  
+  <!-- Neural Network Representation -->
+  <!-- Layer 1 (Input) -->
+  <circle cx="40" cy="60" r="8" fill="#3578e5"/>
+  <circle cx="40" cy="100" r="8" fill="#3578e5"/>
+  <circle cx="40" cy="140" r="8" fill="#3578e5"/>
+  
+  <!-- Layer 2 (Hidden) -->
+  <circle cx="100" cy="40" r="8" fill="#3578e5"/>
+  <circle cx="100" cy="80" r="8" fill="#3578e5"/>
+  <circle cx="100" cy="120" r="8" fill="#3578e5"/>
+  <circle cx="100" cy="160" r="8" fill="#3578e5"/>
+  
+  <!-- Layer 3 (Output) -->
+  <circle cx="160" cy="80" r="8" fill="#3578e5"/>
+  <circle cx="160" cy="120" r="8" fill="#3578e5"/>
+  
+  <!-- Connections -->
+  <!-- Layer 1 to Layer 2 -->
+  <line x1="48" y1="60" x2="92" y2="40" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="60" x2="92" y2="80" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="60" x2="92" y2="120" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="60" x2="92" y2="160" stroke="#3578e5" stroke-width="1"/>
+  
+  <line x1="48" y1="100" x2="92" y2="40" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="100" x2="92" y2="80" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="100" x2="92" y2="120" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="100" x2="92" y2="160" stroke="#3578e5" stroke-width="1"/>
+  
+  <line x1="48" y1="140" x2="92" y2="40" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="140" x2="92" y2="80" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="140" x2="92" y2="120" stroke="#3578e5" stroke-width="1"/>
+  <line x1="48" y1="140" x2="92" y2="160" stroke="#3578e5" stroke-width="1"/>
+  
+  <!-- Layer 2 to Layer 3 -->
+  <line x1="108" y1="40" x2="152" y2="80" stroke="#3578e5" stroke-width="1"/>
+  <line x1="108" y1="40" x2="152" y2="120" stroke="#3578e5" stroke-width="1"/>
+  
+  <line x1="108" y1="80" x2="152" y2="80" stroke="#3578e5" stroke-width="1"/>
+  <line x1="108" y1="80" x2="152" y2="120" stroke="#3578e5" stroke-width="1"/>
+  
+  <line x1="108" y1="120" x2="152" y2="80" stroke="#3578e5" stroke-width="1"/>
+  <line x1="108" y1="120" x2="152" y2="120" stroke="#3578e5" stroke-width="1"/>
+  
+  <line x1="108" y1="160" x2="152" y2="80" stroke="#3578e5" stroke-width="1"/>
+  <line x1="108" y1="160" x2="152" y2="120" stroke="#3578e5" stroke-width="1"/>
+</svg>

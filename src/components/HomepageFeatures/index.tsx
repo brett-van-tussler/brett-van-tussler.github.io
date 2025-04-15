@@ -18,10 +18,10 @@ const FeatureList: FeatureItem[] = [
     description: 'Dive into my bioinformatics explorations and discoveries.',
   },
   {
-    title: 'Math and Machine Learning',
+    title: 'Machine Learning',
     image: require('@site/static/img/ml_dl.jpeg').default,
     link: '/docs/machine_learning',
-    description: 'Discover my interests in math, statistics, and machine learning.',
+    description: 'Discover my interests in machine learning, math, and statistics.',
   },
   {
     title: 'Philosophy',

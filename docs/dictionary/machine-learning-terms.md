@@ -1,8 +1,11 @@
 ---
-id: dictionary
-title: Dictionary
-sidebar_label: Dictionary
+id: Machine-Learning
+title: Machine Learning
+sidebar_label: Machine Learning
+
 ---
+
+This comprehensive dictionary provides clear explanations of essential machine learning and artificial intelligence terminology.
 
 ### Stochastic
 In simple terms, "stochastic" refers to processes or systems that are random or inherently unpredictable, but they follow some statistical patterns or probabilities. Stochastic systems don't have a single, fixed outcome; instead, their behavior or outcomes are governed by chance and probability distributions.

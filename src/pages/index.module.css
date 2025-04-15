@@ -8,6 +8,11 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url('/img/luminary_library.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  text-shadow: -2px -2px 3px #000, 2px -2px 3px #000, -2px 2px 3px #000, 2px 2px 3px #000;
 }
 
 @media screen and (max-width: 996px) {

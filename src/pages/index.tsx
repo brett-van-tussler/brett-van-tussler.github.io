@@ -24,11 +24,14 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs"
             style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+              backgroundColor: 'rgba(255, 255, 255, 0.8)',
               color: 'white',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.4)',
+              transform: 'scale(1.05)',
+              transition: 'all 0.2s ease-in-out'
             }}
           >
-            Home
+            Welcome page
           </Link>
         </div>
       </div>

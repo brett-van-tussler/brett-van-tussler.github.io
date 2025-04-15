@@ -6,8 +6,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Brett Van Tassel\'s Luminary Library',
-  tagline: 'Luminary Library',
-  favicon: 'img/favicon.ico',
+  tagline: 'This is a collection of notes and thoughts on bioinformatics, machine learning, and philosophy.',
+  favicon: 'img/star.svg',
 
   // Set the production url of your site here
   url: 'https://brett-van-tussel.github.io',
@@ -48,6 +48,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     algolia: {
       // The application ID provided by Algolia
       appId: 'CXA2345KVR',
@@ -92,7 +97,22 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docSidebar',
           position: 'left',
-          label: 'Knowledge Base',
+          label: 'Library',
+        },
+        {
+          to: '/docs/bioinformatics',
+          label: 'Bioinformatics',
+          position: 'left',
+        },
+        {
+          to: '/docs/machine_learning',
+          label: 'Math & ML',
+          position: 'left',
+        },
+        {
+          to: '/docs/philosophy',
+          label: 'Philosophy',
+          position: 'left',
         },
         {
           href: 'https://github.com/facebook/docusaurus',
@@ -105,10 +125,10 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Luminary Library',
           items: [
             {
-              label: 'Knowledge Base',
+              label: 'Luminary Library',
               to: '/docs',
             },
           ],
