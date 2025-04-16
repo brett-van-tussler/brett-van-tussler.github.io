@@ -97,7 +97,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docSidebar',
           position: 'left',
-          label: 'Library',
+          label: 'Luminary Dictionaries',
         },
         {
           to: '/docs/bioinformatics',
@@ -106,7 +106,7 @@ const config: Config = {
         },
         {
           to: '/docs/machine_learning',
-          label: 'Math & ML',
+          label: 'ML & Math',
           position: 'left',
         },
         {

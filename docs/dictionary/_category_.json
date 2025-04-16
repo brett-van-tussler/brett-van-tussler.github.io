@@ -1,9 +1,9 @@
 {
-    "label": "Library",
+    "label": "Luminary Dictionaries",
     "position": 2,
     "link": {
       "type": "generated-index",
-      "title": "Library of Dictionaries",
+      "title": "Luminary Dictionaries",
       "description": "Check out some useful dictionaries",
       "image": "/img/ml_terms.svg"
     }
