@@ -1,0 +1,11 @@
+{
+    "label": "Bioinformatics",
+    "position": 2,
+    "link": {
+      "type": "generated-index",
+      "title": "Bioinformatics",
+      "description": "Check out some Bioinformatics applications",
+      "image": "/img/ml_terms.svg"
+    }
+  }
+  

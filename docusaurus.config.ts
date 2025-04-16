@@ -87,7 +87,7 @@ const config: Config = {
     },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Luminary Library',
+      title: 'Luminary Home',
       logo: {
         alt: 'My Site Logo',
         src: 'img/star.png',
@@ -97,20 +97,20 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docSidebar',
           position: 'left',
-          label: 'Luminary Dictionaries',
+          label: 'Luminary Library',
         },
         {
-          to: '/docs/bioinformatics',
+          to: '/docs/category/Bioinformatics',
           label: 'Bioinformatics',
           position: 'left',
         },
         {
-          to: '/docs/machine_learning',
+          to: '/docs/category/Machine-Learning',
           label: 'ML & Math',
           position: 'left',
         },
         {
-          to: '/docs/philosophy',
+          to: '/docs/category/Philosophy',
           label: 'Philosophy',
           position: 'left',
         },

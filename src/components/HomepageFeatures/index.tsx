@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Philosophy',
     image: require('@site/static/img/buddha.jpeg').default,
-    link: '/docs/philosophy',
+    link: '/docs/Philosophy',
     description: 'Explore my thoughts on philosophy and its impact on problem-solving.',
   },
 ];

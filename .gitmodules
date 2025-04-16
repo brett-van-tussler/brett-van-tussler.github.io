@@ -1,0 +1,3 @@
+[submodule "docs/code-examples"]
+	path = docs/code-examples
+	url = https://github.com/brett-van-tussler/code-examples.git
