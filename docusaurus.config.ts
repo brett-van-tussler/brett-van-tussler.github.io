@@ -37,7 +37,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/brett-van-tussler/brett-van-tussler.github.io/edit/main/'
         },
         blog: false,
         theme: {
@@ -85,7 +85,7 @@ const config: Config = {
 
       //... other Algolia params
     },
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/luminary_library.jpg',
     navbar: {
       title: 'Luminary Home',
       logo: {
@@ -115,7 +115,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/brett-van-tussler/brett-van-tussler.github.io',
           label: 'GitHub',
           position: 'right',
         },
