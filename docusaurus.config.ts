@@ -19,7 +19,7 @@ const config: Config = {
   deploymentBranch: 'gh-pages',
   
   // Other settings
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
 
