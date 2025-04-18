@@ -1,0 +1,36 @@
+name: Pull Code Example Markdowns
+
+on:
+  repository_dispatch:
+    types: [pull_code_example_markdowns]
+
+jobs:
+  sync-code-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v3
+
+      - name: Checkout code-examples repository
+        uses: actions/checkout@v3
+        with:
+          repository: brett-van-tussler/code-examples
+          path: temp-code-examples
+
+      - name: Sync code examples
+        run: |
+          cp -r temp-code-examples/* docs/code_examples/
+          rm -rf temp-code-examples
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/code_examples
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update code examples"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
