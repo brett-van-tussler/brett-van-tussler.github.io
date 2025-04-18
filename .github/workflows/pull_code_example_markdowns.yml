@@ -1,5 +1,8 @@
+# Workflow to automatically sync code examples from a separate repository
 name: Pull Code Example Markdowns
 
+# Triggered by a repository_dispatch event with type 'pull_code_example_markdowns'
+# This allows manual or automated triggering of the workflow
 on:
   repository_dispatch:
     types: [pull_code_example_markdowns]
@@ -8,20 +11,24 @@ jobs:
   sync-code-examples:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the main repository where code examples will be synced to
       - name: Checkout main repository
         uses: actions/checkout@v3
 
+      # Step 2: Checkout the code-examples repository into a temporary directory
       - name: Checkout code-examples repository
         uses: actions/checkout@v3
         with:
-          repository: brett-van-tussler/code-examples
-          path: temp-code-examples
+          repository: brett-van-tussler/code-examples  # Source repository
+          path: temp-code-examples                     # Temporary directory
 
+      # Step 3: Copy code examples from temp directory to docs folder and cleanup
       - name: Sync code examples
         run: |
           cp -r temp-code-examples/* docs/code_examples/
           rm -rf temp-code-examples
 
+      # Step 4: Configure git and commit the changes if any files were modified
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
@@ -29,8 +36,9 @@ jobs:
           git add docs/code_examples
           git diff --quiet && git diff --staged --quiet || git commit -m "Update code examples"
 
+      # Step 5: Push the changes back to the repository
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub
+          branch: ${{ github.ref }}                  # Push to the same branch

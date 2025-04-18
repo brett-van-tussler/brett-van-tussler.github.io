@@ -1,5 +1,7 @@
+# Workflow to test the build process on pull requests before merging to main
 name: Test deployment
 
+# Triggered when a pull request is opened or updated against the main branch
 on:
   pull_request:
     branches:
@@ -12,15 +14,21 @@ jobs:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the repository code
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Fetch all history for potential cross-reference
+      
+      # Step 2: Setup Node.js environment with yarn caching
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: yarn
+          node-version: 18  # Use Node.js 18
+          cache: yarn       # Enable yarn dependency caching
 
+      # Step 3: Install project dependencies using yarn
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile  # Ensure consistent dependencies
+      
+      # Step 4: Attempt to build the website to verify no build errors
       - name: Test build website
         run: yarn build

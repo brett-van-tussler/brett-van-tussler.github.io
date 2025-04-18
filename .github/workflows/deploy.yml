@@ -1,5 +1,7 @@
+# Workflow to deploy the website to GitHub Pages when changes are pushed to main
 name: Deploy to GitHub Pages
 
+# Triggered on push events to the main branch
 on:
   push:
     branches:
@@ -12,40 +14,48 @@ jobs:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the repository code
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Fetch all history for potential cross-reference
+      
+      # Step 2: Setup Node.js environment with yarn caching
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: yarn
+          node-version: 18  # Use Node.js 18
+          cache: yarn       # Enable yarn dependency caching
 
+      # Step 3: Install project dependencies
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile  # Ensure consistent dependencies
+      
+      # Step 4: Build the website for production
       - name: Build website
         run: yarn build
 
+      # Step 5: Upload the built website as an artifact
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: build  # Directory containing the built website
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: build
+    needs: build  # Wait for build job to complete
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
+      pages: write    # Required to deploy to Pages
+      id-token: write # Required for authentication
 
-    # Deploy to the github-pages environment
+    # Configure deployment environment
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}  # Sets the deployment URL
 
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Deploy the built website to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
