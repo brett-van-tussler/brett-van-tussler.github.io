@@ -140,6 +140,10 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/brett-van-tussler/brett-van-tussler.github.io',
             },
+            {
+              label: 'Resume',
+              href: '/files/brettvantassel_resume.docx',
+            },
           ],
         },
       ],
