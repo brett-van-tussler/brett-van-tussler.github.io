@@ -48,6 +48,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
+    },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
@@ -142,7 +147,9 @@ const config: Config = {
             },
             {
               label: 'Resume',
-              href: '/files/brettvantassel_resume.docx',
+              href: 'files/brettvantassel_resume.pdf',
+              target: '_blank', // Open in new tab
+              download: 'brettvantassel_resume.pdf', // Add download attribute
             },
           ],
         },
