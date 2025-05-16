@@ -1,0 +1,210 @@
+---
+id: Bioinformatics
+title: Bioinformatics
+sidebar_label: Bioinformatics
+---
+
+Bioinformatics terminology and concepts.
+
+### 🧮 BAF and PBAF Complexes
+
+• Definition: ATP-dependent chromatin remodeling complexes that alter nucleosome positioning to regulate DNA accessibility and gene expression.
+
+• Composition: Both are variants of the SWI/SNF (SWItch/Sucrose Non-Fermentable) complex family with:
+  - Shared core subunits: BRG1/BRM (ATPase), BAF155, BAF170, BAF60
+  - Distinctive subunits: PBAF contains PBRM1, BAF200, and BRD7; BAF contains BAF250A/B (ARID1A/B)
+
+• Function:
+  - Nucleosome repositioning and ejection to control DNA accessibility
+  - Transcriptional regulation through interaction with transcription factors
+  - Chromatin boundary establishment and maintenance
+  - Cell lineage determination and differentiation
+
+• Disease associations:
+  - Cancer: Mutations in BAF/PBAF subunits occur in ~20% of human cancers
+  - Neurodevelopmental disorders: Mutations linked to autism, intellectual disability
+  - Coffin-Siris and Nicolaides-Baraitser syndromes: Caused by mutations in BAF complex genes
+
+• Therapeutic relevance: Emerging targets for cancer therapy through synthetic lethality approaches and epigenetic modulation.
+
+### 🧬 Transcription Factor (TF) Networks
+
+• Purpose: Regulatory systems composed of transcription factors that control gene expression by binding to specific DNA sequences.
+
+• Structure: Complex networks where TFs interact with DNA and with each other to form regulatory circuits that determine when and where genes are expressed.
+
+• Key components:
+  - Transcription factors: Proteins that bind to specific DNA sequences to control gene transcription
+  - Binding motifs: Short DNA sequences recognized by specific TFs
+  - Network motifs: Recurring patterns in regulatory networks (e.g., feed-forward loops, feedback loops)
+  - Hierarchical organization: Master regulators controlling other TFs, creating regulatory cascades
+
+• Biological significance: TF networks orchestrate critical processes including cell differentiation, development, and response to environmental signals.
+
+• Applications in bioinformatics:
+  - Network inference: Computational methods to reconstruct TF networks from genomic data
+  - Motif discovery: Identifying DNA sequences bound by TFs
+  - Network analysis: Understanding regulatory relationships and predicting cellular responses
+  - Disease research: Identifying dysregulated TF networks in conditions like cancer and developmental disorders
+
+### 🧪 Chromatin Remodeling
+
+• Definition: The dynamic process by which specialized protein complexes alter chromatin structure to regulate DNA accessibility for transcription, replication, repair, and recombination.
+
+• Mechanisms:
+  - Nucleosome sliding (moving histone proteins): Repositioning nucleosomes along DNA without disrupting histone-DNA contacts
+  - Histone eviction/replacement: Removing or exchanging histones to alter chromatin composition
+  - Histone modification: Adding or removing chemical groups that affect chromatin compaction
+  - ATP-dependent remodeling: Using energy from ATP hydrolysis to physically restructure chromatin
+
+![Chromatin Structure showing nucleosomes, histones, and the difference between heterochromatin and euchromatin](/img/dna_packaging.jpg)
+
+• Major remodeling complex families:
+  - SWI/SNF family (BAF/PBAF): Nucleosome sliding and ejection
+  - ISWI family: Nucleosome spacing and assembly
+  - CHD family: Nucleosome sliding and histone deacetylation
+  - INO80/SWR1 family: Histone variant exchange (H2A.Z incorporation)
+
+• Biological roles:
+  - Transcriptional regulation: Controlling gene expression by modulating promoter accessibility
+  - DNA replication: Ensuring replication machinery access to DNA
+  - DNA repair: Facilitating repair protein access to damaged DNA
+  - Development: Orchestrating cell fate decisions and differentiation
+
+• Clinical significance:
+  - Cancer: Mutations in chromatin remodelers are frequent in many cancer types
+  - Developmental disorders: Associated with intellectual disability and congenital abnormalities
+  - Aging: Dysregulation of chromatin remodeling contributes to aging phenotypes
+  - Therapeutic targeting: Emerging strategies for modulating chromatin remodeling in disease
+
+### ⚖️ Dalton (Da)
+
+• Definition: A unit of mass used in biochemistry and molecular biology, equivalent to 1/12 the mass of a carbon-12 atom (approximately 1.66 × 10^-24 grams).
+
+• Equivalence: Identical to the atomic mass unit (amu), but preferred in biochemical contexts.
+
+• Applications:
+  - Measuring molecular weights of proteins, nucleic acids, and other biomolecules
+  - Expressing the size of macromolecules (e.g., a 50 kDa protein)
+  - Determining mass shifts in mass spectrometry
+  - Calculating stoichiometry in biochemical reactions
+
+• Context in bioinformatics:
+  - Protein analysis: Used to estimate protein size from amino acid sequence
+  - Mass spectrometry: Critical unit for peptide and protein identification
+  - Structural biology: Important parameter in determining molecular dimensions
+  - Proteomics: Used in database searching algorithms for protein identification
+
+• Historical note: Named after John Dalton, who proposed atomic theory in the early 19th century.
+
+### 🔄 Pluripotency
+
+• Definition: The ability of stem cells to differentiate into any cell type derived from the three germ layers (endoderm, mesoderm, and ectoderm) that form during embryonic development.
+
+• Types of pluripotent cells:
+  - Embryonic stem cells (ESCs): Derived from the inner cell mass of blastocysts
+  - Induced pluripotent stem cells (iPSCs): Somatic cells reprogrammed to a pluripotent state
+  - Embryonic germ cells: Derived from primordial germ cells
+  - Embryonal carcinoma cells: Derived from teratocarcinomas
+
+• Molecular mechanisms:
+  - Core transcription factor network: OCT4, SOX2, and NANOG maintain the pluripotent state
+  - Epigenetic regulation: DNA methylation, histone modifications, and chromatin remodeling
+  - Signaling pathways: LIF/STAT3, Wnt/β-catenin, TGF-β/Activin/Nodal, and FGF pathways
+  - MicroRNAs: Regulation of gene expression at the post-transcriptional level
+
+• Applications in research:
+  - Disease modeling: Creating patient-specific cell lines to study disease mechanisms
+  - Drug discovery and toxicity testing: Screening compounds on relevant human cell types
+  - Developmental biology: Understanding cellular differentiation and embryonic development
+  - Regenerative medicine: Source for cell replacement therapies
+
+• Clinical relevance:
+  - Regenerative medicine: Potential treatments for degenerative diseases and injuries
+  - Cancer biology: Understanding similarities between pluripotency and oncogenic transformation
+  - Aging research: Insights into cellular rejuvenation and senescence
+  - Ethical considerations: Debates surrounding embryonic stem cell research and therapeutic cloning
+
+### 🔄 Dimers
+
+• Definition: Molecular structures formed by the combination of two identical or similar subunits (monomers) that are joined by chemical bonds.
+
+• Types of dimers:
+  - Homodimers: Composed of two identical molecular subunits
+  - Heterodimers: Formed from two different molecular subunits
+  - Protein dimers: Two protein subunits bound together (e.g., transcription factor dimers)
+  - Nucleic acid dimers: Paired DNA or RNA structures (e.g., thymine dimers in DNA)
+
+• Formation mechanisms:
+  - Covalent bonding: Strong chemical bonds between monomers
+  - Non-covalent interactions: Hydrogen bonds, hydrophobic interactions, van der Waals forces
+  - Disulfide bridges: Covalent bonds between cysteine residues in proteins
+  - π-stacking: Interactions between aromatic rings
+
+• Biological significance:
+  - Protein function: Many proteins are only functional as dimers
+  - DNA damage: Thymine dimers caused by UV radiation can lead to mutations
+  - Enzyme regulation: Dimerization can activate or inhibit enzymatic activity
+  - Signal transduction: Receptor dimerization often initiates signaling cascades
+
+• Applications in bioinformatics:
+  - Protein structure prediction: Identifying potential dimerization interfaces
+  - Drug design: Targeting protein-protein interactions at dimer interfaces
+  - Sequence analysis: Detecting dimerization motifs in protein sequences
+  - Molecular dynamics: Simulating dimer formation and stability
+
+### 🔄 Chirality
+
+• Definition: The geometric property where a molecule cannot be superimposed on its mirror image, similar to how left and right hands are non-superimposable mirror images of each other.
+
+• Key concepts:
+  - Chiral center: Typically a carbon atom bonded to four different groups
+  - Enantiomers: Mirror-image forms of a chiral molecule
+  - Optical activity: Chiral molecules rotate plane-polarized light
+  - Racemic mixture: Equal mixture of both enantiomers
+
+• Biological importance:
+  - Enzyme specificity: Most enzymes interact with only one enantiomer of a substrate
+  - Drug efficacy and safety: Different enantiomers can have dramatically different biological effects
+  - Protein structure: All natural amino acids (except glycine) are chiral
+  - Nucleic acid structure: The sugar component in DNA and RNA is chiral
+
+• Nomenclature systems:
+  - R/S system: Based on Cahn-Ingold-Prelog priority rules
+  - D/L system: Based on the configuration of glyceraldehyde
+  - (+)/(-) system: Based on the direction of rotation of plane-polarized light
+
+• Applications in bioinformatics and computational chemistry:
+  - Molecular modeling: Accurate representation of 3D molecular structures
+  - Drug discovery: Virtual screening of specific enantiomers
+  - Protein-ligand interactions: Predicting binding affinities of chiral molecules
+  - Cheminformatics: Algorithms for detecting and representing chirality
+
+### 🔄 Stereoisomers
+
+• Definition: Isomers that have the same molecular formula and sequence of bonded atoms but differ in the three-dimensional orientation of their atoms in space.
+
+• Major types:
+  - Enantiomers: Mirror-image stereoisomers that are non-superimposable
+  - Diastereomers: Non-mirror-image stereoisomers
+  - Conformational isomers: Stereoisomers that can interconvert by rotation around single bonds
+  - Geometric isomers (cis-trans): Differ in the arrangement of groups around a double bond or ring
+
+• Biological significance:
+  - Molecular recognition: Biological systems can distinguish between stereoisomers
+  - Pharmacology: Different stereoisomers can have different pharmacological properties
+  - Metabolism: Enzymes often process only specific stereoisomers
+  - Structural biology: Protein folding and nucleic acid structure depend on specific stereochemistry
+
+• Analytical methods:
+  - X-ray crystallography: Determining absolute configuration
+  - Circular dichroism: Measuring optical activity
+  - NMR spectroscopy: Distinguishing stereoisomers based on chemical environment
+  - Computational methods: Predicting and analyzing stereochemical properties
+
+• Applications in bioinformatics:
+  - Molecular docking: Accounting for stereochemistry in protein-ligand interactions
+  - Structure-based drug design: Optimizing stereochemistry for target binding
+  - Conformational analysis: Predicting energetically favorable stereoisomers
+  - Cheminformatics: Representing and searching stereochemical information in databases
+
