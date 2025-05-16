@@ -79,3 +79,8 @@ The process of taking a pre-trained model and adapting it to a specific task by 
 
 ### ⌨️ Prompt Engineering
 The art and science of crafting effective inputs for large language models to achieve desired outputs. It involves understanding model behavior and using specific techniques to guide the model's responses, crucial for getting optimal results from AI systems.
+
+### 🔢 Tensor Processing Unit (TPU)
+A specialized hardware accelerator developed by Google specifically for neural network machine learning. TPUs are application-specific integrated circuits (ASICs) designed to accelerate tensor operations, which are fundamental to deep learning models. Unlike CPUs and GPUs, TPUs are optimized for matrix operations with high computational throughput and lower precision, making them significantly faster and more energy-efficient for AI workloads.
+
+TPUs play a crucial role in training and running Google's Gemini models, providing the massive computational power needed to process the enormous datasets required for large language models. Their architecture enables parallel processing at scale, reducing training time from weeks to days or hours, and allowing for more efficient inference when deploying these models in production environments.
