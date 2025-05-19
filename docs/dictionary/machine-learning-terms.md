@@ -84,3 +84,23 @@ The art and science of crafting effective inputs for large language models to ac
 A specialized hardware accelerator developed by Google specifically for neural network machine learning. TPUs are application-specific integrated circuits (ASICs) designed to accelerate tensor operations, which are fundamental to deep learning models. Unlike CPUs and GPUs, TPUs are optimized for matrix operations with high computational throughput and lower precision, making them significantly faster and more energy-efficient for AI workloads.
 
 TPUs play a crucial role in training and running Google's Gemini models, providing the massive computational power needed to process the enormous datasets required for large language models. Their architecture enables parallel processing at scale, reducing training time from weeks to days or hours, and allowing for more efficient inference when deploying these models in production environments.
+
+### 📊 Mixed-Effects Models
+A statistical framework that incorporates both fixed effects (parameters that apply to an entire population) and random effects (parameters specific to individual groups or subjects within the data). These models are particularly valuable for analyzing hierarchical, nested, or longitudinal data where observations are not fully independent. Mixed-effects models account for both within-group and between-group variations, making them powerful tools for fields like medicine, ecology, and social sciences where data often has complex, multi-level structures.
+
+By simultaneously modeling group-level and individual-level effects, these models provide more accurate parameter estimates and standard errors than traditional regression approaches when dealing with clustered data. They're especially useful for repeated measures designs, panel data, and any scenario where measurements are taken from the same subjects over time or under different conditions.
+
+Example:
+A mixed-effects model could be used to predict the progression of Alzheimer's disease by analyzing longitudinal MRI data, incorporating patient-specific factors and overall trends. 
+
+### 🔬 Mechanistic Modeling
+An approach to modeling that incorporates known physical, chemical, or biological processes to explain phenomena, rather than relying solely on statistical patterns in data. Unlike purely data-driven approaches, mechanistic models are built on theoretical understanding of the underlying mechanisms that generate the observed data. These models attempt to represent causal relationships and system dynamics based on first principles.
+
+Mechanistic models are particularly valuable in scientific domains where understanding the "why" and "how" is as important as prediction accuracy. They offer greater interpretability and can often extrapolate beyond the range of observed data more reliably than black-box statistical models. In machine learning, mechanistic approaches are increasingly being combined with data-driven methods to create hybrid models that benefit from both theoretical knowledge and empirical patterns, especially in fields like computational biology, climate science, and physics-informed neural networks.
+
+Flight Simulator:
+A flight simulator uses mathematical equations to recreate the experience of flying a plane, demonstrating a real-world application of a mechanistic model.
+Chromatography Model:
+In chromatography, mechanistic models consider physical and biochemical effects like convection, dispersion, and adsorption, based on natural laws
+
+A machine learning model (e.g., a neural network) can be trained to predict cell phenotypes (e.g., cell growth, cell death) based on the outputs of the mechanistic model, which include changes in protein localization, phosphorylation, and downstream effects
