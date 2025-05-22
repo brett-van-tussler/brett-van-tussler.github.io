@@ -28,6 +28,10 @@ Iso- (Greek: ísos) = “equal” or “same”
 Neo- (Greek: neos) = “new”
 	•	Neoplasm – New abnormal growth
 
+Onco- (Greek: onkos) = "tumor" or "mass"
+	•	Oncogene – Gene that can cause cancer
+	•	Oncology – Study of cancer
+
 Pseudo- (Greek: pseudes) = “false”
 	•	Pseudogene – Nonfunctional gene-like DNA sequence
 
@@ -82,10 +86,14 @@ Roots & Stems
 Kinesis (Greek: kinesis) = “movement” or “motion”
 	•	Cytokinesis – The division of the cytoplasm during cell division, resulting in two separate daughter cells. (Cyto- = cell, kinesis = movement → movement of the cell’s contents)
 
-Script / Scrib (Latin: scribere) = “to write”
+Script / Scrib (Latin: scribere) = "to write"
 	•	Transcript – Written RNA copy of DNA
 
-Poly- (Greek: polys) = “many”
+Strat- / Strati- (Latin: stratum) = "layer" or "spread out"
+	•	Stratification – Arrangement in layers
+	•	Stratigraphy – Study of rock layers
+
+Poly- (Greek: polys) = "many"
 	•	Polypeptide – Chain of many amino acids
 
 Mer (Greek: meros) = “part”
@@ -117,3 +125,4 @@ Nucleo- (Latin: nucleus) = “kernel” or “core”
 Chrom- (Greek: chroma) = “color” (later: chromosome)
 	•	Chromatin – Complex of DNA and protein
 	•	Chromosome – Carriers of genetic information - When chromosomes were first observed under a microscope, scientists noticed they stained strongly with certain dyes (colorful chemical stains). Because these structures readily took up color, they were named “chromosomes,” literally meaning “colored bodies.”
+

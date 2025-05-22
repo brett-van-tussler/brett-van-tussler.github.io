@@ -6,6 +6,34 @@ sidebar_label: Bioinformatics
 
 Bioinformatics terminology and concepts.
 
+### 🔗 Similarity Network Fusion (SNF)
+
+• Definition: A computational method that integrates multiple data types to create a unified patient similarity network, enabling more comprehensive analysis than single-data approaches.
+
+• Algorithm principles:
+  - Constructs similarity networks for each data type separately
+  - Iteratively updates each network by fusing information from other networks
+  - Converges to a single integrated network that captures complementary information across data types
+  - Uses spectral clustering for patient stratification and subtype identification
+
+• Applications in multi-omics integration:
+  - Cancer subtyping: Identifying disease subtypes by integrating genomic, transcriptomic, and clinical data
+  - Biomarker discovery: Finding robust biomarkers across multiple data platforms
+  - Patient stratification: Grouping patients with similar molecular profiles across different data types
+  - Drug response prediction: Integrating molecular and pharmacological data to predict treatment outcomes
+
+• Advantages over single-data analysis:
+  - Increased statistical power through data integration
+  - Robustness to noise in individual data types
+  - Ability to capture complementary information across heterogeneous data
+  - Improved prediction accuracy for clinical outcomes
+
+• Implementation considerations:
+  - Parameter selection (number of neighbors, fusion iterations)
+  - Data normalization across different platforms
+  - Computational efficiency for large datasets
+  - Visualization of integrated networks
+
 ### 🧮 BAF and PBAF Complexes
 
 • Definition: ATP-dependent chromatin remodeling complexes that alter nucleosome positioning to regulate DNA accessibility and gene expression.
@@ -370,26 +398,219 @@ Bioinformatics terminology and concepts.
 • Key characteristics:
   - Typically maintain similar functions across species
   - Sequence similarity reflects evolutionary distance between species
-  - Usually present in one or few copies per genome
-  - Often have conserved genomic context (synteny)
+  - Usually present as single copies in each genome (except after lineage-specific duplications)
+  - Conserved genomic context (synteny) in closely related species
+  - Often used as evolutionary markers for phylogenetic studies
+
+• Evolutionary significance:
+  - Enable comparative genomic studies across species
+  - Provide insights into gene function conservation and divergence
+  - Allow reconstruction of species phylogenies
+  - Help identify core genes essential for life
 
 • Identification methods:
-  - Reciprocal best hits in sequence similarity searches
-  - Phylogenetic tree reconstruction
-  - Synteny analysis (conserved gene order)
-  - Orthology databases (OrthoMCL, OMA, EggNOG, OrthoDB)
+  - Sequence similarity: BLAST, HMMER, and other alignment tools
+  - Phylogenetic analysis: Tree-based methods to distinguish orthologs from paralogs
+  - Synteny analysis: Examining conservation of gene order and chromosomal context
+  - Reciprocal best hits (RBH): Identifying mutual best matches between genomes
 
-• Biological significance:
-  - Enable comparative genomics across species
-  - Provide basis for functional annotation transfer
-  - Allow study of evolutionary conservation and divergence
-  - Support reconstruction of species phylogenies
+• Applications in bioinformatics:
+  - Functional annotation: Transferring knowledge from well-studied to newly sequenced organisms
+  - Comparative genomics: Understanding genome evolution and species relationships
+  - Identification of conserved regulatory elements
+  - Drug target discovery across model organisms
+
+### 🔬 Deconvolution Analysis
+
+• Definition: Computational methods used to separate mixed biological signals from heterogeneous samples into their constituent components.
 
 • Applications:
-  - Model organism research: Translating findings across species
-  - Drug discovery: Identifying conserved therapeutic targets
-  - Evolutionary biology: Tracing gene and species histories
-  - Genome annotation: Predicting gene function
+  - Cell type composition estimation from bulk tissue transcriptomics data
+  - Tumor microenvironment characterization from mixed tumor samples
+  - Immune cell profiling from complex tissue samples
+  - Epigenetic signal deconvolution from mixed cell populations
+
+• Key methodologies:
+  - Reference-based deconvolution: Uses known cell type-specific signatures as reference
+  - Reference-free deconvolution: Identifies cell types without prior knowledge using statistical approaches
+  - Semi-supervised approaches: Combines reference data with unsupervised learning
+  - Spatial deconvolution: Incorporates spatial information to resolve cellular heterogeneity
+
+• Algorithms and tools:
+  - CIBERSORT: Estimating immune cell fractions from gene expression profiles
+  - CellMix: R package for linear unmixing of heterogeneous tissue samples
+  - MuSiC: Multi-subject single cell deconvolution
+  - DSA (Digital Sorting Algorithm): Marker-free deconvolution for transcriptomics
+
+• Challenges and considerations:
+  - Reference dataset quality and comprehensiveness
+  - Assumption of linear mixing in most algorithms
+  - Handling of technical and biological noise
+  - Validation of deconvolution results with orthogonal methods
+
+### 🧩 Mosaicism Detection
+
+• Definition: Identification of genetic variations present in only a subset of cells within an individual, resulting from post-zygotic mutations during development.
+
+• Types of mosaicism:
+  - Somatic mosaicism: Mutations present in somatic cells but not germline
+  - Gonadal mosaicism: Mutations present in germ cells that can be transmitted to offspring
+  - Chromosomal mosaicism: Presence of cells with different chromosomal compositions
+  - Mitochondrial heteroplasmy: Varying proportions of mutant mitochondrial DNA
+
+• Detection methods:
+  - Deep sequencing: High-depth targeted sequencing to detect low-frequency variants
+  - Single-cell sequencing: Analyzing genetic material from individual cells
+  - Digital PCR: Highly sensitive detection of rare variants
+  - SNP arrays: Detection of mosaic copy number variations and loss of heterozygosity
+
+• Bioinformatic challenges:
+  - Distinguishing true mosaic variants from sequencing errors
+  - Determining variant allele frequency thresholds
+  - Computational efficiency for large-scale analyses
+  - Integration of multiple data types for comprehensive detection
+
+• Clinical significance:
+  - Cancer: Tumor heterogeneity and clonal evolution
+  - Developmental disorders: Explaining variable phenotypes
+  - Aging: Accumulation of somatic mutations throughout life
+  - Precision medicine: Tailoring treatments based on subclonal genetic profiles
+
+### 🧬 HLA Imputation
+
+• Definition: Computational methods to predict human leukocyte antigen (HLA) genotypes from SNP data or low-coverage sequencing, leveraging linkage disequilibrium patterns.
+
+• Importance of HLA:
+  - Critical role in immune response and self/non-self recognition
+  - Highly polymorphic gene family with thousands of alleles
+  - Strong association with autoimmune diseases, transplant outcomes, and drug hypersensitivity
+  - Relevant for vaccine development and immunotherapy response prediction
+
+• Imputation approaches:
+  - Statistical methods: Using reference panels and linkage disequilibrium patterns
+  - Machine learning: Neural networks and other ML approaches for HLA type prediction
+  - Graph-based methods: Leveraging haplotype structures and population-specific patterns
+  - Hybrid approaches: Combining multiple methods for improved accuracy
+
+• Tools and resources:
+  - SNP2HLA: Imputes classical HLA alleles and amino acid polymorphisms
+  - HIBAG: HLA genotype imputation with attribute bagging
+  - HLA*IMP: Statistical HLA imputation using reference panels
+  - T1DGC and 1000 Genomes reference panels: Population-specific HLA haplotype references
+
+• Applications:
+  - GWAS: Fine-mapping of disease associations in the HLA region
+  - Pharmacogenomics: Predicting adverse drug reactions
+  - Transplantation medicine: Virtual crossmatching and donor selection
+  - Population genetics: Studying HLA diversity across human populations
+
+### 🧬 Isoforms
+
+• Definition: Different forms of a protein that arise from the same gene through alternative splicing, alternative promoter usage, or alternative polyadenylation.
+
+• Generation mechanisms:
+  - Alternative splicing: Inclusion or exclusion of specific exons
+  - Alternative promoter usage: Transcription initiation from different start sites
+  - Alternative polyadenylation: Different 3' end processing of mRNA
+  - RNA editing: Post-transcriptional modification of nucleotides
+
+• Biological significance:
+  - Increases proteome diversity without expanding the genome
+  - Enables tissue-specific or developmental stage-specific protein functions
+  - Allows fine-tuning of protein activity, localization, or interaction partners
+  - Contributes to phenotypic complexity in higher organisms
+
+• Characteristics:
+  - Share some sequence regions but differ in others
+  - May have different functional domains, subcellular localization signals, or regulatory sites
+  - Often exhibit tissue-specific or condition-specific expression patterns
+  - Can have distinct or overlapping functions
+
+• Detection methods:
+  - RNA-seq with isoform-specific analysis
+  - Long-read sequencing (PacBio, Nanopore)
+  - Isoform-specific RT-PCR
+  - Mass spectrometry-based proteomics
+
+• Clinical relevance:
+  - Aberrant isoform expression associated with various diseases
+  - Cancer-specific isoforms as potential biomarkers or therapeutic targets
+  - Genetic variants affecting splicing linked to hereditary disorders
+  - Isoform-specific drug targeting strategies
+
+### 🧬 Alternative Splicing
+
+• Definition: A post-transcriptional process where different exons from a pre-mRNA are included in or excluded from the mature mRNA, generating multiple transcript variants from a single gene.
+
+• Major types:
+  - Exon skipping: Exclusion of an exon from the final transcript
+  - Mutually exclusive exons: Inclusion of one exon from a set of possible exons
+  - Alternative 5' splice sites: Use of different 5' splice junctions
+  - Alternative 3' splice sites: Use of different 3' splice junctions
+  - Intron retention: Inclusion of an intron in the mature transcript
+
+• Regulatory mechanisms:
+  - Cis-regulatory elements: Exonic/intronic splicing enhancers or silencers
+  - Trans-acting factors: SR proteins, hnRNPs, and other splicing regulators
+  - RNA secondary structure: Affects accessibility of splice sites
+  - Epigenetic marks: Histone modifications and DNA methylation
+  - Transcription rate: Kinetic coupling between transcription and splicing
+
+• Biological importance:
+  - Expands transcriptome and proteome diversity
+  - Enables tissue-specific and developmental stage-specific gene expression
+  - Contributes to evolutionary adaptation and species complexity
+  - Allows rapid cellular responses to environmental changes
+
+• Detection and analysis methods:
+  - RNA-seq with splice junction analysis
+  - Exon microarrays
+  - RT-PCR with isoform-specific primers
+  - Computational tools: MISO, rMATS, SUPPA, Whippet
+
+• Clinical significance:
+  - Splicing dysregulation in cancer and neurodegenerative diseases
+  - Mutations affecting splice sites cause ~15% of human genetic diseases
+  - Therapeutic approaches targeting splicing (antisense oligonucleotides, small molecules)
+  - Splicing patterns as diagnostic or prognostic biomarkers
+
+### 🧬 Gene Fusion Events
+
+• Definition: Hybrid genes formed by the joining of two previously separate genes, typically resulting from chromosomal rearrangements such as translocations, inversions, or deletions.
+
+• Formation mechanisms:
+  - Chromosomal translocations: Exchange of genetic material between non-homologous chromosomes
+  - Chromosomal inversions: Reversal of a DNA segment within a chromosome
+  - Tandem duplications: Duplication of a segment followed by fusion
+  - Transcription-mediated gene fusion: Read-through transcription between adjacent genes
+  - Trans-splicing: Joining of exons from separate pre-mRNA molecules
+
+• Structural characteristics:
+  - Breakpoint junctions: Points where the two genes are joined
+  - Fusion domains: Protein domains contributed by each partner gene
+  - Reading frame: Determines if the fusion produces a functional protein
+  - Regulatory elements: Promoters and enhancers that control fusion gene expression
+
+• Detection methods:
+  - RNA-seq with fusion-detection algorithms (STAR-Fusion, FusionCatcher)
+  - Whole genome sequencing to identify genomic breakpoints
+  - FISH (Fluorescence In Situ Hybridization) for known fusions
+  - RT-PCR with fusion-specific primers
+  - Mass spectrometry for fusion protein detection
+
+• Biological and clinical significance:
+  - Oncogenic drivers in many cancer types (e.g., BCR-ABL in chronic myeloid leukemia)
+  - Diagnostic biomarkers for cancer classification
+  - Therapeutic targets for precision medicine approaches
+  - Evolutionary mechanism for new gene function
+  - Contribution to genetic diversity and adaptation
+
+• Notable examples:
+  - BCR-ABL1 in chronic myeloid leukemia (Philadelphia chromosome)
+  - EML4-ALK in non-small cell lung cancer
+  - TMPRSS2-ERG in prostate cancer
+  - PML-RARA in acute promyelocytic leukemia
+  - SYT-SSX in synovial sarcoma
 
 ### 🧬 Homologs
 

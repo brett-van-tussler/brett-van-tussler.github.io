@@ -104,3 +104,38 @@ Chromatography Model:
 In chromatography, mechanistic models consider physical and biochemical effects like convection, dispersion, and adsorption, based on natural laws
 
 A machine learning model (e.g., a neural network) can be trained to predict cell phenotypes (e.g., cell growth, cell death) based on the outputs of the mechanistic model, which include changes in protein localization, phosphorylation, and downstream effects
+
+### 📊 Tensor Decomposition
+A mathematical approach for breaking down multi-dimensional arrays (tensors) into simpler components, similar to how matrix factorization works for two-dimensional data. Tensor decompositions reveal underlying patterns and structures in complex multi-way data, making them powerful tools for dimensionality reduction, feature extraction, and latent factor discovery in unsupervised learning.
+
+Tensor methods are particularly valuable for analyzing data with multiple aspects or modes (such as users-items-time in recommendation systems or subjects-features-time in neuroimaging), where traditional matrix methods would lose important multi-way relationships.
+
+### 🧩 Tucker Decomposition
+A higher-order extension of principal component analysis (PCA) that decomposes a tensor into a core tensor multiplied by a matrix along each mode. Tucker decomposition provides a more flexible representation than other tensor methods, allowing different ranks for different dimensions.
+
+In unsupervised learning, Tucker decomposition excels at subspace learning and dimensionality reduction for multi-way data, enabling applications like multi-aspect data mining, anomaly detection in network traffic, and feature extraction from multi-modal signals.
+
+### 🔄 Canonical Polyadic (CP) Decomposition
+Also known as CANDECOMP/PARAFAC decomposition, CP breaks down a tensor into a sum of rank-one tensors (outer products of vectors). This decomposition provides a highly interpretable representation where each component represents a distinct pattern or factor in the data.
+
+CP decomposition serves as a powerful unsupervised learning tool for discovering latent factors in multi-way data, with applications in chemometrics (analyzing chemical measurements), neuroscience (identifying functional networks), and recommendation systems (capturing user-item-context interactions).
+
+### 🌐 Generalized CP (GCP) Decomposition
+An extension of the standard CP decomposition that incorporates different loss functions and constraints to handle various data types (binary, count, continuous) and missing values. GCP provides more flexibility for modeling complex real-world data with non-Gaussian characteristics.
+
+In unsupervised learning, GCP enables robust pattern discovery in heterogeneous multi-way data, supporting applications like topic modeling across document collections, community detection in dynamic networks, and analyzing sparse, noisy biological measurements across multiple experimental conditions.
+
+### 📊 Lasso Regression
+A linear regression technique that performs both variable selection and regularization to enhance prediction accuracy and interpretability. Lasso (Least Absolute Shrinkage and Selection Operator) adds an L1 penalty term to the cost function, which can shrink some coefficients exactly to zero, effectively removing less important features from the model. This feature selection capability makes Lasso particularly valuable for high-dimensional datasets where many features may be irrelevant or redundant.
+
+Lasso Regression is widely used in fields like genomics (selecting relevant genetic markers), finance (identifying key economic indicators), and image processing (extracting important features while discarding noise).
+
+### 📈 Ridge Regression
+A regularization technique that addresses multicollinearity in linear regression by adding an L2 penalty term to the cost function. Unlike Lasso, Ridge Regression shrinks coefficients toward zero but rarely sets them exactly to zero, keeping all features in the model while reducing their impact. This approach is particularly effective when dealing with highly correlated predictors, preventing the model from assigning excessive importance to any single variable.
+
+Ridge Regression excels in scenarios where all features contribute to the outcome but need to be constrained to prevent overfitting, such as in economic forecasting, climate modeling, and biomedical research.
+
+### 🔀 Elastic Net
+A hybrid regression technique that combines the penalties of both Lasso and Ridge Regression, incorporating both L1 and L2 regularization terms. This balanced approach overcomes limitations of each method alone: it can select variables like Lasso while handling groups of correlated features better, similar to Ridge. The mixing parameter allows data scientists to tune the model between pure Lasso and pure Ridge behavior.
+
+Elastic Net is particularly valuable for complex datasets with many correlated features, such as in genomics (where groups of genes may work together), neuroimaging (where brain regions have correlated activities), and recommendation systems (where user preferences show complex patterns).

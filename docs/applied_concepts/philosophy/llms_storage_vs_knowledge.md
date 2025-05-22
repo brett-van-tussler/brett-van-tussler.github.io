@@ -45,7 +45,3 @@ The AI community has further developed techniques like knowledge distillation, w
 The ability of LLMs to compress vast amounts of training data into relatively small models through high-dimensional representations is both their greatest strength and the source of their limitations. They sacrifice perfect accuracy for the ability to generalize, compress, and create.
 
 This tradeoff isn't a bug—it's a feature that mirrors how human cognition works. We don't have perfect recall either, but we excel at extracting patterns and generating new ideas from compressed knowledge. LLMs, in their imperfect compression of the world's text, are following a similar path.
-
-
-### And now for some of my thoughts
-Would it be possible to perfectly map out high dimensional space for simply storing more information that the uncompressed storage space would contain?
