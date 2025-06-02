@@ -139,3 +139,30 @@ Ridge Regression excels in scenarios where all features contribute to the outcom
 A hybrid regression technique that combines the penalties of both Lasso and Ridge Regression, incorporating both L1 and L2 regularization terms. This balanced approach overcomes limitations of each method alone: it can select variables like Lasso while handling groups of correlated features better, similar to Ridge. The mixing parameter allows data scientists to tune the model between pure Lasso and pure Ridge behavior.
 
 Elastic Net is particularly valuable for complex datasets with many correlated features, such as in genomics (where groups of genes may work together), neuroimaging (where brain regions have correlated activities), and recommendation systems (where user preferences show complex patterns).
+
+### 📊 Pearson Correlation Coefficient
+
+The Pearson Correlation Coefficient (PCC) is a statistical measure that quantifies the linear relationship between two continuous variables. It produces a value ranging from -1 to +1, where +1 indicates a perfect positive linear relationship, -1 indicates a perfect negative linear relationship, and 0 indicates no linear relationship between the variables.
+
+Mathematically, it is calculated as the ratio between the covariance of two variables and the product of their standard deviations, making it a normalized measurement of covariance. The formula is often expressed as:
+
+\[ r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \sum_{i=1}^{n} (y_i - \bar{y})^2}} \]
+
+In machine learning, the Pearson correlation coefficient serves several critical functions:
+
+1. **Feature Selection**: It helps identify which features have strong relationships with the target variable, allowing data scientists to select the most relevant features for model training.
+
+2. **Multicollinearity Detection**: It identifies highly correlated input features that might cause instability in models like linear regression.
+
+3. **Dimensionality Reduction**: Understanding correlation patterns helps in techniques like Principal Component Analysis (PCA) to reduce the number of features while preserving information.
+
+4. **Data Exploration**: It provides insights into relationships within the data, guiding further analysis and model selection.
+
+The interpretation of correlation strength varies by field, but generally:
+- Values between ±0.1 and ±0.3 indicate weak correlation
+- Values between ±0.3 and ±0.5 indicate moderate correlation
+- Values between ±0.5 and ±1.0 indicate strong correlation
+
+It's important to note that Pearson correlation only captures linear relationships and is sensitive to outliers. For non-linear relationships or when dealing with ordinal data, alternative measures like Spearman's rank correlation coefficient may be more appropriate.
+
+In practical machine learning applications, Pearson correlation is used in genomics to identify relationships between genes, in financial modeling to analyze market dependencies, and in recommendation systems to measure similarities between user preferences or items.

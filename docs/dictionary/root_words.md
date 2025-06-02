@@ -140,3 +140,8 @@ Kin- (Greek: kinein) = "to move" or "set in motion"
 	•	Kinetic – Relating to or produced by motion
 	•	Kinesiology – Study of human movement and body mechanics
 	•	Telekinesis – Hypothetical ability to move objects using the mind
+
+Pan- (Greek: pân) = "wide"
+	•	Pancreas – Large organ for digestion
+	•	Panther – Large wild cat
+	•	Panthera – Family of cats
