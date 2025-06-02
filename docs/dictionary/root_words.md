@@ -47,6 +47,11 @@ Suffixes
 
 ⸻
 
+-tropy / -tropic (Greek: tropē, from trepein) = "turn" or "turning" or "influence"
+	•	Pleiotropy – Multiple effects from a single gene (pleio = many, tropy = influence)
+	•	Phototropic – Turning or growing toward light
+	•	Geotropic – Turning or growing in response to gravity
+
 -mer (Greek: méros) = “part” or “segment”
 
 -ase (Latin from Greek: -asis) = “enzyme”
@@ -107,6 +112,10 @@ Phob / Philic (Greek: phobos / philos) = “fear” / “love”
 	•	Hydrophobic – Repelled by water
 	•	Hydrophilic – Attracted to water
 
+Pleio- (Greek: pleíōn) = "more" or "many"
+	•	Pleiotropy – Phenomenon where a single gene influences multiple phenotypic traits
+	•	Pleiotropic – Having multiple effects from a single cause
+
 Lys- (Greek: lysis) = “to loosen or break”
 	•	Lysosome – Organelle that breaks down waste
 
@@ -126,3 +135,8 @@ Chrom- (Greek: chroma) = “color” (later: chromosome)
 	•	Chromatin – Complex of DNA and protein
 	•	Chromosome – Carriers of genetic information - When chromosomes were first observed under a microscope, scientists noticed they stained strongly with certain dyes (colorful chemical stains). Because these structures readily took up color, they were named “chromosomes,” literally meaning “colored bodies.”
 
+Kin- (Greek: kinein) = "to move" or "set in motion"
+	•	Kinase – Enzyme that transfers phosphate groups, causing molecular changes
+	•	Kinetic – Relating to or produced by motion
+	•	Kinesiology – Study of human movement and body mechanics
+	•	Telekinesis – Hypothetical ability to move objects using the mind
