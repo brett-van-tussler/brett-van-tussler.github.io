@@ -606,7 +606,7 @@ Bioinformatics terminology and concepts.
   - Contribution to genetic diversity and adaptation
 
 • Notable examples:
-  - BCR-ABL1 in chronic myeloid leukemia (Philadelphia chromosome)
+  - BCR-ABL1 in chronic myeloid leukemia (Phil Philadelphia chromosome)
   - EML4-ALK in non-small cell lung cancer
   - TMPRSS2-ERG in prostate cancer
   - PML-RARA in acute promyelocytic leukemia
@@ -716,6 +716,566 @@ Bioinformatics terminology and concepts.
   - Molecular features increasingly guide personalized treatment decisions
   - Model disease for studying clonal evolution and pre-leukemic states
   - Emerging role of genetic predisposition in disease development
+
+### 🧬 Somatic Mutations
+
+• Definition: Alterations in DNA that occur after conception in somatic (non-germline) cells of the body and are not inherited from parents or passed to offspring. These mutations accumulate throughout an individual's lifetime in various tissues due to environmental exposures, replication errors, or endogenous processes.
+
+• Comparison with germline mutations:
+  - Somatic mutations: Present only in specific cells/tissues, not in every cell of the body, not heritable
+  - Germline mutations: Present in germ cells (sperm or eggs), found in every cell of the body, can be passed to offspring
+  - Distribution: Somatic mutations show tissue-specific patterns and increase with age, while germline variants are uniformly distributed across tissues
+
+• Types of somatic mutations:
+  - Driver mutations: Confer selective growth advantage to cells, contribute directly to cancer development by affecting oncogenes or tumor suppressor genes
+  - Passenger mutations: Do not provide growth advantage, occur coincidentally in cells that already have driver mutations
+  - Based on DNA change: Single nucleotide variants (SNVs), insertions/deletions (indels), copy number alterations (CNAs), structural variants (SVs), and chromosomal rearrangements
+
+• Mutational signatures:
+  - Characteristic patterns of mutations caused by specific mutational processes
+  - Examples: UV light exposure (C>T transitions), tobacco smoke (G>T transversions), APOBEC enzyme activity, defective DNA repair mechanisms
+  - Provide insights into cancer etiology and progression mechanisms
+
+• Detection methods:
+  - Next-generation sequencing (NGS): Whole-genome, whole-exome, or targeted panel sequencing
+  - Tumor-normal comparison: Sequencing both tumor and matched normal tissue to identify somatic-specific variants
+  - Deep sequencing: Required to detect low-frequency mutations in heterogeneous samples
+  - Single-cell sequencing: For analyzing intratumoral heterogeneity and clonal evolution
+  - Liquid biopsy: Detection of circulating tumor DNA (ctDNA) in blood for non-invasive monitoring
+
+• Clinical significance:
+  - Cancer diagnosis: Identifying driver mutations that define cancer subtypes
+  - Prognostic biomarkers: Mutations associated with disease progression or survival outcomes
+  - Predictive biomarkers: Mutations that predict response to specific therapies
+  - Therapeutic targets: Basis for precision medicine approaches in cancer treatment
+  - Monitoring: Tracking treatment response and disease recurrence through serial sampling
+
+• Applications in precision oncology:
+  - Targeted therapies: Drugs designed to target specific mutations (e.g., EGFR inhibitors for EGFR mutations)
+  - Immunotherapy selection: Tumor mutational burden (TMB) as a biomarker for immunotherapy response
+  - Pan-cancer approaches: Targeting mutations across multiple cancer types regardless of tissue of origin
+  - Resistance mechanisms: Identifying secondary mutations that confer treatment resistance
+  - Minimal residual disease detection: Using somatic mutations as personalized biomarkers
+
+• Computational challenges:
+  - Distinguishing driver from passenger mutations
+  - Accounting for tumor heterogeneity and normal cell contamination
+  - Identifying mutations in low-frequency subclones
+  - Integrating multiple data types for comprehensive mutational profiling
+  - Interpreting variants of unknown significance
+
+### 🔄 Ubiquitin Proteasome System (UPS)
+
+• Definition: A major intracellular protein degradation pathway that selectively tags proteins with ubiquitin molecules for subsequent degradation by the 26S proteasome complex, playing a crucial role in protein homeostasis and cellular quality control.
+
+• Key components:
+  - Ubiquitin: A 76-amino acid protein that serves as the tag for protein degradation
+  - E1 (ubiquitin-activating enzymes): Activate ubiquitin in an ATP-dependent manner
+  - E2 (ubiquitin-conjugating enzymes): Transfer activated ubiquitin from E1
+  - E3 (ubiquitin ligases): Recognize specific substrates and facilitate ubiquitin transfer
+  - Proteasome: A large multi-subunit complex that degrades ubiquitinated proteins
+  - Deubiquitinating enzymes (DUBs): Remove ubiquitin tags, providing regulation
+
+• Ubiquitination process:
+  - Activation: E1 activates ubiquitin in an ATP-dependent reaction
+  - Conjugation: E2 accepts the activated ubiquitin from E1
+  - Ligation: E3 catalyzes the transfer of ubiquitin to lysine residues on target proteins
+  - Polyubiquitination: Multiple ubiquitin molecules form chains (K48-linked chains target for degradation)
+
+• Proteasomal degradation:
+  - Recognition: Polyubiquitinated proteins are recognized by the 19S regulatory particle
+  - Unfolding: Proteins are unfolded and deubiquitinated
+  - Degradation: Unfolded proteins enter the 20S core particle and are cleaved into peptides
+  - Recycling: Amino acids are recycled for new protein synthesis
+
+• Biological significance:
+  - Protein quality control: Elimination of misfolded or damaged proteins
+  - Regulation of protein abundance: Control of cellular levels of regulatory proteins
+  - Cell cycle control: Degradation of cyclins and cell cycle inhibitors
+  - Signal transduction: Regulation of signaling pathway components
+  - Immune response: Antigen processing for MHC class I presentation
+
+• Clinical relevance:
+  - Cancer: Proteasome inhibitors (e.g., bortezomib) approved for multiple myeloma
+  - Neurodegenerative diseases: Accumulation of protein aggregates due to UPS dysfunction
+  - Inflammatory disorders: UPS involvement in NF-κB pathway regulation
+  - Emerging target for drug development: Targeted protein degradation approaches
+
+### 🎯 Targeted Protein Degradation
+
+• Definition: A therapeutic strategy that harnesses the cell's endogenous protein degradation machinery to selectively eliminate disease-causing proteins, particularly those considered "undruggable" by traditional approaches.
+
+• Major degradation pathways utilized:
+  - Ubiquitin-proteasome system (UPS): Primary pathway for degradation of intracellular proteins
+  - Lysosomal pathway: Alternative route for degradation of membrane proteins and aggregates
+  - Autophagy: Bulk degradation of cellular components including organelles and protein aggregates
+
+• Key technologies:
+  - PROteolysis TArgeting Chimeras (PROTACs): Bifunctional molecules linking target proteins to E3 ligases
+  - Molecular glues: Monovalent molecules that enhance protein-protein interactions with E3 ligases
+  - Lysosome-targeting chimeras (LYTACs): Direct proteins to lysosomal degradation
+  - Autophagy-targeting chimeras (AUTACs): Target proteins for autophagic degradation
+  - dTAGs: Degradation tags for rapid protein elimination
+
+• Advantages over traditional inhibitors:
+  - Catalytic mode of action: One degrader molecule can process multiple target proteins
+  - Event-driven rather than occupancy-driven: Prolonged effect after drug clearance
+  - Ability to target non-enzymatic protein functions and scaffolding proteins
+  - Potential to overcome resistance mechanisms
+  - Lower required drug concentrations for efficacy
+
+• Challenges and limitations:
+  - Tissue distribution and intracellular penetration
+  - Identification of appropriate E3 ligases for specific tissues
+  - Potential for off-target effects
+  - Complex pharmacokinetic and pharmacodynamic relationships
+
+• Clinical applications:
+  - Oncology: Degradation of oncoproteins and transcription factors
+  - Neurodegenerative diseases: Clearance of protein aggregates
+  - Inflammatory disorders: Degradation of inflammatory mediators
+  - Infectious diseases: Elimination of viral proteins
+
+### 🧪 Svedberg Sedimentation Coefficient
+• Definition: A unit of measurement (symbol S) that characterizes the sedimentation rate of particles under centrifugal force, defined as the ratio of a particle's sedimentation velocity to the applied acceleration. One Svedberg unit equals exactly 10⁻¹³ seconds (100 femtoseconds).
+
+• Key principles:
+- Named after Swedish chemist Theodor Svedberg, who won the 1926 Nobel Prize for his work on colloids and invention of the ultracentrifuge
+- Represents how quickly a particle settles in solution during centrifugation
+- Determined by a particle's mass, density, and shape
+- Larger, heavier particles generally have higher S values
+- Svedberg values are not additive; when two particles bind together, their combined S value is not the sum of their individual values
+
+• Mathematical basis:
+- Described by the Svedberg equation: s = m(1-νρ)/f
+- Where m is the particle mass, ν is the partial specific volume, ρ is the solvent density, and f is the frictional coefficient
+- For a spherical particle, the frictional coefficient is related to its radius by Stokes' law
+- A particle with a sedimentation coefficient of 26S will travel at 26 micrometers per second under an acceleration of 1 million gravities
+
+• Applications in bioinformatics and molecular biology:
+- Classification of cellular components like ribosomes (e.g., 70S prokaryotic ribosomes, 80S eukaryotic ribosomes)
+- Characterization of ribosomal subunits (e.g., 30S and 50S in prokaryotes, 40S and 60S in eukaryotes)
+- Identification of protein complexes and determination of their stoichiometry
+- Analysis of macromolecular interactions and binding affinities
+- Determination of size distributions in heterogeneous samples
+
+• Analytical techniques:
+- Analytical ultracentrifugation (AUC) is the primary method for measuring sedimentation coefficients
+- Sedimentation velocity experiments track boundary movement over time
+- Sedimentation equilibrium experiments analyze concentration gradients at equilibrium
+- Modern analysis uses computational software to fit data to the Lamm equation
+- Detection methods include absorbance, interference, and fluorescence optics
+
+• Significance in structural biology:
+- Provides hydrodynamic information complementary to other structural techniques
+- Helps determine molecular weight, shape, and conformational changes
+- Enables study of macromolecules in their native state without interaction with matrices or surfaces
+- Applicable to a wide range of molecular weights (from hundreds to millions of Daltons)
+- Allows analysis of complex biological samples including cell lysates and bodily fluids
+
+### 🔄 Monovalent Molecular Glue Degraders
+
+• Definition: Small, monofunctional molecules (<500 Da) that induce or stabilize protein-protein interactions between an E3 ubiquitin ligase and a target protein, leading to ubiquitination and subsequent proteasomal degradation of the target.
+
+• Mechanism of action:
+  - Surface modification: Alter the surface of E3 ligases to create binding interfaces for target proteins
+  - Neo-substrate recruitment: Induce recognition of proteins not normally targeted by the E3 ligase
+  - Ternary complex formation: Stabilize the interaction between E3 ligase and target protein
+  - Catalytic activity: Function in a substoichiometric manner to degrade multiple copies of target proteins
+
+• Types of molecular glues:
+  - Type I: Induce non-native protein-protein interactions
+  - Type II: Stabilize endogenous protein-protein interactions
+
+• Advantages over PROTACs:
+  - Lower molecular weight: Typically <500 Da compared to >700 Da for PROTACs
+  - Improved drug-like properties: Better cell permeability and bioavailability
+  - Simpler chemical structure: Easier synthesis and optimization
+  - Potential for oral administration: Better pharmacokinetic properties
+
+• Notable examples:
+  - Immunomodulatory imide drugs (IMiDs): Thalidomide, lenalidomide, pomalidomide
+  - Indisulam: Targets RBM39 via DCAF15
+  - CR8: Degrades cyclin K
+  - Sulfonamides: Target RBM39 through DCAF15
+
+• Clinical significance:
+  - FDA-approved drugs: Thalidomide, lenalidomide, and pomalidomide for multiple myeloma
+  - Clinical trials: Multiple candidates in development for various cancers
+  - Potential for targeting previously undruggable proteins
+  - Emerging approach for precision medicine
+
+### 🧬 PROteolysis TArgeting Chimeras (PROTACs)
+
+• Definition: Bifunctional molecules designed to induce targeted protein degradation by simultaneously binding to a protein of interest and an E3 ubiquitin ligase, bringing them into proximity to facilitate ubiquitination and subsequent proteasomal degradation of the target protein.
+
+• Structural components:
+  - Target protein-binding ligand: Binds specifically to the protein of interest
+  - E3 ligase-binding ligand: Recruits an E3 ubiquitin ligase (e.g., CRBN, VHL, IAP, MDM2)
+  - Linker: Connects the two ligands and optimizes their spatial arrangement
+
+• Mechanism of action:
+  - Target engagement: Binding to both the target protein and E3 ligase
+  - Ternary complex formation: Creation of a three-molecule complex (target-PROTAC-E3 ligase)
+  - Ubiquitination: Transfer of ubiquitin molecules to the target protein
+  - Proteasomal degradation: Recognition and degradation of the polyubiquitinated target
+  - Recycling: Release of the PROTAC for additional rounds of target degradation
+
+• Advantages over traditional inhibitors:
+  - Event-driven pharmacology: Effect persists after drug clearance
+  - Catalytic mechanism: One PROTAC can facilitate degradation of multiple target proteins
+  - Broader target scope: Can address previously undruggable proteins
+  - Potential to overcome resistance: Complete protein removal versus functional inhibition
+  - Degradation of all protein functions: Not limited to active site inhibition
+
+• Design considerations:
+  - E3 ligase selection: Tissue expression, binding affinity, and substrate compatibility
+  - Linker optimization: Length, composition, and flexibility
+  - Target ligand selection: Binding affinity, selectivity, and attachment point
+  - Ternary complex geometry: Spatial arrangement for optimal ubiquitination
+
+• Clinical development status:
+  - Multiple candidates in clinical trials for various cancers
+  - ARV-110 (androgen receptor degrader) for prostate cancer
+  - ARV-471 (estrogen receptor degrader) for breast cancer
+  - DT2216 (BCL-xL degrader) for hematologic malignancies
+
+• Challenges and limitations:
+  - High molecular weight: Potential issues with cell permeability and oral bioavailability
+  - Complex structure: Synthetic challenges and potential metabolic instability
+  - Hook effect: Decreased efficacy at high concentrations
+  - Tissue-specific E3 ligase expression: Potential limitations in tissue selectivity
+
+### 🧪 Cytotoxicity
+
+• Definition: The degree to which a substance or agent can damage or kill living cells, typically through disruption of cellular structures, interference with metabolic pathways, or triggering of cell death mechanisms.
+
+• Mechanisms of cytotoxicity:
+  - Necrosis: Uncontrolled cell death characterized by cell swelling, membrane rupture, and inflammatory response
+  - Apoptosis: Programmed cell death involving cell shrinkage, chromatin condensation, and formation of apoptotic bodies
+  - Autophagy: Self-degradation process that can lead to cell death when excessive
+  - Mitochondrial dysfunction: Disruption of energy production and release of pro-apoptotic factors
+  - DNA damage: Direct or indirect damage to genetic material leading to cell cycle arrest or death
+
+• Detection methods:
+  - Membrane integrity assays: LDH release, trypan blue exclusion, propidium iodide staining
+  - Metabolic activity assays: MTT, MTS, XTT, WST-1, resazurin reduction
+  - ATP content assays: Luminescence-based detection of cellular ATP levels
+  - Apoptosis assays: Annexin V binding, caspase activation, TUNEL assay
+  - High-content imaging: Automated microscopy with multiple fluorescent markers
+  - Flow cytometry: Multiparametric analysis of cell death markers
+
+• Applications in bioinformatics:
+  - Toxicogenomics: Computational analysis of gene expression changes in response to toxic compounds
+  - QSAR modeling: Predicting cytotoxicity based on chemical structure
+  - Pathway analysis: Identifying molecular mechanisms of toxicity
+  - Machine learning approaches: Developing predictive models for cytotoxicity screening
+  - Systems biology: Integrating multi-omics data to understand cellular responses to toxicants
+
+• Clinical and research significance:
+  - Drug development: Screening compounds for safety and efficacy
+  - Cancer research: Evaluating potential anticancer agents
+  - Immunology: Assessing immune cell-mediated cytotoxicity
+  - Environmental toxicology: Evaluating potential hazards of chemicals
+  - Nanomaterial safety assessment: Determining biocompatibility of engineered materials
+
+### 🧬 sgRNA (Single Guide RNA)
+
+• Definition: A synthetic RNA molecule that combines the functions of crRNA (CRISPR RNA) and tracrRNA (trans-activating crRNA) into a single chimeric structure, used to guide Cas nucleases to specific DNA targets in CRISPR-Cas genome editing systems.
+
+• Structure and components:
+  - Spacer sequence (20 nucleotides): Complementary to the target DNA sequence
+  - Scaffold sequence (~80 nucleotides): Forms secondary structures necessary for Cas protein binding
+  - PAM (Protospacer Adjacent Motif): DNA sequence required for target recognition (not part of sgRNA but essential for targeting)
+
+• Design considerations:
+  - Target specificity: Minimizing off-target effects through careful sequence selection
+  - GC content: Optimal range of 40-60% for efficient binding
+  - Secondary structure: Avoiding self-complementarity that could interfere with target binding
+  - Position effects: Targeting the beginning of genes or critical functional domains
+  - PAM proximity: Selecting targets with appropriate PAM sequences for the Cas variant used
+
+• Bioinformatic tools for sgRNA design:
+  - CHOPCHOP: Web tool for CRISPR/Cas9 target prediction and off-target evaluation
+  - CRISPOR: Comprehensive tool for guide selection and off-target prediction
+  - E-CRISP: Design tool with evaluation of on-target efficiency and off-target effects
+  - Cas-Designer: Tool for designing guide RNAs for various CRISPR systems
+  - CRISPRscan: Algorithm for predicting sgRNA efficiency in vivo
+
+• Applications in genome editing:
+  - Gene knockout: Introducing frameshift mutations through NHEJ repair
+  - Gene knock-in: Precise sequence insertion via HDR pathway
+  - Base editing: Creating specific nucleotide changes without double-strand breaks
+  - Epigenetic modification: Targeting chromatin modifiers to specific genomic loci
+  - Transcriptional regulation: Activating or repressing gene expression (CRISPRa/CRISPRi)
+  - Multiplexed editing: Simultaneous modification of multiple genomic targets
+
+• Computational challenges:
+  - Off-target prediction: Algorithms to identify potential unintended targets
+  - Efficiency prediction: Machine learning models to estimate editing efficiency
+  - Repair outcome prediction: Predicting the spectrum of editing outcomes
+  - Visualization tools: Representing complex genomic targeting information
+  - Data integration: Combining sgRNA design with functional genomics data
+
+### 🧬 Isoforms
+
+• Definition: Different forms of a protein that arise from the same gene through alternative splicing, alternative promoter usage, or alternative polyadenylation.
+
+• Generation mechanisms:
+  - Alternative splicing: Inclusion or exclusion of specific exons
+  - Alternative promoter usage: Transcription initiation from different start sites
+  - Alternative polyadenylation: Different 3' end processing of mRNA
+  - RNA editing: Post-transcriptional modification of nucleotides
+
+• Biological significance:
+  - Increases proteome diversity without expanding the genome
+  - Enables tissue-specific or developmental stage-specific protein functions
+  - Allows fine-tuning of protein activity, localization, or interaction partners
+  - Contributes to phenotypic complexity in higher organisms
+
+• Characteristics:
+  - Share some sequence regions but differ in others
+  - May have different functional domains, subcellular localization signals, or regulatory sites
+  - Often exhibit tissue-specific or condition-specific expression patterns
+  - Can have distinct or overlapping functions
+
+• Detection methods:
+  - RNA-seq with isoform-specific analysis
+  - Long-read sequencing (PacBio, Nanopore)
+  - Isoform-specific RT-PCR
+  - Mass spectrometry-based proteomics
+
+• Clinical relevance:
+  - Aberrant isoform expression associated with various diseases
+  - Cancer-specific isoforms as potential biomarkers or therapeutic targets
+  - Genetic variants affecting splicing linked to hereditary disorders
+  - Isoform-specific drug targeting strategies
+
+### 🧬 Alternative Splicing
+
+• Definition: A post-transcriptional process where different exons from a pre-mRNA are included in or excluded from the mature mRNA, generating multiple transcript variants from a single gene.
+
+• Major types:
+  - Exon skipping: Exclusion of an exon from the final transcript
+  - Mutually exclusive exons: Inclusion of one exon from a set of possible exons
+  - Alternative 5' splice sites: Use of different 5' splice junctions
+  - Alternative 3' splice sites: Use of different 3' splice junctions
+  - Intron retention: Inclusion of an intron in the mature transcript
+
+• Regulatory mechanisms:
+  - Cis-regulatory elements: Exonic/intronic splicing enhancers or silencers
+  - Trans-acting factors: SR proteins, hnRNPs, and other splicing regulators
+  - RNA secondary structure: Affects accessibility of splice sites
+  - Epigenetic marks: Histone modifications and DNA methylation
+  - Transcription rate: Kinetic coupling between transcription and splicing
+
+• Biological importance:
+  - Expands transcriptome and proteome diversity
+  - Enables tissue-specific and developmental stage-specific gene expression
+  - Contributes to evolutionary adaptation and species complexity
+  - Allows rapid cellular responses to environmental changes
+
+• Detection and analysis methods:
+  - RNA-seq with splice junction analysis
+  - Exon microarrays
+  - RT-PCR with isoform-specific primers
+  - Computational tools: MISO, rMATS, SUPPA, Whippet
+
+• Clinical significance:
+  - Splicing dysregulation in cancer and neurodegenerative diseases
+  - Mutations affecting splice sites cause ~15% of human genetic diseases
+  - Therapeutic approaches targeting splicing (antisense oligonucleotides, small molecules)
+  - Splicing patterns as diagnostic or prognostic biomarkers
+
+### 🧬 Gene Fusion Events
+
+• Definition: Hybrid genes formed by the joining of two previously separate genes, typically resulting from chromosomal rearrangements such as translocations, inversions, or deletions.
+
+• Formation mechanisms:
+  - Chromosomal translocations: Exchange of genetic material between non-homologous chromosomes
+  - Chromosomal inversions: Reversal of a DNA segment within a chromosome
+  - Tandem duplications: Duplication of a segment followed by fusion
+  - Transcription-mediated gene fusion: Read-through transcription between adjacent genes
+  - Trans-splicing: Joining of exons from separate pre-mRNA molecules
+
+• Structural characteristics:
+  - Breakpoint junctions: Points where the two genes are joined
+  - Fusion domains: Protein domains contributed by each partner gene
+  - Reading frame: Determines if the fusion produces a functional protein
+  - Regulatory elements: Promoters and enhancers that control fusion gene expression
+
+• Detection methods:
+  - RNA-seq with fusion-detection algorithms (STAR-Fusion, FusionCatcher)
+  - Whole genome sequencing to identify genomic breakpoints
+  - FISH (Fluorescence In Situ Hybridization) for known fusions
+  - RT-PCR with fusion-specific primers
+  - Mass spectrometry for fusion protein detection
+
+• Biological and clinical significance:
+  - Oncogenic drivers in many cancer types (e.g., BCR-ABL in chronic myeloid leukemia)
+  - Diagnostic biomarkers for cancer classification
+  - Therapeutic targets for precision medicine approaches
+  - Evolutionary mechanism for new gene function
+  - Contribution to genetic diversity and adaptation
+
+• Notable examples:
+  - BCR-ABL1 in chronic myeloid leukemia (Phil Philadelphia chromosome)
+  - EML4-ALK in non-small cell lung cancer
+  - TMPRSS2-ERG in prostate cancer
+  - PML-RARA in acute promyelocytic leukemia
+  - SYT-SSX in synovial sarcoma
+
+### 🧬 Homologs
+
+• Definition: Genes that share a common evolutionary ancestry, regardless of whether they arose through speciation (orthologs) or duplication (paralogs).
+
+• Types of homology relationships:
+  - Orthologs: Genes separated by speciation
+  - Paralogs: Genes separated by duplication
+  - Xenologs: Genes acquired through horizontal gene transfer
+  - Ohnologs: Paralogs resulting from whole genome duplication
+
+• Detection methods:
+  - Sequence similarity searches (BLAST, HMMER)
+  - Protein domain architecture analysis
+  - 3D structural comparison
+  - Combined phylogenetic and genomic approaches
+
+• Degrees of homology:
+  - Complete homology: Similarity across entire sequence length
+  - Partial homology: Similarity in specific domains or regions
+  - Remote homology: Detectable only through sensitive methods or structural analysis
+
+• Applications in research:
+  - Inferring protein function and structure
+  - Reconstructing gene and genome evolution
+  - Understanding protein family expansion and contraction
+  - Identifying conserved functional sites
+
+### 🧬 Xenologs
+
+• Definition: Homologous genes acquired through horizontal gene transfer (HGT) between different species rather than through vertical inheritance.
+
+• Key characteristics:
+  - Phylogenetic incongruence with species tree
+  - Often have nucleotide composition or codon usage distinct from host genome
+  - May be flanked by mobile genetic elements
+  - Frequently confer novel adaptive functions
+
+• Common mechanisms of transfer:
+  - Transformation: Uptake of environmental DNA
+  - Conjugation: Direct cell-to-cell transfer
+  - Transduction: Virus-mediated transfer
+  - Endosymbiotic gene transfer: From organelles to nucleus
+
+• Prevalence across life:
+  - Common in prokaryotes (bacteria and archaea)
+  - Less frequent but significant in unicellular eukaryotes
+  - Rare but documented in multicellular eukaryotes
+  - Extensive in certain lineages (e.g., bdelloid rotifers)
+
+• Biological and evolutionary significance:
+  - Rapid acquisition of adaptive traits (e.g., antibiotic resistance)
+  - Metabolic innovation and niche expansion
+  - Acceleration of evolutionary change
+  - Complication of phylogenetic reconstruction
+
+• Applications:
+  - Tracking antibiotic resistance spread
+  - Identifying potential bioremediation genes
+  - Understanding microbial genome evolution
+  - Developing novel antimicrobial strategies
+
+### 🩸 Myelodysplastic Syndrome (MDS)
+
+• Definition: A heterogeneous group of clonal hematopoietic stem cell disorders characterized by dysplasia and ineffective hematopoiesis in the bone marrow, leading to peripheral blood cytopenias and a variable risk of progression to acute myeloid leukemia (AML).
+
+• Classification systems:
+  - World Health Organization (WHO) classification: Based on morphology, blast percentage, cytogenetics, and specific genetic abnormalities
+  - French-American-British (FAB) classification: Historical system based on morphological features
+  - International Prognostic Scoring System (IPSS) and revised IPSS (R-IPSS): Risk stratification tools that guide treatment decisions
+
+• Molecular characteristics:
+  - Recurrent somatic mutations in genes involved in RNA splicing (SF3B1, SRSF2, U2AF1)
+  - Epigenetic regulators (TET2, DNMT3A, IDH1/2, ASXL1)
+  - Transcription factors (RUNX1, ETV6)
+  - Tumor suppressor genes (TP53)
+  - Chromosomal abnormalities (del(5q), del(7q), trisomy 8, complex karyotype)
+
+• Clinical manifestations:
+  - Anemia: Fatigue, weakness, pallor, dyspnea
+  - Neutropenia: Increased susceptibility to infections
+  - Thrombocytopenia: Bleeding, bruising, petechiae
+  - Autoimmune phenomena in 10-20% of patients
+  - Potential transformation to acute myeloid leukemia
+
+• Diagnostic approach:
+  - Peripheral blood smear: Cytopenias, dysplastic features in blood cells
+  - Bone marrow aspiration and biopsy: Dysplasia, blast percentage, cellularity
+  - Cytogenetic analysis: Chromosomal abnormalities
+  - Next-generation sequencing: Detection of somatic mutations
+  - Flow cytometry: Immunophenotypic abnormalities
+
+• Bioinformatic applications:
+  - Mutational profiling to identify driver mutations and clonal architecture
+  - Prediction of disease progression and treatment response
+  - Integration of multi-omics data (genomics, transcriptomics, epigenomics)
+  - Development of machine learning algorithms for risk stratification
+  - Identification of novel therapeutic targets through pathway analysis
+
+• Clinical significance:
+  - Prognosis varies widely based on subtype, cytogenetics, and molecular features
+  - Treatment approaches range from supportive care to targeted therapies and stem cell transplantation
+  - Molecular features increasingly guide personalized treatment decisions
+  - Model disease for studying clonal evolution and pre-leukemic states
+  - Emerging role of genetic predisposition in disease development
+
+### 🧬 Somatic Mutations
+
+• Definition: Alterations in DNA that occur after conception in somatic (non-germline) cells of the body and are not inherited from parents or passed to offspring. These mutations accumulate throughout an individual's lifetime in various tissues due to environmental exposures, replication errors, or endogenous processes.
+
+• Comparison with germline mutations:
+  - Somatic mutations: Present only in specific cells/tissues, not in every cell of the body, not heritable
+  - Germline mutations: Present in germ cells (sperm or eggs), found in every cell of the body, can be passed to offspring
+  - Distribution: Somatic mutations show tissue-specific patterns and increase with age, while germline variants are uniformly distributed across tissues
+
+• Types of somatic mutations:
+  - Driver mutations: Confer selective growth advantage to cells, contribute directly to cancer development by affecting oncogenes or tumor suppressor genes
+  - Passenger mutations: Do not provide growth advantage, occur coincidentally in cells that already have driver mutations
+  - Based on DNA change: Single nucleotide variants (SNVs), insertions/deletions (indels), copy number alterations (CNAs), structural variants (SVs), and chromosomal rearrangements
+
+• Mutational signatures:
+  - Characteristic patterns of mutations caused by specific mutational processes
+  - Examples: UV light exposure (C>T transitions), tobacco smoke (G>T transversions), APOBEC enzyme activity, defective DNA repair mechanisms
+  - Provide insights into cancer etiology and progression mechanisms
+
+• Detection methods:
+  - Next-generation sequencing (NGS): Whole-genome, whole-exome, or targeted panel sequencing
+  - Tumor-normal comparison: Sequencing both tumor and matched normal tissue to identify somatic-specific variants
+  - Deep sequencing: Required to detect low-frequency mutations in heterogeneous samples
+  - Single-cell sequencing: For analyzing intratumoral heterogeneity and clonal evolution
+  - Liquid biopsy: Detection of circulating tumor DNA (ctDNA) in blood for non-invasive monitoring
+
+• Clinical significance:
+  - Cancer diagnosis: Identifying driver mutations that define cancer subtypes
+  - Prognostic biomarkers: Mutations associated with disease progression or survival outcomes
+  - Predictive biomarkers: Mutations that predict response to specific therapies
+  - Therapeutic targets: Basis for precision medicine approaches in cancer treatment
+  - Monitoring: Tracking treatment response and disease recurrence through serial sampling
+
+• Applications in precision oncology:
+  - Targeted therapies: Drugs designed to target specific mutations (e.g., EGFR inhibitors for EGFR mutations)
+  - Immunotherapy selection: Tumor mutational burden (TMB) as a biomarker for immunotherapy response
+  - Pan-cancer approaches: Targeting mutations across multiple cancer types regardless of tissue of origin
+  - Resistance mechanisms: Identifying secondary mutations that confer treatment resistance
+  - Minimal residual disease detection: Using somatic mutations as personalized biomarkers
+
+• Computational challenges:
+  - Distinguishing driver from passenger mutations
+  - Accounting for tumor heterogeneity and normal cell contamination
+  - Identifying mutations in low-frequency subclones
+  - Integrating multiple data types for comprehensive mutational profiling
+  - Interpreting variants of unknown significance
 
 ### 🔄 Ubiquitin Proteasome System (UPS)
 
