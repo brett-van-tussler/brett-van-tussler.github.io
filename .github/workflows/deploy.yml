@@ -1,15 +1,17 @@
 # Workflow to deploy the website to GitHub Pages when changes are pushed to main
 name: Deploy to GitHub Pages
 
-# Triggered on push events to the main branch or repository dispatch
+# Triggered by pushes to main, after convert workflow completes, repository dispatch, or manual trigger
 on:
-  push:
+  workflow_run:
+    workflows: ["Convert Applied Concepts to Markdown"]
+    types:
+      - completed
     branches:
       - main
   repository_dispatch:
     types: [trigger-deploy]
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   build:

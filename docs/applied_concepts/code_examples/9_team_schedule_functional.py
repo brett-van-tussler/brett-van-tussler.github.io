@@ -4,7 +4,7 @@ from collections import Counter
 
 def generate_schedule(num_teams):
     
-    # Create list of teams
+    # Create list of teams 
     teams = [f"Team {i+1}" for i in range(num_teams)]
     
     # Initialize schedule

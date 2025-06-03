@@ -4,10 +4,7 @@ name: Convert Applied Concepts to Markdown
 # Triggered by push events, repository_dispatch, or manually
 on:
   push:
-    branches: [ main]  # Adjust branch names as needed
-    paths:
-      - 'docs/applied_concepts/**/*.py'
-      - 'docs/applied_concepts/**/*.ipynb'
+    branches: [ main ]  # Adjust branch names as needed
   repository_dispatch:
     types: [convert_applied_concepts]
   workflow_dispatch:  # Allows manual triggering
