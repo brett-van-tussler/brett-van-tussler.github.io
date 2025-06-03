@@ -1,0 +1,120 @@
+# Workflow to automatically convert Python and Jupyter notebook files to markdown
+name: Convert Applied Concepts to Markdown
+
+# Triggered by push events, repository_dispatch, or manually
+on:
+  push:
+    branches: [ main]  # Adjust branch names as needed
+    paths:
+      - 'docs/applied_concepts/**/*.py'
+      - 'docs/applied_concepts/**/*.ipynb'
+  repository_dispatch:
+    types: [convert_applied_concepts]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  convert-to-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment with nbconvert
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 3: Install nbconvert and dependencies
+      - name: Install dependencies
+        run: |
+          pip install nbconvert jupyter
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      # Step 4: Convert files to markdown with change detection
+      - name: Convert files to markdown
+        run: |
+          #!/bin/bash
+          set -e
+          
+          CHANGES_MADE=false
+          
+          # Function to convert .ipynb files
+          convert_notebook() {
+            local notebook="$1"
+            local markdown="${notebook%.ipynb}.md"
+            
+            # Check if markdown doesn't exist or notebook is newer
+            if [[ ! -f "$markdown" ]] || [[ "$notebook" -nt "$markdown" ]]; then
+              echo "Converting $notebook to $markdown"
+              jupyter nbconvert --to markdown "$notebook" --output "$(basename "${markdown%.md}")"
+              CHANGES_MADE=true
+            else
+              echo "Skipping $notebook (markdown is up to date)"
+            fi
+          }
+          
+          # Function to convert .py files
+          convert_python() {
+            local python_file="$1"
+            local markdown="${python_file}.md"
+            
+            # Check if markdown doesn't exist or python file is newer
+            if [[ ! -f "$markdown" ]] || [[ "$python_file" -nt "$markdown" ]]; then
+              echo "Converting $python_file to $markdown"
+              # Create markdown with Python code block
+              {
+                echo "# $(basename "${python_file%.py}")"
+                echo ""
+                echo "\`\`\`python"
+                cat "$python_file"
+                echo "\`\`\`"
+              } > "$markdown"
+              CHANGES_MADE=true
+            else
+              echo "Skipping $python_file (markdown is up to date)"
+            fi
+          }
+          
+          # Find and convert all .ipynb files in applied_concepts
+          find docs/applied_concepts -name "*.ipynb" -type f | while read -r notebook; do
+            convert_notebook "$notebook"
+          done
+          
+          # Find and convert all .py files in applied_concepts
+          find docs/applied_concepts -name "*.py" -type f | while read -r python_file; do
+            convert_python "$python_file"
+          done
+          
+          # Set output for next step
+          echo "CHANGES_MADE=$CHANGES_MADE" >> $GITHUB_ENV
+
+      # Step 5: Configure git and commit changes only if there were changes
+      - name: Commit changes
+        run: |
+          if [[ "$CHANGES_MADE" == "true" ]]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add docs/applied_concepts
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-convert applied concepts files to markdown"
+          else
+            echo "No changes to commit"
+          fi
+
+      # Step 6: Push changes only if there were commits
+      - name: Push changes
+        if: env.CHANGES_MADE == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
+      # Step 7: Trigger deploy workflow if changes were made
+      - name: Trigger deploy workflow
+        if: env.CHANGES_MADE == 'true'
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: trigger-deploy
