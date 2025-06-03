@@ -44,7 +44,7 @@ jobs:
           # Function to convert .ipynb files
           convert_notebook() {
             local notebook="$1"
-            local markdown="${notebook%.ipynb}.md"
+            local markdown="${notebook}.md"
             
             # Check if file is empty or invalid
             if [[ ! -s "$notebook" ]]; then
