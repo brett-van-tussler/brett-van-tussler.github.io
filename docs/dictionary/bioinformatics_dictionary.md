@@ -888,7 +888,7 @@ Bioinformatics terminology and concepts.
   - Type II: Stabilize endogenous protein-protein interactions
 
 • Advantages over PROTACs:
-  - Lower molecular weight: Typically <500 Da compared to >700 Da for PROTACs
+  - Lower molecular weight: Typically `<500` Da compared to `>700` Da for PROTACs
   - Improved drug-like properties: Better cell permeability and bioavailability
   - Simpler chemical structure: Easier synthesis and optimization
   - Potential for oral administration: Better pharmacokinetic properties
@@ -1423,7 +1423,7 @@ Bioinformatics terminology and concepts.
 
 ### 🔄 Monovalent Molecular Glue Degraders
 
-• Definition: Small, monofunctional molecules (<500 Da) that induce or stabilize protein-protein interactions between an E3 ubiquitin ligase and a target protein, leading to ubiquitination and subsequent proteasomal degradation of the target.
+• Definition: Small, monofunctional molecules (`<500 Da`) that induce or stabilize protein-protein interactions between an E3 ubiquitin ligase and a target protein, leading to ubiquitination and subsequent proteasomal degradation of the target.
 
 • Mechanism of action:
   - Surface modification: Alter the surface of E3 ligases to create binding interfaces for target proteins
@@ -1436,7 +1436,7 @@ Bioinformatics terminology and concepts.
   - Type II: Stabilize endogenous protein-protein interactions
 
 • Advantages over PROTACs:
-  - Lower molecular weight: Typically <500 Da compared to >700 Da for PROTACs
+  - Lower molecular weight: Typically `<500 Da` compared to `>700` Da for PROTACs
   - Improved drug-like properties: Better cell permeability and bioavailability
   - Simpler chemical structure: Easier synthesis and optimization
   - Potential for oral administration: Better pharmacokinetic properties
