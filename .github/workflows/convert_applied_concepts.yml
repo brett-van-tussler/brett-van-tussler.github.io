@@ -46,11 +46,26 @@ jobs:
             local notebook="$1"
             local markdown="${notebook%.ipynb}.md"
             
+            # Check if file is empty or invalid
+            if [[ ! -s "$notebook" ]]; then
+              echo "Skipping $notebook (file is empty)"
+              return
+            fi
+            
+            # Check if it's valid JSON
+            if ! python3 -c "import json; json.load(open('$notebook'))" 2>/dev/null; then
+              echo "Skipping $notebook (invalid JSON format)"
+              return
+            fi
+            
             # Check if markdown doesn't exist or notebook is newer
             if [[ ! -f "$markdown" ]] || [[ "$notebook" -nt "$markdown" ]]; then
               echo "Converting $notebook to $markdown"
-              jupyter nbconvert --to markdown "$notebook" --output "$(basename "${markdown%.md}")"
-              CHANGES_MADE=true
+              if jupyter nbconvert --to markdown "$notebook" --output "$(basename "${markdown%.md}")"; then
+                echo "true" > /tmp/changes_made
+              else
+                echo "Failed to convert $notebook"
+              fi
             else
               echo "Skipping $notebook (markdown is up to date)"
             fi
@@ -72,21 +87,29 @@ jobs:
                 cat "$python_file"
                 echo "\`\`\`"
               } > "$markdown"
-              CHANGES_MADE=true
+              echo "true" > /tmp/changes_made
             else
               echo "Skipping $python_file (markdown is up to date)"
             fi
           }
           
+          # Initialize changes flag file
+          echo "false" > /tmp/changes_made
+          
           # Find and convert all .ipynb files in applied_concepts
-          find docs/applied_concepts -name "*.ipynb" -type f | while read -r notebook; do
+          while IFS= read -r -d '' notebook; do
             convert_notebook "$notebook"
-          done
+          done < <(find docs/applied_concepts -name "*.ipynb" -type f -print0)
           
           # Find and convert all .py files in applied_concepts
-          find docs/applied_concepts -name "*.py" -type f | while read -r python_file; do
+          while IFS= read -r -d '' python_file; do
             convert_python "$python_file"
-          done
+          done < <(find docs/applied_concepts -name "*.py" -type f -print0)
+          
+          # Read the final state and set environment variable
+          CHANGES_MADE=$(cat /tmp/changes_made)
+          echo "CHANGES_MADE=$CHANGES_MADE" >> $GITHUB_ENV
+          echo "Final CHANGES_MADE value: $CHANGES_MADE"
           
           # Set output for next step
           echo "CHANGES_MADE=$CHANGES_MADE" >> $GITHUB_ENV
