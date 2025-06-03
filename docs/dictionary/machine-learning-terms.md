@@ -166,3 +166,15 @@ The interpretation of correlation strength varies by field, but generally:
 It's important to note that Pearson correlation only captures linear relationships and is sensitive to outliers. For non-linear relationships or when dealing with ordinal data, alternative measures like Spearman's rank correlation coefficient may be more appropriate.
 
 In practical machine learning applications, Pearson correlation is used in genomics to identify relationships between genes, in financial modeling to analyze market dependencies, and in recommendation systems to measure similarities between user preferences or items.
+
+**Simple Examples:**
+
+1. **Strong Positive Correlation (r ≈ 0.9)**: Height and weight in a population. As height increases, weight tends to increase proportionally.
+
+2. **Moderate Positive Correlation (r ≈ 0.4)**: Study hours and test scores. More study time generally leads to better scores, but other factors also influence performance.
+
+3. **No Correlation (r ≈ 0)**: Shoe size and intelligence. These variables have no meaningful linear relationship.
+
+4. **Moderate Negative Correlation (r ≈ -0.4)**: Age of a car and its resale value. Older cars typically have lower resale values, though condition and other factors matter.
+
+5. **Strong Negative Correlation (r ≈ -0.8)**: Outdoor temperature and home heating usage. As temperature drops, heating usage increases substantially.

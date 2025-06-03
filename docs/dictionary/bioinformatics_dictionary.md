@@ -875,7 +875,7 @@ Bioinformatics terminology and concepts.
 
 ### 🔄 Monovalent Molecular Glue Degraders
 
-• Definition: Small, monofunctional molecules (<500 Da) that induce or stabilize protein-protein interactions between an E3 ubiquitin ligase and a target protein, leading to ubiquitination and subsequent proteasomal degradation of the target.
+• Definition: Small, monofunctional molecules (`<500 Da`) that induce or stabilize protein-protein interactions between an E3 ubiquitin ligase and a target protein, leading to ubiquitination and subsequent proteasomal degradation of the target.
 
 • Mechanism of action:
   - Surface modification: Alter the surface of E3 ligases to create binding interfaces for target proteins
@@ -1541,3 +1541,7 @@ Bioinformatics terminology and concepts.
   - Prediction of phosphorylation sites using machine learning algorithms
   - Structural modeling to design selective kinase inhibitors
   - Network analysis of kinase signaling pathways in disease states
+
+  ### 🧬 Moiety
+
+Refers to a distinct part or portion of a molecule that has characteristic chemical properties and can be identified in other molecules as well. In biochemistry and organic chemistry, moieties are typically larger structural units that may contain functional groups. In pharmacology, an active moiety is the part of a molecule responsible for the physiological or pharmacological action of a drug.
