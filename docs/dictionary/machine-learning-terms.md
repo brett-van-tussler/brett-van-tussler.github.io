@@ -50,6 +50,12 @@ A neural network designed for sequential data that maintains a "memory" of previ
 ### 🧠 Long Short-Term Memory (LSTM)
 An advanced RNN architecture that solves the "vanishing gradient" problem, allowing it to remember important information for longer sequences. It uses specialized gates to control information flow, making it excellent for tasks requiring long-term memory like language translation and speech recognition.
 
+### 🔗 Multi-Layer Perceptron (MLP)
+A fundamental type of feedforward neural network consisting of multiple layers of interconnected nodes (perceptrons). An MLP typically includes an input layer, one or more hidden layers, and an output layer, with each layer fully connected to the next. Unlike single-layer perceptrons, MLPs can learn non-linear relationships through their hidden layers and activation functions, making them capable of solving complex classification and regression problems. MLPs are the building blocks of deep learning and serve as the foundation for more sophisticated architectures like CNNs and RNNs. They're widely used in applications ranging from image recognition to financial modeling.
+
+### ⚡ ReLU (Rectified Linear Unit)
+A widely-used activation function in neural networks that outputs the input directly if it's positive, otherwise it outputs zero. Mathematically defined as f(x) = max(0, x), ReLU is simple yet effective at introducing non-linearity into neural networks while being computationally efficient. It helps solve the vanishing gradient problem that plagued earlier activation functions like sigmoid and tanh, allowing for faster training of deep networks. ReLU has become the default activation function for hidden layers in most modern neural network architectures, though variants like Leaky ReLU and ELU address some of its limitations, such as the "dying ReLU" problem where neurons can become permanently inactive.
+
 ### 🎨 Generative Adversarial Network (GAN)
 An AI architecture where two networks compete: one creates fake data, while the other tries to distinguish real from fake. This competition drives both to improve, resulting in increasingly realistic synthetic data. GANs have revolutionized AI-generated art, deepfakes, and synthetic data generation.
 
@@ -168,6 +174,28 @@ The interpretation of correlation strength varies by field, but generally:
 It's important to note that Pearson correlation only captures linear relationships and is sensitive to outliers. For non-linear relationships or when dealing with ordinal data, alternative measures like Spearman's rank correlation coefficient may be more appropriate.
 
 In practical machine learning applications, Pearson correlation is used in genomics to identify relationships between genes, in financial modeling to analyze market dependencies, and in recommendation systems to measure similarities between user preferences or items.
+
+**Simple Examples:**
+
+1. **Strong Positive Correlation (r ≈ 0.9)**: Height and weight in a population. As height increases, weight tends to increase proportionally.
+
+2. **Moderate Positive Correlation (r ≈ 0.4)**: Study hours and test scores. More study time generally leads to better scores, but other factors also influence performance.
+
+3. **No Correlation (r ≈ 0)**: Shoe size and intelligence. These variables have no meaningful linear relationship.
+
+4. **Moderate Negative Correlation (r ≈ -0.4)**: Age of a car and its resale value. Older cars typically have lower resale values, though condition and other factors matter.
+
+5. **Strong Negative Correlation (r ≈ -0.8)**: Outdoor temperature and home heating usage. As temperature drops, heating usage increases substantially.
+
+### 🔧 Autograd
+
+Automatic differentiation (autograd) is a computational technique that automatically calculates derivatives of functions defined by computer programs. Unlike symbolic differentiation (which manipulates mathematical expressions) or numerical differentiation (which approximates derivatives using finite differences), autograd computes exact derivatives efficiently by applying the chain rule systematically during program execution.
+
+In machine learning, autograd is fundamental to training neural networks through gradient-based optimization. It enables frameworks like PyTorch, TensorFlow, and JAX to automatically compute gradients of loss functions with respect to model parameters, eliminating the need for manual derivative calculations. This automation is crucial for deep learning, where models may have millions or billions of parameters.
+
+Autograd works by tracking operations performed on tensors and building a computational graph that records how outputs depend on inputs. During the backward pass, it traverses this graph in reverse order, applying the chain rule to compute gradients efficiently. This process, combined with backpropagation, enables the training of complex neural architectures that would be impractical to differentiate manually.
+
+Modern autograd systems support both forward-mode and reverse-mode automatic differentiation, with reverse-mode (used in backpropagation) being particularly efficient for functions with many inputs and few outputs, which is typical in machine learning scenarios.
 
 **Simple Examples:**
 

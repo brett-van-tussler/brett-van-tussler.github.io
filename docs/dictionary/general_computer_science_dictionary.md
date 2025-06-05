@@ -40,3 +40,22 @@ UDP is a connectionless transport layer protocol in the Internet Protocol Suite 
 
 SSH is a cryptographic network protocol that provides secure communication over an unsecured network by establishing an encrypted connection between two computers. Developed as a replacement for insecure protocols like Telnet and rsh, SSH uses public-key cryptography for authentication and symmetric encryption for confidentiality and integrity of data transmission. The protocol operates primarily on TCP port 22 and supports multiple authentication methods, including password-based authentication, public key authentication, host-based authentication, and keyboard-interactive authentication. SSH enables several secure network services: remote command-line login, remote command execution, secure file transfer (via SFTP or SCP), port forwarding (tunneling), and X11 forwarding for running graphical applications remotely. It's widely used by system administrators for secure remote server management, by developers for secure access to version control systems, and as a fundamental component in automated deployment pipelines. SSH's architecture consists of three major components: the transport layer protocol (providing encryption and server authentication), the user authentication protocol, and the connection protocol (multiplexing the encrypted tunnel into multiple logical channels). Modern implementations like OpenSSH have become the de facto standard for secure remote access across Unix-like operating systems, Windows, and network devices.
 
+### Float (Floating-Point Number)
+
+A float, or floating-point number, is a data type used in computer programming to represent real numbers that can have a fractional part. Unlike integers, which represent whole numbers, floats can represent a wide range of values, including very small and very large numbers, as well as numbers with decimal points. Floating-point numbers are typically stored in a format defined by the IEEE 754 standard, which specifies how to represent the number using a sign bit, an exponent, and a significand (or mantissa). Common floating-point types include single-precision (usually 32-bit) and double-precision (usually 64-bit), offering different ranges and levels of precision. While versatile, floating-point arithmetic can introduce small inaccuracies due to the finite way real numbers are approximated, leading to potential rounding errors or loss of precision in calculations.
+
+**Reference:** [How floating point works - jan Misali](https://www.youtube.com/watch?v=dQhj5RGtag0&ab_channel=janMisali)
+
+### Floating-Point Precision
+
+Floating-point precision refers to the number of significant digits that can be accurately represented by a floating-point data type. It determines how close the stored floating-point number can be to the true mathematical value. Precision is limited because computers store numbers in a finite number of bits. The IEEE 754 standard defines common formats like single-precision (float) and double-precision (double). Single-precision typically offers about 7 decimal digits of precision, while double-precision offers about 15-17 decimal digits. 
+
+What this means in practice is that calculations involving floating-point numbers may not always be exact. For example, representing 0.1 in binary floating-point is not perfectly accurate, similar to how 1/3 cannot be perfectly represented as a finite decimal. This can lead to:
+- **Rounding Errors**: Small discrepancies that occur when a number is rounded to fit the available precision.
+- **Loss of Significance**: When subtracting two nearly equal numbers, significant digits can be lost, leading to a result with much lower relative accuracy.
+- **Comparison Issues**: Directly comparing two floating-point numbers for equality (e.g., `a == b`) can be unreliable due to these small precision differences. It's often better to check if their absolute difference is within a small tolerance (epsilon).
+
+Understanding floating-point precision is crucial in scientific computing, financial calculations, and any domain where numerical accuracy is important, as ignoring these limitations can lead to incorrect results or unexpected behavior in programs.
+
+**Reference:** [How floating point works - jan Misali](https://www.youtube.com/watch?v=dQhj5RGtag0&ab_channel=janMisali)
+
