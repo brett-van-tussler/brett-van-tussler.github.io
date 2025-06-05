@@ -59,6 +59,8 @@ jobs:
             if [[ ! -f "$markdown" ]] || [[ "$notebook" -nt "$markdown" ]]; then
               echo "Converting $notebook to $markdown"
               if jupyter nbconvert --to markdown "$notebook" --output "$(basename "${markdown%.md}")"; then
+                # Replace < and > symbols with HTML entities to prevent MDX compilation errors
+                sed -i 's/</\&lt;/g; s/>/\&gt;/g' "$markdown"
                 echo "true" > /tmp/changes_made
               else
                 echo "Failed to convert $notebook"

@@ -56,6 +56,13 @@ A fundamental type of feedforward neural network consisting of multiple layers o
 ### ⚡ ReLU (Rectified Linear Unit)
 A widely-used activation function in neural networks that outputs the input directly if it's positive, otherwise it outputs zero. Mathematically defined as f(x) = max(0, x), ReLU is simple yet effective at introducing non-linearity into neural networks while being computationally efficient. It helps solve the vanishing gradient problem that plagued earlier activation functions like sigmoid and tanh, allowing for faster training of deep networks. ReLU has become the default activation function for hidden layers in most modern neural network architectures, though variants like Leaky ReLU and ELU address some of its limitations, such as the "dying ReLU" problem where neurons can become permanently inactive.
 
+### 📊 Softmax
+A mathematical function that converts a vector of real numbers into a probability distribution, where each output value is between 0 and 1 and all outputs sum to 1. Softmax is commonly used as the final activation function in multi-class classification problems, transforming raw model outputs (logits) into interpretable probabilities for each class.
+
+Mathematically defined as: $$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j} e^{x_j}}$$ for all j, where x is the input vector. The exponential function ensures all outputs are positive, while the normalization by the sum creates a valid probability distribution. Softmax amplifies the differences between values - larger inputs receive disproportionately higher probabilities, making it useful for confident predictions.
+
+Softmax is essential in neural networks for tasks like image classification (determining which of several objects appears in an image), natural language processing (predicting the next word from a vocabulary), and any scenario requiring probabilistic outputs across multiple mutually exclusive categories. It's often paired with cross-entropy loss during training to optimize classification performance.
+
 ### 🎨 Generative Adversarial Network (GAN)
 An AI architecture where two networks compete: one creates fake data, while the other tries to distinguish real from fake. This competition drives both to improve, resulting in increasingly realistic synthetic data. GANs have revolutionized AI-generated art, deepfakes, and synthetic data generation.
 
@@ -145,12 +152,6 @@ Ridge Regression excels in scenarios where all features contribute to the outcom
 A hybrid regression technique that combines the penalties of both Lasso and Ridge Regression, incorporating both L1 and L2 regularization terms. This balanced approach overcomes limitations of each method alone: it can select variables like Lasso while handling groups of correlated features better, similar to Ridge. The mixing parameter allows data scientists to tune the model between pure Lasso and pure Ridge behavior.
 
 Elastic Net is particularly valuable for complex datasets with many correlated features, such as in genomics (where groups of genes may work together), neuroimaging (where brain regions have correlated activities), and recommendation systems (where user preferences show complex patterns).
-
-### 📊 Pearson Correlation Coefficient
-
-The Pearson Correlation Coefficient (PCC) is a statistical measure that quantifies the linear relationship between two continuous variables. It produces a value ranging from -1 to +1, where +1 indicates a perfect positive linear relationship, -1 indicates a perfect negative linear relationship, and 0 indicates no linear relationship between the variables.
-
-Mathematically, it is calculated as the ratio between the covariance of two variables and the product of their standard deviations, making it a normalized measurement of covariance. The formula is often expressed as:
 
 $$
 r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \sum_{i=1}^{n} (y_i - \bar{y})^2}}
