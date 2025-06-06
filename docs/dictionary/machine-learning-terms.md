@@ -153,6 +153,11 @@ A hybrid regression technique that combines the penalties of both Lasso and Ridg
 
 Elastic Net is particularly valuable for complex datasets with many correlated features, such as in genomics (where groups of genes may work together), neuroimaging (where brain regions have correlated activities), and recommendation systems (where user preferences show complex patterns).
 
+📊 Pearson Correlation Coefficient
+The Pearson Correlation Coefficient (PCC) is a statistical measure that quantifies the linear relationship between two continuous variables. It produces a value ranging from -1 to +1, where +1 indicates a perfect positive linear relationship, -1 indicates a perfect negative linear relationship, and 0 indicates no linear relationship between the variables.
+
+Mathematically, it is calculated as the ratio between the covariance of two variables and the product of their standard deviations, making it a normalized measurement of covariance. The formula is often expressed as:
+
 $$
 r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \sum_{i=1}^{n} (y_i - \bar{y})^2}}
 $$
@@ -209,3 +214,7 @@ Modern autograd systems support both forward-mode and reverse-mode automatic dif
 4. **Moderate Negative Correlation (r ≈ -0.4)**: Age of a car and its resale value. Older cars typically have lower resale values, though condition and other factors matter.
 
 5. **Strong Negative Correlation (r ≈ -0.8)**: Outdoor temperature and home heating usage. As temperature drops, heating usage increases substantially.
+
+### 🧬 Epochs
+
+In machine learning and neural networks, an epoch refers to one complete pass through the entire training dataset during the training process. During each epoch, the model sees every training example once and updates its parameters accordingly. Multiple epochs are typically required to train a model effectively, with the number of epochs being a hyperparameter that affects model performance and training time.
