@@ -45,3 +45,20 @@ The theorem has applications in various fields including cryptography (RSA algor
 **Video explanation:** [Chinese Remainder Theorem](https://www.youtube.com/watch?v=e8DtzQkjOMQ&t=6s&ab_channel=NesoAcademy) - A comprehensive explanation of the Chinese Remainder Theorem, its proof, and applications.
 
 
+### 📐 Euler's Number (e)
+A fundamental mathematical constant approximately equal to 2.71828, denoted by the letter 'e' in honor of the Swiss mathematician Leonhard Euler. It is defined as the limit of (1 + 1/n)ⁿ as n approaches infinity, or equivalently as the sum of the infinite series:
+
+$$e = \sum_{n=0}^{\infty} \frac{1}{n!} = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots$$
+
+Euler's number is the base of the natural logarithm and appears naturally in many areas of mathematics, particularly in calculus where it serves as the unique number such that the derivative of eˣ equals eˣ itself. This property makes it invaluable for solving differential equations and modeling exponential growth and decay processes.
+
+**Key Applications:**
+- **Compound Interest**: Continuous compounding formula A = Pe^(rt)
+- **Population Growth**: Exponential growth models in biology and demographics
+- **Radioactive Decay**: Half-life calculations in physics and chemistry
+- **Probability Theory**: Normal distribution and Poisson processes
+- **Signal Processing**: Fourier transforms and complex analysis
+- **Machine Learning**: Activation functions (sigmoid, softmax) and optimization algorithms
+- **Economics**: Present value calculations and economic modeling
+
+The constant e is irrational and transcendental, meaning it cannot be expressed as a simple fraction or as the root of any polynomial equation with rational coefficients. Its ubiquity in natural phenomena has earned it the designation as one of the most important mathematical constants alongside π.
