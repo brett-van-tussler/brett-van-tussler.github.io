@@ -54,9 +54,18 @@ Suffixes
 
 -mer (Greek: méros) = “part” or “segment”
 
--ase (Latin from Greek: -asis) = “enzyme”
+-ase = “enzyme”
 	•	ATPase – Enzyme that hydrolyzes ATP
 	•	Ligase – Enzyme that joins two molecules
+
+-sis (Greek: sis) = denotes a process or state of being.
+    •	Homeostasis - stable internal conditions
+
+-tic (Greek: -tikos) = “characteristic” or “pertaining to”
+-astic (Greek: -astikos) = "pertaining to" or "characterized by"
+	•	Stochastic – Characterized by randomness or probability
+	•	Elastic – Characterized by the ability to return to original shape
+	•	Plastic – Characterized by the ability to be molded or shaped
 
 -some \ ome (Greek: -ōma) = “body or complex” or “mass, typically refers to a whole set or collection”
 	•	Genome – Entire set of genes in an organism
@@ -93,6 +102,10 @@ Kinesis (Greek: kinesis) = “movement” or “motion”
 
 Script / Scrib (Latin: scribere) = "to write"
 	•	Transcript – Written RNA copy of DNA
+
+Stoch- / Stokh- (Greek: stokhos) = "target" or "aim"
+	•	Stochastic – Involving randomness or probability (originally "able to guess" or "aiming at a target")
+	•	Stochastics – Mathematical study of random processes
 
 Strat- / Strati- (Latin: stratum) = "layer" or "spread out"
 	•	Stratification – Arrangement in layers
