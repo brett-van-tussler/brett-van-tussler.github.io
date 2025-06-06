@@ -62,3 +62,37 @@ Euler's number is the base of the natural logarithm and appears naturally in man
 - **Economics**: Present value calculations and economic modeling
 
 The constant e is irrational and transcendental, meaning it cannot be expressed as a simple fraction or as the root of any polynomial equation with rational coefficients. Its ubiquity in natural phenomena has earned it the designation as one of the most important mathematical constants alongside π.
+
+### ⛓️ Chain Rule
+A fundamental rule in calculus for finding the derivative of composite functions. The chain rule states that if you have a composite function f(g(x)), then its derivative is the derivative of the outer function evaluated at the inner function, multiplied by the derivative of the inner function.
+
+Mathematically expressed as:
+$$\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$$
+
+Or in Leibniz notation:
+$$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$$
+
+The chain rule is essential for differentiating complex functions and is widely used in calculus, physics, engineering, and machine learning (particularly in backpropagation algorithms for neural networks). Common applications include finding derivatives of exponential functions, trigonometric functions with inner functions, and nested polynomial expressions.
+
+### ➗ Quotient Rule
+A differentiation rule used to find the derivative of a function that is the quotient (division) of two other functions. If you have a function h(x) = f(x)/g(x), where both f(x) and g(x) are differentiable and g(x) ≠ 0, then the quotient rule provides the formula for h'(x).
+
+The quotient rule formula is:
+$$\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}$$
+
+Often remembered by the mnemonic "low d-high minus high d-low, over low squared" where "high" refers to the numerator function and "low" refers to the denominator function. This rule is particularly useful in calculus for differentiating rational functions, rates of change problems, and optimization problems involving ratios.
+
+### 🔢 Exponent Rules
+A set of fundamental algebraic rules that govern operations with exponential expressions. These rules are essential for simplifying expressions, solving equations, and working with logarithms and exponential functions.
+
+**Basic Exponent Rules:**
+- **Product Rule**: $a^m \cdot a^n = a^{m+n}$
+- **Quotient Rule**: $\frac{a^m}{a^n} = a^{m-n}$ (where $a \neq 0$)
+- **Power Rule**: $(a^m)^n = a^{mn}$
+- **Power of a Product**: $(ab)^n = a^n b^n$
+- **Power of a Quotient**: $\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$ (where $b \neq 0$)
+- **Zero Exponent**: $a^0 = 1$ (where $a \neq 0$)
+- **Negative Exponent**: $a^{-n} = \frac{1}{a^n}$ (where $a \neq 0$)
+- **Fractional Exponent**: $a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m$
+
+These rules form the foundation for working with exponential and logarithmic functions, compound interest calculations, scientific notation, and are extensively used in algebra, calculus, physics, chemistry, and computer science algorithms.
