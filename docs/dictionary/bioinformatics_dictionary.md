@@ -1545,3 +1545,35 @@ Bioinformatics terminology and concepts.
   ### 🧬 Moiety
 
 Refers to a distinct part or portion of a molecule that has characteristic chemical properties and can be identified in other molecules as well. In biochemistry and organic chemistry, moieties are typically larger structural units that may contain functional groups. In pharmacology, an active moiety is the part of a molecule responsible for the physiological or pharmacological action of a drug.
+
+### 🧠 Hebbian Theory
+
+• Definition: A neurobiological theory that explains how synaptic connections between neurons are strengthened through repeated and persistent stimulation, often summarized as "cells that fire together, wire together."
+
+• Core principle:
+  - Synaptic plasticity: When two neurons are repeatedly active at the same time, the synaptic connection between them becomes stronger
+  - Activity-dependent modification: The strength of neural connections depends on the correlation of activity between pre- and post-synaptic neurons
+  - Learning mechanism: Forms the basis for associative learning and memory formation
+
+• Mathematical formulation:
+  - Hebbian learning rule: Δw = η × x × y (where Δw is the change in synaptic weight, η is the learning rate, x is pre-synaptic activity, y is post-synaptic activity)
+  - Long-term potentiation (LTP): Persistent strengthening of synapses based on recent patterns of activity
+  - Long-term depression (LTD): Weakening of synaptic connections when neurons fire out of sync
+
+• Applications in computational neuroscience:
+  - Artificial neural networks: Hebbian learning algorithms for unsupervised learning
+  - Self-organizing maps: Neural network architectures that use Hebbian principles for pattern recognition
+  - Spike-timing dependent plasticity (STDP): Refined models that consider the precise timing of neural spikes
+  - Memory models: Computational frameworks for understanding how memories are stored and retrieved
+
+• Biological significance:
+  - Development: Critical for proper neural circuit formation during brain development
+  - Learning and memory: Fundamental mechanism underlying associative learning and memory consolidation
+  - Adaptation: Allows neural circuits to adapt to environmental changes and experiences
+  - Pathology: Dysregulation implicated in neurodevelopmental disorders and neurodegenerative diseases
+
+• Modern extensions:
+  - Spike-timing dependent plasticity: Considers the precise timing of pre- and post-synaptic spikes
+  - Homeostatic plasticity: Mechanisms that maintain overall neural activity within functional ranges
+  - Metaplasticity: Changes in the ability to induce synaptic plasticity based on prior synaptic activity
+  - Computational implementations: Machine learning algorithms inspired by Hebbian principles
