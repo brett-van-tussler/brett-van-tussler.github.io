@@ -41,6 +41,9 @@ A fundamental optimization algorithm used to train machine learning models. It i
 ### ↩️ Backpropagation
 The core learning algorithm for neural networks that calculates how much each neuron contributed to the error, then adjusts weights backwards through the network. It's like tracing back through a chain of decisions to identify and correct mistakes, enabling efficient network training.
 
+[The Most Important Algorithm in Machine Learning](https://www.youtube.com/watch?v=SmZmBKc7Lrs&ab_channel=ArtemKirsanov)
+
+
 ### 👁️ Convolutional Neural Network (CNN)
 A specialized neural network architecture inspired by the visual cortex. It uses sliding filters to automatically learn and detect important features in grid-like data (especially images), making it powerful for tasks like facial recognition, object detection, and medical image analysis.
 

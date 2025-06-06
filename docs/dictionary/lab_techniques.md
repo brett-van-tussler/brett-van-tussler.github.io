@@ -56,6 +56,6 @@ Western blotting has numerous applications in research and clinical settings <mc
 ### Limitations
 1. Requires specific antibodies for target proteins <mcreference link="https://microbenotes.com/western-blot/" index="5">5</mcreference>
 2. Potential for antibody cross-reactivity and off-target effects <mcreference link="https://microbenotes.com/western-blot/" index="5">5</mcreference>
-3. Time-consuming procedure (typically 1-2 days) <mcreference link="https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034" index="1">1</mcreference>
+3. Time-consuming procedure (typically 1-2 days) <mcreference link="[^1]: https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034" index="1">1</mcreference>
 4. Semi-quantitative rather than fully quantitative <mcreference link="https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034" index="1">1</mcreference>
 5. Relatively costly due to antibody expenses and detection reagents <mcreference link="https://microbenotes.com/western-blot/" index="5">5</mcreference>
