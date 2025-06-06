@@ -54,8 +54,8 @@ An advanced RNN architecture that solves the "vanishing gradient" problem, allow
 A fundamental type of feedforward neural network consisting of multiple layers of interconnected nodes (perceptrons). An MLP typically includes an input layer, one or more hidden layers, and an output layer, with each layer fully connected to the next. Unlike single-layer perceptrons, MLPs can learn non-linear relationships through their hidden layers and activation functions, making them capable of solving complex classification and regression problems. MLPs are the building blocks of deep learning and serve as the foundation for more sophisticated architectures like CNNs and RNNs. They're widely used in applications ranging from image recognition to financial modeling.
 
 ### ⚡ ReLU (Rectified Linear Unit)
-A widely-used activation function in neural networks that outputs the input directly if it's positive, otherwise it outputs zero. Mathematically defined as f(x) = max(0, x), ReLU is simple yet effective at introducing non-linearity into neural networks while being computationally efficient. It helps solve the vanishing gradient problem that plagued earlier activation functions like sigmoid and tanh, allowing for faster training of deep networks. ReLU has become the default activation function for hidden layers in most modern neural network architectures, though variants like Leaky ReLU and ELU address some of its limitations, such as the "dying ReLU" problem where neurons can become permanently inactive.
 
+A widely-used activation function in neural networks that outputs the input directly if it's positive, otherwise it outputs zero. Mathematically defined as f(x) = max(0, x), ReLU is simple yet effective at introducing non-linearity into neural networks while being computationally efficient. It helps solve the vanishing gradient problem that plagued earlier activation functions like sigmoid and tanh, allowing for faster training of deep networks. ReLU has become the default activation function for hidden layers in most modern neural network architectures, though variants like Leaky ReLU and ELU address some of its limitations, such as the "dying ReLU" problem where neurons can become permanently inactive.
 ### 📊 Softmax
 A mathematical function that converts a vector of real numbers into a probability distribution, where each output value is between 0 and 1 and all outputs sum to 1. Softmax is commonly used as the final activation function in multi-class classification problems, transforming raw model outputs (logits) into interpretable probabilities for each class.
 
@@ -153,7 +153,7 @@ A hybrid regression technique that combines the penalties of both Lasso and Ridg
 
 Elastic Net is particularly valuable for complex datasets with many correlated features, such as in genomics (where groups of genes may work together), neuroimaging (where brain regions have correlated activities), and recommendation systems (where user preferences show complex patterns).
 
-📊 Pearson Correlation Coefficient
+### 📊 Pearson Correlation Coefficient
 The Pearson Correlation Coefficient (PCC) is a statistical measure that quantifies the linear relationship between two continuous variables. It produces a value ranging from -1 to +1, where +1 indicates a perfect positive linear relationship, -1 indicates a perfect negative linear relationship, and 0 indicates no linear relationship between the variables.
 
 Mathematically, it is calculated as the ratio between the covariance of two variables and the product of their standard deviations, making it a normalized measurement of covariance. The formula is often expressed as:
