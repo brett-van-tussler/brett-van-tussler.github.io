@@ -138,6 +138,11 @@ An extension of the standard CP decomposition that incorporates different loss f
 
 In unsupervised learning, GCP enables robust pattern discovery in heterogeneous multi-way data, supporting applications like topic modeling across document collections, community detection in dynamic networks, and analyzing sparse, noisy biological measurements across multiple experimental conditions.
 
+### 📊 Loss Function
+A mathematical function that measures how far a model's predictions are from the actual target values, providing a quantifiable way to assess model performance during training. The loss function calculates the "cost" or "error" of the model's current state, with lower values indicating better performance. Different types of problems require different loss functions: mean squared error for regression tasks, cross-entropy for classification, and specialized losses for tasks like object detection or generative modeling.
+
+The choice of loss function is crucial as it directly influences how the model learns through gradient descent optimization. During training, the algorithm adjusts model parameters to minimize the loss function, effectively teaching the model to make better predictions. Common examples include mean absolute error (L1 loss), mean squared error (L2 loss), binary cross-entropy, categorical cross-entropy, and Huber loss. Modern deep learning often employs custom loss functions tailored to specific tasks, such as focal loss for handling class imbalance or perceptual loss for image generation tasks.
+
 ### 📊 Lasso Regression
 A linear regression technique that performs both variable selection and regularization to enhance prediction accuracy and interpretability. Lasso (Least Absolute Shrinkage and Selection Operator) adds an L1 penalty term to the cost function, which can shrink some coefficients exactly to zero, effectively removing less important features from the model. This feature selection capability makes Lasso particularly valuable for high-dimensional datasets where many features may be irrelevant or redundant.
 
