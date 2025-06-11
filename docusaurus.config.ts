@@ -136,6 +136,29 @@ const config: Config = {
           position: 'left',
         },
         {
+          type: 'dropdown',
+          label: 'Dictionaries',
+          position: 'left',
+          items: [
+            {
+              label: 'All Definitions',
+              to: '/all-definitions',
+            },
+            {
+              label: 'Machine Learning',
+              to: '/machine-learning-dictionary',
+            },
+            {
+              label: 'Mathematics',
+              to: '/mathematics-dictionary',
+            },
+            {
+              label: 'Bioinformatics',
+              to: '/bioinformatics-dictionary',
+            },
+          ],
+        },
+        {
           href: 'https://github.com/brett-van-tussler/brett-van-tussler.github.io',
           label: 'GitHub',
           position: 'right',
