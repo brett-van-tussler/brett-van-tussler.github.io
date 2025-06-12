@@ -115,25 +115,40 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'docSidebar',
-          position: 'left',
+          type: 'dropdown',
           label: 'Luminary Library',
-        },
-        {
-          to: '/docs/category/Bioinformatics',
-          label: 'Bioinformatics',
           position: 'left',
-        },
-        {
-          to: '/docs/category/Machine-Learning',
-          label: 'ML & Math',
-          position: 'left',
-        },
-        {
-          to: '/docs/category/Philosophy',
-          label: 'Philosophy',
-          position: 'left',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'docSidebar',
+              label: 'All Content',
+            },
+            {
+              to: '/docs/category/bioinformatics',
+              label: 'Bioinformatics',
+            },
+            {
+              to: '/docs/category/machine-learning',
+              label: 'Machine Learning',
+            },
+            {
+              to: '/docs/category/math',
+              label: 'Math',
+            },
+            {
+              to: '/docs/category/general-computer-science',
+              label: 'Computer Science',
+            },
+            {
+              to: '/docs/category/code-examples',
+              label: 'Code Examples',
+            },
+            {
+              to: '/docs/category/philosophy',
+              label: 'Philosophy',
+            },
+          ],
         },
         {
           type: 'dropdown',
@@ -155,6 +170,10 @@ const config: Config = {
             {
               label: 'Bioinformatics',
               to: '/bioinformatics-dictionary',
+            },
+            {
+              label: 'Root Words',
+              to: '/root-words',
             },
           ],
         },

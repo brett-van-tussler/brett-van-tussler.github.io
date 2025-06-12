@@ -9,7 +9,7 @@ export default function MathematicsDictionary() {
       description="Interactive mathematics definitions with cross-references"
     >
       <InteractiveDictionary 
-        filterTag="mathematics" 
+        filterTag="math" 
         title="Mathematics Dictionary"
       />
     </Layout>

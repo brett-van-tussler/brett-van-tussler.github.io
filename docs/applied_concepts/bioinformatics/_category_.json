@@ -6,6 +6,7 @@
       "title": "Bioinformatics",
       "description": "Check out some Bioinformatics applications",
       "image": "/img/ml_terms.svg"
-    }
+    },
+    "className": "category-page"
   }
   

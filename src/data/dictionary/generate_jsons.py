@@ -17,7 +17,7 @@ def parse_markdown_to_json(md_text):
         # Extract title with emoji
         lines = section.strip().splitlines()
         title_line = lines[0].strip()
-        match = re.match(r'(?P<emoji>[\U0001F300-\U0001FAFF])\s*(?P<title>.+)', title_line)
+        match = re.match(r'(?P<emoji>[^a-zA-Z0-9\s\(\)\[\]\{\}\.,;:"\'`!@#\$%\^&\*\-=_\+\\|/<>?]+)\s*(?P<title>.+)', title_line)
         if not match:
             continue
 
@@ -41,14 +41,13 @@ def parse_markdown_to_json(md_text):
     return output
 
 # Example usage:
-filename = 'bioinformatics_dictionary.md'
+filename = 'dictionary_words.md'
 
 with open(filename, 'r', encoding='utf-8') as markdown_file:
     markdown_input = markdown_file.read()
     parsed_json = parse_markdown_to_json(markdown_input)
+    # Create output filename by replacing .md with .json
+    output_filename = os.path.splitext(filename)[0] + '.json'
 
-# Create output filename by replacing .md with .json
-output_filename = os.path.splitext(filename)[0] + '.json'
-
-with open(output_filename, 'w', encoding='utf-8') as json_file:
-    json.dump(parsed_json, json_file, indent=2, ensure_ascii=False)
+    with open(output_filename, 'w', encoding='utf-8') as json_file:
+        json.dump(parsed_json, json_file, indent=2, ensure_ascii=False)

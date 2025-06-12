@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import definitionsData from '../data/definitions.json';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
 
 interface Definition {
   id: string;
@@ -41,16 +43,107 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
     onDefinitionClick(termId);
   };
 
-  // Format text to preserve line breaks and basic formatting
+  // Function to parse markdown links, LaTeX math expressions, and basic formatting (bold) and convert them to JSX
+  const parseMarkdownLinks = (text: string): React.ReactNode[] => {
+    if (!text) return [];
+    
+    // Combined regex to match links, math expressions, and bold text
+    // Using named capture groups to identify the type of match
+    const combinedRegex = /(?:\[([^\]]+)\]\(([^)]+)\))|(?:\$\$([^$]+)\$\$)|(?:\*\*([^*]+)\*\*)/g;
+    const parts: React.ReactNode[] = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = combinedRegex.exec(text)) !== null) {
+      // Add text before the matched element
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+
+      // Determine which type of element was matched
+      if (match[1] !== undefined && match[2] !== undefined) {
+        // This is a link
+        const linkText = match[1];
+        const linkUrl = match[2];
+        parts.push(
+          <a
+            key={`link-${match.index}`}
+            href={linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: 'var(--ifm-color-primary)',
+              textDecoration: 'underline',
+              cursor: 'pointer'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.color = 'var(--ifm-color-primary-dark)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.color = 'var(--ifm-color-primary)';
+            }}
+          >
+            {linkText}
+          </a>
+        );
+      } else if (match[3] !== undefined) {
+        // This is a math expression
+        const mathExpression = match[3];
+        parts.push(
+          <span
+            key={`math-${match.index}`}
+            style={{
+              display: 'block',
+              margin: '1em 0',
+              padding: '0.5em',
+              backgroundColor: 'var(--ifm-background-surface-color)',
+              borderRadius: '4px',
+              overflowX: 'auto',
+              fontFamily: 'KaTeX_Main, Times New Roman, serif'
+            }}
+            dangerouslySetInnerHTML={{
+              __html: katex.renderToString(mathExpression, {
+                displayMode: true,
+                throwOnError: false,
+                strict: false
+              })
+            }}
+          />
+        );
+      } else if (match[4] !== undefined) {
+        // This is bold text
+        const boldText = match[4];
+        parts.push(
+          <strong key={`bold-${match.index}`}>
+            {boldText}
+          </strong>
+        );
+      }
+
+      lastIndex = match.index + match[0].length;
+    }
+
+    // Add remaining text after the last matched element
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : [text];
+  };
+
+  // Format text to preserve line breaks and parse markdown links
   const formatText = (text: string) => {
     if (!text) return text;
     
-    return text.split('\n').map((line, index, array) => (
-      <React.Fragment key={index}>
-        {line}
-        {index < array.length - 1 && <br />}
-      </React.Fragment>
-    ));
+    return text.split('\n').map((line, index, array) => {
+      const parsedLine = parseMarkdownLinks(line);
+      return (
+        <React.Fragment key={index}>
+          {parsedLine}
+          {index < array.length - 1 && <br />}
+        </React.Fragment>
+      );
+    });
   };
 
   // Render definition text with linked terms as clickable buttons
@@ -119,7 +212,7 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
     allMatches.sort((a, b) => a.index - b.index);
   
     // Filter out overlapping matches, keeping the first one
-    const filteredMatches = [];
+    const filteredMatches: Array<{index: number; length: number; termId: string}> = [];
     for (const match of allMatches) {
       const hasOverlap = filteredMatches.some(existing => 
         (match.index < existing.index + existing.length) && 
