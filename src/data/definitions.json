@@ -1,4 +1,12 @@
 {
+  "similarity-network-fusion-(snf)": {
+    "id": "similarity-network-fusion-(snf)",
+    "title": "Similarity Network Fusion (SNF)",
+    "emoji": "🔗",
+    "definition": "• Definition: A computational method that integrates multiple data types to create a unified patient similarity network, enabling more comprehensive analysis than single-data approaches.\n\n• Algorithm principles:\n  - Constructs similarity networks for each data type separately\n  - Iteratively updates each network by fusing information from other networks\n  - Converges to a single integrated network that captures complementary information across data types\n  - Uses spectral clustering for patient stratification and subtype identification\n\n• Applications in multi-omics integration:\n  - Cancer subtyping: Identifying disease subtypes by integrating genomic, transcriptomic, and clinical data\n  - Biomarker discovery: Finding robust biomarkers across multiple data platforms\n  - Patient stratification: Grouping patients with similar molecular profiles across different data types\n  - Drug response prediction: Integrating molecular and pharmacological data to predict treatment outcomes\n\n• Advantages over single-data analysis:\n  - Increased statistical power through data integration\n  - Robustness to noise in individual data types\n  - Ability to capture complementary information across heterogeneous data\n  - Improved prediction accuracy for clinical outcomes\n\n• Implementation considerations:\n  - Parameter selection (number of neighbors, fusion iterations)\n  - Data normalization across different platforms\n  - Computational efficiency for large datasets\n  - Visualization of integrated networks",
+    "tags": [],
+    "linkedTerms": []
+  },
   "chain-rule": {
     "id": "chain-rule",
     "title": "Chain Rule",

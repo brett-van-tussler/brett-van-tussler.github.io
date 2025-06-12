@@ -37,14 +37,27 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
     setIsExpanded(!isExpanded);
   };
 
-  const handleLinkClick = (termId: string) => {
+  const handleDefinitionClick = (termId: string) => {
     onDefinitionClick(termId);
+  };
+
+  // Format text to preserve line breaks and basic formatting
+  const formatText = (text: string) => {
+    if (!text) return text;
+    
+    return text.split('\n').map((line, index, array) => (
+      <React.Fragment key={index}>
+        {line}
+        {index < array.length - 1 && <br />}
+      </React.Fragment>
+    ));
   };
 
   // Render definition text with linked terms as clickable buttons
   const renderDefinitionText = (text: string) => {
     if (!definition.linkedTerms || definition.linkedTerms.length === 0) {
-      return text;
+      // Preserve formatting even when no linked terms
+      return formatText(text);
     }
   
     // Collect all matches first, then sort by position
@@ -123,9 +136,10 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
   
     // Process matches in order
     filteredMatches.forEach((match) => {
-      // Add text before this match
+      // Add text before this match with formatting preserved
       if (match.index > lastIndex) {
-        elements.push(text.substring(lastIndex, match.index));
+        const beforeText = text.substring(lastIndex, match.index);
+        elements.push(...(Array.isArray(formatText(beforeText)) ? formatText(beforeText) : [formatText(beforeText)]));
       }
   
       const matchText = text.substring(match.index, match.index + match.length);
@@ -133,19 +147,21 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
       elements.push(
         <button
           key={`${match.termId}-${match.index}`}
-          onClick={() => handleLinkClick(match.termId)}
+          onClick={() => handleDefinitionClick(match.termId)}
           style={{
-            backgroundColor: 'var(--ifm-color-primary)',
+            background: 'linear-gradient(135deg, var(--ifm-color-primary-light), var(--ifm-color-primary))',
             color: 'white',
             border: 'none',
-            borderRadius: '3px',
-            padding: '1px 4px',
+            borderRadius: '4px',
+            padding: '2px 6px',
             margin: '0 1px',
-            fontSize: 'inherit',
             cursor: 'pointer',
-            transition: 'all 0.2s ease',
+            fontSize: 'inherit',
+            fontWeight: '500',
             textDecoration: 'none',
-            display: 'inline-block'
+            display: 'inline-block',
+            transition: 'all 0.2s ease',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
           }}
           onMouseOver={(e) => {
             e.currentTarget.style.transform = 'scale(1.05)';
@@ -163,12 +179,13 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
       lastIndex = match.index + matchText.length;
     });
   
-    // Add remaining text
+    // Add remaining text with formatting preserved
     if (lastIndex < text.length) {
-      elements.push(text.substring(lastIndex));
+      const remainingText = text.substring(lastIndex);
+      elements.push(...(Array.isArray(formatText(remainingText)) ? formatText(remainingText) : [formatText(remainingText)]));
     }
   
-    return elements.length > 0 ? elements : text;
+    return elements.length > 0 ? elements : formatText(text);
   };
 
   return (

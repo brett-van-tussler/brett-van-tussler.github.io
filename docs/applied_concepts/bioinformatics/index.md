@@ -1,2 +1,2 @@
 
-# Bioinformatics
+# Bioinformatics Dictionary
