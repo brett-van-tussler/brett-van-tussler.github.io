@@ -14,19 +14,19 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Interests in Bioinformatics',
     image: require('@site/static/img/bioinformatics.jpeg').default,
-    link: '/docs/bioinformatics', // Link to navigate to
+    link: '/docs/category/bioinformatics', // Link to navigate to
     description: 'Dive into my bioinformatics explorations and discoveries.',
   },
   {
     title: 'Machine Learning',
     image: require('@site/static/img/ml_dl.jpeg').default,
-    link: '/docs/machine_learning',
+    link: '/docs/category/machine_learning',
     description: 'Discover my interests in machine learning, math, and statistics.',
   },
   {
     title: 'Philosophy',
     image: require('@site/static/img/buddha.jpeg').default,
-    link: '/docs/Philosophy',
+    link: '/docs/category/Philosophy',
     description: 'Explore my thoughts on philosophy and its impact on problem-solving.',
   },
 ];
