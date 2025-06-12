@@ -1,58 +1,1017 @@
 {
+  "git-triage": {
+    "id": "git-triage",
+    "title": "Git Triage:",
+    "emoji": "🔍✅",
+    "definition": "The process of reviewing, labeling, categorizing, and prioritizing issues and pull requests in a Git repository to ensure effective project management and workflow. Git triage helps maintain order, identify critical tasks, eliminate duplicates, and streamline collaboration among contributors.",
+    "tags": ["git"],
+    "linkedTerms": []
+  },
+  "repository-dispatch": {
+    "id": "repository-dispatch",
+    "title": "Repository Dispatch:",
+    "emoji": "🔄🚀",
+    "definition": "A GitHub feature that enables external events to trigger GitHub Actions workflows in a repository. It allows custom webhook events to initiate automated processes, facilitating integration with external services and enabling programmatic workflow execution. Repository dispatch is commonly used for creating custom automation triggers and coordinating workflows across multiple repositories.",
+    "tags": ["git"],
+    "linkedTerms": []
+  },
+  "parametric-statistics": {
+    "id": "parametric-statistics",
+    "title": "Parametric Statistics",
+    "emoji": "📊",
+    "definition": "Statistical methods that assume data comes from a population following a probability distribution based on a fixed set of parameters. These methods make specific assumptions about the data's distribution (often assuming normal distribution) and draw inferences about the parameters of the assumed distribution. Examples include t-tests, ANOVA, and linear regression.\n\nParametric methods are generally more powerful when their assumptions are met but may produce misleading results when these assumptions are violated.",
+    "tags": ["math"],
+    "linkedTerms": []
+  },
+  "non-parametric-statistics": {
+    "id": "non-parametric-statistics",
+    "title": "Non-parametric Statistics",
+    "emoji": "📈",
+    "definition": "Statistical techniques that don't rely on assumptions about the underlying population distribution. These methods are distribution-free and typically based on ranks or orders rather than the actual values. Examples include the Mann-Whitney U test, Kruskal-Wallis test, and Spearman's rank correlation.\n\nNon-parametric methods are more robust and flexible, making them suitable when data doesn't meet parametric assumptions or when working with ordinal data, but they may have less statistical power when parametric assumptions are valid.",
+    "tags": ["math"],
+    "linkedTerms": []
+  },
+  "diffie-hellman-key-exchange": {
+    "id": "diffie-hellman-key-exchange",
+    "title": "Diffie-Hellman Key Exchange",
+    "emoji": "🔐",
+    "definition": "A cryptographic protocol that allows two parties to establish a shared secret key over an insecure communication channel without requiring a prior shared secret. It relies on the mathematical principles of modular exponentiation and the computational difficulty of the discrete logarithm problem.\n\nThe protocol works by having both parties generate private keys, derive public keys using modular exponentiation, exchange these public keys, and then independently compute the same shared secret. This method is fundamental to many secure communications systems and was the first practical implementation of public key cryptography. It's widely used in secure protocols like HTTPS, SSH, IPsec, and TLS to establish encrypted communication channels.\n\n**Video explanations:** \n[Diffie-Hellman Key Exchange](https://www.youtube.com/watch?v=YEBfamv-_do&t=3s&ab_channel=ArtoftheProblem) - A visual explanation of how the Diffie-Hellman protocol works and why it's secure.\n\n[The Genius Math of Modern Encryption | Diffie-Hellman Key Exchange](https://www.youtube.com/watch?v=XSJLyK9LlnY&ab_channel=PurpleMind) - A visual explanation of how the Diffie-Hellman protocol works and why it's secure.",
+    "tags": ["computer science", "math"],
+    "linkedTerms": []
+  },
+  "small-subgroup-vulnerabilities": {
+    "id": "small-subgroup-vulnerabilities",
+    "title": "Small Subgroup Vulnerabilities",
+    "emoji": "🔓",
+    "definition": "A cryptographic weakness that can occur in implementations of protocols using discrete logarithm-based cryptography, particularly Diffie-Hellman key exchange. These vulnerabilities arise when an attacker forces computations into a small subgroup of the larger cryptographic group, making it feasible to determine the private key through brute force methods.\n\nSmall subgroup attacks exploit improper parameter validation, specifically when implementations fail to verify that received public keys are members of the correct cryptographic group of appropriate order. By sending carefully crafted invalid public values, attackers can extract information about the victim's private key through multiple protocol interactions. Proper implementation requires validation of all public keys and the use of safe primes or prime order subgroups to mitigate these vulnerabilities.",
+    "tags": ["computer science", "math"],
+    "linkedTerms": []
+  },
+  "pohlig-hellman-algorithm": {
+    "id": "pohlig-hellman-algorithm",
+    "title": "Pohlig-Hellman Algorithm",
+    "emoji": "🧮",
+    "definition": "An algorithm for computing discrete logarithms in a cyclic group, particularly useful when the order of the group has only small prime factors. Developed by Stephen Pohlig and Martin Hellman in 1978, it significantly reduces the computational complexity of the discrete logarithm problem in certain groups.\n\nThe algorithm works by decomposing the discrete logarithm problem in a group of composite order into smaller subproblems in groups of prime order using the Chinese remainder theorem. It then solves these smaller problems using techniques like the baby-step giant-step algorithm. While highly efficient for groups whose order factors into small primes, it's ineffective against groups specifically chosen for cryptographic purposes (those with at least one large prime factor). Understanding this algorithm is crucial for cryptographers to select appropriate parameters for discrete logarithm-based cryptosystems like Diffie-Hellman and ElGamal.\n\n**Video explanation:** \n[How can I compute discrete logs faster? — Pohlig–Hellman — The Ross Program](https://youtu.be/B0p0jbCGvWk?si=1tM6BZ_65_SI_Hba) - A mathematical explanation of how the Diffie-Hellman protocol works and why it's secure.",
+    "tags": ["computer science", "math"],
+    "linkedTerms": [
+      "chinese-remainder-theorem"
+    ]
+  },
+  "chinese-remainder-theorem": {
+    "id": "chinese-remainder-theorem",
+    "title": "Chinese Remainder Theorem",
+    "emoji": "🧩",
+    "definition": "A fundamental result in number theory that provides a solution to systems of simultaneous linear congruences with coprime moduli. The theorem states that if one has several congruence equations, a unique solution exists modulo the product of the moduli, provided that the moduli are pairwise coprime.\n\nFormally, if n₁, n₂, ..., nₖ are pairwise coprime positive integers and a₁, a₂, ..., aₖ are any integers, then the system of congruences x ≡ a₁ (mod n₁), x ≡ a₂ (mod n₂), ..., x ≡ aₖ (mod nₖ) has a unique solution modulo N = n₁ × n₂ × ... × nₖ.\n\nThe theorem has applications in various fields including cryptography (RSA algorithm), coding theory, and computer science (particularly in distributed computing and for creating efficient algorithms). It also has historical significance, originating in ancient Chinese mathematics as early as the 3rd century CE in the mathematical text \"Sunzi Suanjing.\"\n\n**Video explanation:** \n[Chinese Remainder Theorem](https://www.youtube.com/watch?v=e8DtzQkjOMQ&t=6s&ab_channel=NesoAcademy) - A comprehensive explanation of the Chinese Remainder Theorem, its proof, and applications.",
+    "tags": ["math"],
+    "linkedTerms": []
+  },
+  "euler's-number-(e)": {
+    "id": "euler's-number-(e)",
+    "title": "Euler's Number (e)",
+    "emoji": "📐",
+    "definition": "A fundamental mathematical constant approximately equal to 2.71828, denoted by the letter 'e' in honor of the Swiss mathematician Leonhard Euler. It is defined as the limit of (1 + 1/n)ⁿ as n approaches infinity, or equivalently as the sum of the infinite series:\n\n$$e = \\sum_{n=0}^{\\infty} \\frac{1}{n!} = 1 + \\frac{1}{1!} + \\frac{1}{2!} + \\frac{1}{3!} + \\cdots$$\n\nEuler's number is the base of the natural logarithm and appears naturally in many areas of mathematics, particularly in calculus where it serves as the unique number such that the derivative of eˣ equals eˣ itself. This property makes it invaluable for solving differential equations and modeling exponential growth and decay processes.\n\n**Key Applications:**\n- **Compound Interest**: Continuous compounding formula A = Pe^(rt)\n- **Population Growth**: Exponential growth models in biology and demographics\n- **Radioactive Decay**: Half-life calculations in physics and chemistry\n- **Probability Theory**: Normal distribution and Poisson processes\n- **Signal Processing**: Fourier transforms and complex analysis\n- **Machine Learning**: Activation functions (sigmoid, softmax) and optimization algorithms\n- **Economics**: Present value calculations and economic modeling\n\nThe constant e is irrational and transcendental, meaning it cannot be expressed as a simple fraction or as the root of any polynomial equation with rational coefficients. Its ubiquity in natural phenomena has earned it the designation as one of the most important mathematical constants alongside π.",
+    "tags": ["math"],
+    "linkedTerms": [
+      "softmax",
+      "machine-learning"
+    ]
+  },
   "chain-rule": {
     "id": "chain-rule",
     "title": "Chain Rule",
-    "emoji": "🔗",
-    "definition": "A fundamental rule in calculus for computing the derivative of composite functions. If you have a composite function f(g(x)), the chain rule states that the derivative is f'(g(x)) × g'(x). This rule is essential in backpropagation algorithms used in a neural network.",
-    "tags": ["machine-learning", "mathematics"],
-    "linkedTerms": ["derivative", "backpropagation", "neural-network"]
+    "emoji": "⛓️",
+    "definition": "A fundamental rule in calculus for finding the derivative of composite functions. The chain rule states that if you have a composite function f(g(x)), then its derivative is the derivative of the outer function evaluated at the inner function, multiplied by the derivative of the inner function.\n\nMathematically expressed as:\n$$\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)$$\n\nOr in Leibniz notation:\n$$\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$$\n\nThe chain rule is essential for differentiating complex functions and is widely used in calculus, physics, engineering, and machine learning (particularly in backpropagation algorithms for neural networks). Common applications include finding derivatives of exponential functions, trigonometric functions with inner functions, and nested polynomial expressions.",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "backpropagation",
+      "neural-network",
+      "machine-learning"
+    ]
   },
-  "derivative": {
-    "id": "derivative",
-    "title": "Derivative",
-    "emoji": "📈",
-    "definition": "A measure of how a function changes as its input changes. Formally, the derivative of a function f at point x is the limit of the ratio of the change in f to the change in x as the change in x approaches zero. The gradient descent algorithm relies heavily on computing derivatives.",
-    "tags": ["mathematics", "machine-learning"],
-    "linkedTerms": ["gradient-descent", "chain-rule"]
+  "quotient-rule": {
+    "id": "quotient-rule",
+    "title": "Quotient Rule",
+    "emoji": "➗",
+    "definition": "A differentiation rule used to find the derivative of a function that is the quotient (division) of two other functions. If you have a function h(x) = f(x)/g(x), where both f(x) and g(x) are differentiable and g(x) ≠ 0, then the quotient rule provides the formula for h'(x).\n\nThe quotient rule formula is:\n$$\\frac{d}{dx}\\left[\\frac{f(x)}{g(x)}\\right] = \\frac{f'(x) \\cdot g(x) - f(x) \\cdot g'(x)}{[g(x)]^2}$$\n\nOften remembered by the mnemonic \"low d-high minus high d-low, over low squared\" where \"high\" refers to the numerator function and \"low\" refers to the denominator function. This rule is particularly useful in calculus for differentiating rational functions, rates of change problems, and optimization problems involving ratios.",
+    "tags": ["math"],
+    "linkedTerms": []
   },
-  "backpropagation": {
-    "id": "backpropagation",
-    "title": "Backpropagation",
-    "emoji": "🔄",
-    "definition": "An algorithm used to train neural networks by computing gradients of the loss function with respect to the network's weights. It works by applying the chain rule to compute these gradients efficiently, propagating errors backward through the network.",
-    "tags": ["machine-learning"],
-    "linkedTerms": ["chain-rule", "gradient-descent", "neural-network"]
+  "exponent-rules": {
+    "id": "exponent-rules",
+    "title": "Exponent Rules",
+    "emoji": "🔢",
+    "definition": "A set of fundamental algebraic rules that govern operations with exponential expressions. These rules are essential for simplifying expressions, solving equations, and working with logarithms and exponential functions.\n\n**Basic Exponent Rules:**\n- **Product Rule**: $a^m \\cdot a^n = a^{m+n}$\n- **Quotient Rule**: $\\frac{a^m}{a^n} = a^{m-n}$ (where $a \\neq 0$)\n- **Power Rule**: $(a^m)^n = a^{mn}$\n- **Power of a Product**: $(ab)^n = a^n b^n$\n- **Power of a Quotient**: $\\left(\\frac{a}{b}\\right)^n = \\frac{a^n}{b^n}$ (where $b \\neq 0$)\n- **Zero Exponent**: $a^0 = 1$ (where $a \\neq 0$)\n- **Negative Exponent**: $a^{-n} = \\frac{1}{a^n}$ (where $a \\neq 0$)\n- **Fractional Exponent**: $a^{\\frac{m}{n}} = \\sqrt[n]{a^m} = (\\sqrt[n]{a})^m$\n\nThese rules form the foundation for working with exponential and logarithmic functions, compound interest calculations, scientific notation, and are extensively used in algebra, calculus, physics, chemistry, and computer science algorithms.",
+    "tags": ["math"],
+    "linkedTerms": [
+      "quotient-rule"
+    ]
   },
-  "gradient-descent": {
-    "id": "gradient-descent",
-    "title": "Gradient Descent",
-    "emoji": "⬇️",
-    "definition": "An optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient. It uses derivatives to determine the direction and magnitude of each step.",
-    "tags": ["machine-learning", "mathematics"],
-    "linkedTerms": ["derivative", "backpropagation"]
+  "stochastic": {
+    "id": "stochastic",
+    "title": "Stochastic",
+    "emoji": "🎲",
+    "definition": "In simple terms, \"stochastic\" refers to processes or systems that are random or inherently unpredictable, but they follow some statistical patterns or probabilities. Stochastic systems don't have a single, fixed outcome; instead, their behavior or outcomes are governed by chance and probability distributions.\n\nThe term is widely used in fields like mathematics, biology, finance, and physics, where randomness and uncertainty are present.",
+    "tags": ["math"],
+    "linkedTerms": []
   },
   "neural-network": {
     "id": "neural-network",
     "title": "Neural Network",
     "emoji": "🧠",
-    "definition": "A computational model inspired by biological neural networks. It consists of interconnected nodes (neurons) organized in layers, where each connection has an associated weight that is adjusted during training using algorithms like backpropagation.",
+    "definition": "A computing system inspired by biological neural networks in human brains. It consists of interconnected nodes (neurons) that process and transmit information. Neural networks are fundamental to modern AI, enabling systems to learn patterns from data and make predictions or decisions.",
     "tags": ["machine-learning"],
-    "linkedTerms": ["backpropagation", "gradient-descent"]
+    "linkedTerms": []
   },
-  "dna-sequencing": {
-    "id": "dna-sequencing",
-    "title": "DNA Sequencing",
+  "machine-learning": {
+    "id": "machine-learning",
+    "title": "Machine Learning",
+    "emoji": "🤖",
+    "definition": "A subset of AI where systems improve their performance on a task through experience (data), without being explicitly programmed. It's crucial for applications like image recognition, recommendation systems, and natural language processing.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "deep-learning": {
+    "id": "deep-learning",
+    "title": "Deep Learning",
+    "emoji": "🔮",
+    "definition": "A specialized form of machine learning using multiple layers of neural networks. It's particularly powerful for complex tasks like understanding images, text, and speech. Deep learning has enabled breakthrough applications like ChatGPT and stable diffusion models.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning"
+    ]
+  },
+  "transformer": {
+    "id": "transformer",
+    "title": "Transformer",
+    "emoji": "🔄",
+    "definition": "An influential neural network architecture that revolutionized natural language processing. It uses self-attention mechanisms to process sequential data, enabling better understanding of context in language. Transformers power most modern language models like GPT and BERT.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "attention-mechanism"
+    ]
+  },
+  "reinforcement-learning": {
+    "id": "reinforcement-learning",
+    "title": "Reinforcement Learning",
+    "emoji": "🎮",
+    "definition": "A type of machine learning where an agent learns to make decisions by interacting with an environment. The agent receives rewards or penalties based on its actions, similar to how humans learn through trial and error. It's crucial for robotics, game AI, and autonomous systems.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "machine-learning"
+    ]
+  },
+  "supervised-learning": {
+    "id": "supervised-learning",
+    "title": "Supervised Learning",
+    "emoji": "👨‍🏫",
+    "definition": "A learning approach where the AI system is trained on labeled data (examples with known correct answers). It's like learning with a teacher who provides the correct answers. This is the most common form of machine learning, used in applications like spam detection and image classification.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "machine-learning"
+    ]
+  },
+  "unsupervised-learning": {
+    "id": "unsupervised-learning",
+    "title": "Unsupervised Learning",
+    "emoji": "🔍",
+    "definition": "A learning method where the AI system finds patterns in unlabeled data without explicit guidance. It's like discovering categories or relationships naturally. Important for data clustering, anomaly detection, and understanding hidden patterns in data.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "overfitting": {
+    "id": "overfitting",
+    "title": "Overfitting",
+    "emoji": "📈",
+    "definition": "A common problem in machine learning where a model learns the training data too precisely, including its noise and irregularities. This reduces its ability to generalize to new data, like memorizing answers instead of understanding the underlying concepts.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "machine-learning"
+    ]
+  },
+  "gradient-descent": {
+    "id": "gradient-descent",
+    "title": "Gradient Descent",
+    "emoji": "⬇️",
+    "definition": "A fundamental optimization algorithm used to train machine learning models. It iteratively adjusts the model's parameters to minimize errors, like finding the bottom of a valley by taking small steps downhill. This process is crucial for training neural networks effectively.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning"
+    ]
+  },
+  "backpropagation": {
+    "id": "backpropagation",
+    "title": "Backpropagation",
+    "emoji": "↩️",
+    "definition": "The core learning algorithm for neural networks that calculates how much each neuron contributed to the error, then adjusts weights backwards through the network. It's like tracing back through a chain of decisions to identify and correct mistakes, enabling efficient network training.\n\n[The Most Important Algorithm in Machine Learning](https://www.youtube.com/watch?v=SmZmBKc7Lrs&ab_channel=ArtemKirsanov)",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning"
+    ]
+  },
+  "convolutional-neural-network-(cnn)": {
+    "id": "convolutional-neural-network-(cnn)",
+    "title": "Convolutional Neural Network (CNN)",
+    "emoji": "👁️",
+    "definition": "A specialized neural network architecture inspired by the visual cortex. It uses sliding filters to automatically learn and detect important features in grid-like data (especially images), making it powerful for tasks like facial recognition, object detection, and medical image analysis.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network"
+    ]
+  },
+  "recurrent-neural-network-(rnn)": {
+    "id": "recurrent-neural-network-(rnn)",
+    "title": "Recurrent Neural Network (RNN)",
+    "emoji": "🔄",
+    "definition": "A neural network designed for sequential data that maintains a \"memory\" of previous inputs. Like having a short-term memory, it processes information in order and uses past context to understand current inputs, making it suitable for tasks like text prediction and time series analysis.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network"
+    ]
+  },
+  "long-short-term-memory-(lstm)": {
+    "id": "long-short-term-memory-(lstm)",
+    "title": "Long Short-Term Memory (LSTM)",
+    "emoji": "🧠",
+    "definition": "An advanced RNN architecture that solves the \"vanishing gradient\" problem, allowing it to remember important information for longer sequences. It uses specialized gates to control information flow, making it excellent for tasks requiring long-term memory like language translation and speech recognition.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "multi-layer-perceptron-(mlp)": {
+    "id": "multi-layer-perceptron-(mlp)",
+    "title": "Multi-Layer Perceptron (MLP)",
+    "emoji": "🔗",
+    "definition": "A fundamental type of feedforward neural network consisting of multiple layers of interconnected nodes (perceptrons). An MLP typically includes an input layer, one or more hidden layers, and an output layer, with each layer fully connected to the next. Unlike single-layer perceptrons, MLPs can learn non-linear relationships through their hidden layers and activation functions, making them capable of solving complex classification and regression problems. MLPs are the building blocks of deep learning and serve as the foundation for more sophisticated architectures like CNNs and RNNs. They're widely used in applications ranging from image recognition to financial modeling.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "deep-learning"
+    ]
+  },
+  "relu-(rectified-linear-unit)": {
+    "id": "relu-(rectified-linear-unit)",
+    "title": "ReLU (Rectified Linear Unit)",
+    "emoji": "⚡",
+    "definition": "A widely-used activation function in neural networks that outputs the input directly if it's positive, otherwise it outputs zero. Mathematically defined as f(x) = max(0, x), ReLU is simple yet effective at introducing non-linearity into neural networks while being computationally efficient. It helps solve the vanishing gradient problem that plagued earlier activation functions like sigmoid and tanh, allowing for faster training of deep networks. ReLU has become the default activation function for hidden layers in most modern neural network architectures, though variants like Leaky ReLU and ELU address some of its limitations, such as the \"dying ReLU\" problem where neurons can become permanently inactive.",
+    "tags": ["machine-learning", "math"],
+    "linkedTerms": [
+      "neural-network"
+    ]
+  },
+  "softmax": {
+    "id": "softmax",
+    "title": "Softmax",
+    "emoji": "📊",
+    "definition": "A mathematical function that converts a vector of real numbers into a probability distribution, where each output value is between 0 and 1 and all outputs sum to 1. Softmax is commonly used as the final activation function in multi-class classification problems, transforming raw model outputs (logits) into interpretable probabilities for each class.\n\nMathematically defined as: $$\\text{softmax}(x_i) = \\frac{e^{x_i}}{\\sum_{j} e^{x_j}}$$ for all j, where x is the input vector. The exponential function ensures all outputs are positive, while the normalization by the sum creates a valid probability distribution. Softmax amplifies the differences between values - larger inputs receive disproportionately higher probabilities, making it useful for confident predictions.\n\nSoftmax is essential in neural networks for tasks like image classification (determining which of several objects appears in an image), natural language processing (predicting the next word from a vocabulary), and any scenario requiring probabilistic outputs across multiple mutually exclusive categories. It's often paired with cross-entropy loss during training to optimize classification performance.",
+    "tags": ["machine-learning", "math"],
+    "linkedTerms": [
+      "neural-network"
+    ]
+  },
+  "generative-adversarial-network-(gan)": {
+    "id": "generative-adversarial-network-(gan)",
+    "title": "Generative Adversarial Network (GAN)",
+    "emoji": "🎨",
+    "definition": "An AI architecture where two networks compete: one creates fake data, while the other tries to distinguish real from fake. This competition drives both to improve, resulting in increasingly realistic synthetic data. GANs have revolutionized AI-generated art, deepfakes, and synthetic data generation.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "variational-autoencoder-(vae)": {
+    "id": "variational-autoencoder-(vae)",
+    "title": "Variational Autoencoder (VAE)",
+    "emoji": "🗜️",
+    "definition": "A generative model that learns to compress data into a compact representation and then reconstruct it. Unlike regular autoencoders, VAEs learn smooth, continuous representations that allow meaningful data generation and manipulation. They're vital for tasks like image generation and data compression.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "attention-mechanism": {
+    "id": "attention-mechanism",
+    "title": "Attention Mechanism",
+    "emoji": "👀",
+    "definition": "A breakthrough technique that allows neural networks to focus on relevant parts of input data, similar to human attention. By learning which parts of the input are important for each output, it dramatically improves performance in tasks like translation and image captioning. This mechanism is a key component of transformer architectures.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "transformer",
+      "neural-network"
+    ]
+  },
+  "positional-encoding": {
+    "id": "positional-encoding",
+    "title": "Positional Encoding",
+    "emoji": "📍",
+    "definition": "A technique that adds location information to data in neural networks, helping them understand the order and structure of sequences. It's crucial for transformer models to process ordered data like text or time series, as it provides context about where each piece of information belongs in the sequence.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "transformer",
+      "neural-network"
+    ]
+  },
+  "embedding": {
+    "id": "embedding",
+    "title": "Embedding",
+    "emoji": "🔠",
+    "definition": "A technique that converts discrete data (like words or categories) into dense vectors of continuous numbers. These learned representations capture semantic relationships and similarities, enabling AI models to process categorical data effectively. It's fundamental to modern NLP and recommendation systems.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "tokenization": {
+    "id": "tokenization",
+    "title": "Tokenization",
+    "emoji": "✂️",
+    "definition": "The process of breaking text into smaller units (tokens) that can be processed by AI models. These tokens might be words, subwords, or characters. Modern systems often use subword tokenization to handle unknown words and reduce vocabulary size while maintaining meaning.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "word-embedding": {
+    "id": "word-embedding",
+    "title": "Word Embedding",
+    "emoji": "📝",
+    "definition": "A specific type of embedding that maps words to vectors of real numbers, capturing semantic relationships between words. Similar words cluster together in the embedding space, allowing models to understand word meanings and relationships. Examples include Word2Vec and GloVe.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "embedding"
+    ]
+  },
+  "vector-database": {
+    "id": "vector-database",
+    "title": "Vector Database",
+    "emoji": "🗄️",
+    "definition": "A specialized database designed to store and efficiently search through high-dimensional vectors (embeddings). These databases enable rapid similarity search and are crucial for modern AI applications like semantic search, recommendation systems, and image retrieval.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "embedding"
+    ]
+  },
+  "fine-tuning": {
+    "id": "fine-tuning",
+    "title": "Fine-tuning",
+    "emoji": "🎯",
+    "definition": "The process of taking a pre-trained model and adapting it to a specific task by training it on a smaller, task-specific dataset. This transfer learning approach saves computational resources and often yields better results than training from scratch.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "prompt-engineering": {
+    "id": "prompt-engineering",
+    "title": "Prompt Engineering",
+    "emoji": "⌨️",
+    "definition": "The art and science of crafting effective inputs for large language models to achieve desired outputs. It involves understanding model behavior and using specific techniques to guide the model's responses, crucial for getting optimal results from AI systems.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "tensor-processing-unit-(tpu)": {
+    "id": "tensor-processing-unit-(tpu)",
+    "title": "Tensor Processing Unit (TPU)",
+    "emoji": "🔢",
+    "definition": "A specialized hardware accelerator developed by Google specifically for neural network machine learning. TPUs are application-specific integrated circuits (ASICs) designed to accelerate tensor operations, which are fundamental to deep learning models. Unlike CPUs and GPUs, TPUs are optimized for matrix operations with high computational throughput and lower precision, making them significantly faster and more energy-efficient for AI workloads.\n\nTPUs play a crucial role in training and running Google's Gemini models, providing the massive computational power needed to process the enormous datasets required for large language models. Their architecture enables parallel processing at scale, reducing training time from weeks to days or hours, and allowing for more efficient inference when deploying these models in production environments.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning",
+      "deep-learning"
+    ]
+  },
+  "mixed-effects-models": {
+    "id": "mixed-effects-models",
+    "title": "Mixed-Effects Models",
+    "emoji": "📊",
+    "definition": "A statistical framework that incorporates both fixed effects (parameters that apply to an entire population) and random effects (parameters specific to individual groups or subjects within the data). These models are particularly valuable for analyzing hierarchical, nested, or longitudinal data where observations are not fully independent. Mixed-effects models account for both within-group and between-group variations, making them powerful tools for fields like medicine, ecology, and social sciences where data often has complex, multi-level structures.\n\nBy simultaneously modeling group-level and individual-level effects, these models provide more accurate parameter estimates and standard errors than traditional regression approaches when dealing with clustered data. They're especially useful for repeated measures designs, panel data, and any scenario where measurements are taken from the same subjects over time or under different conditions.\n\nExample:\nA mixed-effects model could be used to predict the progression of Alzheimer's disease by analyzing longitudinal MRI data, incorporating patient-specific factors and overall trends.",
+    "tags": ["machine-learning"],
+    "linkedTerms": []
+  },
+  "mechanistic-modeling": {
+    "id": "mechanistic-modeling",
+    "title": "Mechanistic Modeling",
+    "emoji": "🔬",
+    "definition": "An approach to modeling that incorporates known physical, chemical, or biological processes to explain phenomena, rather than relying solely on statistical patterns in data. Unlike purely data-driven approaches, mechanistic models are built on theoretical understanding of the underlying mechanisms that generate the observed data. These models attempt to represent causal relationships and system dynamics based on first principles.\n\nMechanistic models are particularly valuable in scientific domains where understanding the \"why\" and \"how\" is as important as prediction accuracy. They offer greater interpretability and can often extrapolate beyond the range of observed data more reliably than black-box statistical models. In machine learning, mechanistic approaches are increasingly being combined with data-driven methods to create hybrid models that benefit from both theoretical knowledge and empirical patterns, especially in fields like computational biology, climate science, and physics-informed neural networks.\n\nFlight Simulator:\nA flight simulator uses mathematical equations to recreate the experience of flying a plane, demonstrating a real-world application of a mechanistic model.\nChromatography Model:\nIn chromatography, mechanistic models consider physical and biochemical effects like convection, dispersion, and adsorption, based on natural laws\n\nA machine learning model (e.g., a neural network) can be trained to predict cell phenotypes (e.g., cell growth, cell death) based on the outputs of the mechanistic model, which include changes in protein localization, phosphorylation, and downstream effects",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning"
+    ]
+  },
+  "tensor-decomposition": {
+    "id": "tensor-decomposition",
+    "title": "Tensor Decomposition",
+    "emoji": "📊",
+    "definition": "A mathematical approach for breaking down multi-dimensional arrays (tensors) into simpler components, similar to how matrix factorization works for two-dimensional data. Tensor decompositions reveal underlying patterns and structures in complex multi-way data, making them powerful tools for dimensionality reduction, feature extraction, and latent factor discovery in unsupervised learning.\n\nTensor methods are particularly valuable for analyzing data with multiple aspects or modes (such as users-items-time in recommendation systems or subjects-features-time in neuroimaging), where traditional matrix methods would lose important multi-way relationships.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "unsupervised-learning"
+    ]
+  },
+  "tucker-decomposition": {
+    "id": "tucker-decomposition",
+    "title": "Tucker Decomposition",
+    "emoji": "🧩",
+    "definition": "A higher-order extension of principal component analysis (PCA) that decomposes a tensor into a core tensor multiplied by a matrix along each mode. Tucker decomposition provides a more flexible representation than other tensor methods, allowing different ranks for different dimensions.\n\nIn unsupervised learning, Tucker decomposition excels at subspace learning and dimensionality reduction for multi-way data, enabling applications like multi-aspect data mining, anomaly detection in network traffic, and feature extraction from multi-modal signals.",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "unsupervised-learning"
+    ]
+  },
+  "canonical-polyadic-(cp)-decomposition": {
+    "id": "canonical-polyadic-(cp)-decomposition",
+    "title": "Canonical Polyadic (CP) Decomposition",
+    "emoji": "🔄",
+    "definition": "Also known as CANDECOMP/PARAFAC decomposition, CP breaks down a tensor into a sum of rank-one tensors (outer products of vectors). This decomposition provides a highly interpretable representation where each component represents a distinct pattern or factor in the data.\n\nCP decomposition serves as a powerful unsupervised learning tool for discovering latent factors in multi-way data, with applications in chemometrics (analyzing chemical measurements), neuroscience (identifying functional networks), and recommendation systems (capturing user-item-context interactions).",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "unsupervised-learning"
+    ]
+  },
+  "generalized-cp-(gcp)-decomposition": {
+    "id": "generalized-cp-(gcp)-decomposition",
+    "title": "Generalized CP (GCP) Decomposition",
+    "emoji": "🌐",
+    "definition": "An extension of the standard CP decomposition that incorporates different loss functions and constraints to handle various data types (binary, count, continuous) and missing values. GCP provides more flexibility for modeling complex real-world data with non-Gaussian characteristics.\n\nIn unsupervised learning, GCP enables robust pattern discovery in heterogeneous multi-way data, supporting applications like topic modeling across document collections, community detection in dynamic networks, and analyzing sparse, noisy biological measurements across multiple experimental conditions.",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "unsupervised-learning",
+      "loss-function"
+    ]
+  },
+  "loss-function": {
+    "id": "loss-function",
+    "title": "Loss Function",
+    "emoji": "📊",
+    "definition": "A mathematical function that measures how far a model's predictions are from the actual target values, providing a quantifiable way to assess model performance during training. The loss function calculates the \"cost\" or \"error\" of the model's current state, with lower values indicating better performance. Different types of problems require different loss functions: mean squared error for regression tasks, cross-entropy for classification, and specialized losses for tasks like object detection or generative modeling.\n\nThe choice of loss function is crucial as it directly influences how the model learns through gradient descent optimization. During training, the algorithm adjusts model parameters to minimize the loss function, effectively teaching the model to make better predictions. Common examples include mean absolute error (L1 loss), mean squared error (L2 loss), binary cross-entropy, categorical cross-entropy, and Huber loss. Modern deep learning often employs custom loss functions tailored to specific tasks, such as focal loss for handling class imbalance or perceptual loss for image generation tasks.",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "deep-learning",
+      "gradient-descent"
+    ]
+  },
+  "lasso-regression": {
+    "id": "lasso-regression",
+    "title": "Lasso Regression",
+    "emoji": "📊",
+    "definition": "A linear regression technique that performs both variable selection and regularization to enhance prediction accuracy and interpretability. Lasso (Least Absolute Shrinkage and Selection Operator) adds an L1 penalty term to the cost function, which can shrink some coefficients exactly to zero, effectively removing less important features from the model. This feature selection capability makes Lasso particularly valuable for high-dimensional datasets where many features may be irrelevant or redundant.\n\nLasso Regression is widely used in fields like genomics (selecting relevant genetic markers), finance (identifying key economic indicators), and image processing (extracting important features while discarding noise).",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": []
+  },
+  "ridge-regression": {
+    "id": "ridge-regression",
+    "title": "Ridge Regression",
+    "emoji": "📈",
+    "definition": "A regularization technique that addresses multicollinearity in linear regression by adding an L2 penalty term to the cost function. Unlike Lasso, Ridge Regression shrinks coefficients toward zero but rarely sets them exactly to zero, keeping all features in the model while reducing their impact. This approach is particularly effective when dealing with highly correlated predictors, preventing the model from assigning excessive importance to any single variable.\n\nRidge Regression excels in scenarios where all features contribute to the outcome but need to be constrained to prevent overfitting, such as in economic forecasting, climate modeling, and biomedical research.",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "overfitting"
+    ]
+  },
+  "elastic-net": {
+    "id": "elastic-net",
+    "title": "Elastic Net",
+    "emoji": "🔀",
+    "definition": "A hybrid regression technique that combines the penalties of both Lasso and Ridge Regression, incorporating both L1 and L2 regularization terms. This balanced approach overcomes limitations of each method alone: it can select variables like Lasso while handling groups of correlated features better, similar to Ridge. The mixing parameter allows data scientists to tune the model between pure Lasso and pure Ridge behavior.\n\nElastic Net is particularly valuable for complex datasets with many correlated features, such as in genomics (where groups of genes may work together), neuroimaging (where brain regions have correlated activities), and recommendation systems (where user preferences show complex patterns).",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "ridge-regression"
+    ]
+  },
+  "pearson-correlation-coefficient": {
+    "id": "pearson-correlation-coefficient",
+    "title": "Pearson Correlation Coefficient",
+    "emoji": "📊",
+    "definition": "The Pearson Correlation Coefficient (PCC) is a statistical measure that quantifies the linear relationship between two continuous variables. It produces a value ranging from -1 to +1, where +1 indicates a perfect positive linear relationship, -1 indicates a perfect negative linear relationship, and 0 indicates no linear relationship between the variables.\n\nMathematically, it is calculated as the ratio between the covariance of two variables and the product of their standard deviations, making it a normalized measurement of covariance. The formula is often expressed as:\n\n$$\nr = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^{n} (x_i - \\bar{x})^2 \\sum_{i=1}^{n} (y_i - \\bar{y})^2}}\n$$\n\nIn machine learning, the Pearson correlation coefficient serves several critical functions:\n\n1. **Feature Selection**: It helps identify which features have strong relationships with the target variable, allowing data scientists to select the most relevant features for model training.\n\n2. **Multicollinearity Detection**: It identifies highly correlated input features that might cause instability in models like linear regression.\n\n3. **Dimensionality Reduction**: Understanding correlation patterns helps in techniques like Principal Component Analysis (PCA) to reduce the number of features while preserving information.\n\n4. **Data Exploration**: It provides insights into relationships within the data, guiding further analysis and model selection.\n\nThe interpretation of correlation strength varies by field, but generally:\n- Values between ±0.1 and ±0.3 indicate weak correlation\n- Values between ±0.3 and ±0.5 indicate moderate correlation\n- Values between ±0.5 and ±1.0 indicate strong correlation\n\nIt's important to note that Pearson correlation only captures linear relationships and is sensitive to outliers. For non-linear relationships or when dealing with ordinal data, alternative measures like Spearman's rank correlation coefficient may be more appropriate.\n\nIn practical machine learning applications, Pearson correlation is used in genomics to identify relationships between genes, in financial modeling to analyze market dependencies, and in recommendation systems to measure similarities between user preferences or items.\n\n**Simple Examples:**\n\n1. **Strong Positive Correlation (r ≈ 0.9)**: Height and weight in a population. As height increases, weight tends to increase proportionally.\n\n2. **Moderate Positive Correlation (r ≈ 0.4)**: Study hours and test scores. More study time generally leads to better scores, but other factors also influence performance.\n\n3. **No Correlation (r ≈ 0)**: Shoe size and intelligence. These variables have no meaningful linear relationship.\n\n4. **Moderate Negative Correlation (r ≈ -0.4)**: Age of a car and its resale value. Older cars typically have lower resale values, though condition and other factors matter.\n\n5. **Strong Negative Correlation (r ≈ -0.8)**: Outdoor temperature and home heating usage. As temperature drops, heating usage increases substantially.",
+    "tags": ["math", "machine-learning"],
+    "linkedTerms": [
+      "machine-learning"
+    ]
+  },
+  "autograd": {
+    "id": "autograd",
+    "title": "Autograd",
+    "emoji": "🔧",
+    "definition": "Automatic differentiation (autograd) is a computational technique that automatically calculates derivatives of functions defined by computer programs. Unlike symbolic differentiation (which manipulates mathematical expressions) or numerical differentiation (which approximates derivatives using finite differences), autograd computes exact derivatives efficiently by applying the chain rule systematically during program execution.\n\nIn machine learning, autograd is fundamental to training neural networks through gradient-based optimization. It enables frameworks like PyTorch, TensorFlow, and JAX to automatically compute gradients of loss functions with respect to model parameters, eliminating the need for manual derivative calculations. This automation is crucial for deep learning, where models may have millions or billions of parameters.\n\nAutograd works by tracking operations performed on tensors and building a computational graph that records how outputs depend on inputs. During the backward pass, it traverses this graph in reverse order, applying the chain rule to compute gradients efficiently. This process, combined with backpropagation, enables the training of complex neural architectures that would be impractical to differentiate manually.\n\nModern autograd systems support both forward-mode and reverse-mode automatic differentiation, with reverse-mode (used in backpropagation) being particularly efficient for functions with many inputs and few outputs, which is typical in machine learning scenarios.\n\n**Simple Examples:**\n\n1. **Strong Positive Correlation (r ≈ 0.9)**: Height and weight in a population. As height increases, weight tends to increase proportionally.\n\n2. **Moderate Positive Correlation (r ≈ 0.4)**: Study hours and test scores. More study time generally leads to better scores, but other factors also influence performance.\n\n3. **No Correlation (r ≈ 0)**: Shoe size and intelligence. These variables have no meaningful linear relationship.\n\n4. **Moderate Negative Correlation (r ≈ -0.4)**: Age of a car and its resale value. Older cars typically have lower resale values, though condition and other factors matter.\n\n5. **Strong Negative Correlation (r ≈ -0.8)**: Outdoor temperature and home heating usage. As temperature drops, heating usage increases substantially.",
+    "tags": ["math", "machine-learning", "computer science"],
+    "linkedTerms": [
+      "backpropagation",
+      "chain-rule",
+      "neural-network",
+      "machine-learning",
+      "deep-learning",
+      "loss-function"
+    ]
+  },
+  "epochs": {
+    "id": "epochs",
+    "title": "Epochs",
     "emoji": "🧬",
-    "definition": "The process of determining the precise order of nucleotides within a DNA molecule. Modern sequencing often uses machine learning algorithms for base calling and quality assessment.",
-    "tags": ["bioinformatics"],
-    "linkedTerms": ["base-calling"]
+    "definition": "In machine learning and neural networks, an epoch refers to one complete pass through the entire training dataset during the training process. During each epoch, the model sees every training example once and updates its parameters accordingly. Multiple epochs are typically required to train a model effectively, with the number of epochs being a hyperparameter that affects model performance and training time.",
+    "tags": ["machine-learning"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning"
+    ]
   },
-  "base-calling": {
-    "id": "base-calling",
-    "title": "Base Calling",
-    "emoji": "📞",
-    "definition": "The process of determining the identity of nucleotide bases from raw sequencing data. Modern base calling algorithms often employ neural networks and other machine learning techniques to improve accuracy.",
-    "tags": ["bioinformatics", "machine-learning"],
-    "linkedTerms": ["dna-sequencing", "neural-network"]
+  "rna-seq-(rna-sequencing)": {
+    "id": "rna-seq-(rna-sequencing)",
+    "title": "RNA-seq (RNA sequencing)",
+    "emoji": "🧬",
+    "definition": "• Purpose: Measures gene expression — tells you which genes are being transcribed into RNA, and how much.\n\n• Data type: Sequencing reads aligned to genes/transcripts.\n\n• Used for: Identifying differentially expressed genes between conditions (e.g., normal vs. cancer cells).",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": []
+  },
+  "atac-seq-(assay-for-transposase-accessible-chromatin-using-sequencing)": {
+    "id": "atac-seq-(assay-for-transposase-accessible-chromatin-using-sequencing)",
+    "title": "ATAC-seq (Assay for Transposase-Accessible Chromatin using sequencing)",
+    "emoji": "🧪",
+    "definition": "• Purpose: Identifies open or accessible regions of chromatin — places where DNA is not tightly wrapped around histones and is more likely to be active.\n\n• Data type: Peaks indicating open chromatin regions.\n\n• Used for: Inferring regulatory regions like enhancers, promoters, and transcription factor binding sites.",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": []
+  },
+  "chip-seq-(chromatin-immunoprecipitation-sequencing)": {
+    "id": "chip-seq-(chromatin-immunoprecipitation-sequencing)",
+    "title": "ChIP-seq (Chromatin Immunoprecipitation Sequencing)",
+    "emoji": "🔬",
+    "definition": "• Purpose: Maps protein-DNA interactions, such as where transcription factors or modified histones bind DNA.\n\n• Data type: Enrichment peaks showing binding locations.\n\n• Used for: Studying gene regulation, histone modifications, and epigenetic changes.",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": []
+  },
+  "hi-c-(chromosome-conformation-capture-+-sequencing)": {
+    "id": "hi-c-(chromosome-conformation-capture-+-sequencing)",
+    "title": "Hi-C (Chromosome Conformation Capture + Sequencing)",
+    "emoji": "🧩",
+    "definition": "• Purpose: Reveals 3D organization of the genome by capturing DNA-DNA interactions across long distances.\n\n• Data type: Contact maps showing spatial proximity between regions of the genome.\n\n• Used for: Studying chromatin loops, compartments, and topologically associating domains (TADs).\n\n| Method     | Focus                          | Insight Gained                                  |\n|------------|--------------------------------|-------------------------------------------------|\n| RNA-seq    | Transcribed RNA                | Which genes are active and how much             |\n| ATAC-seq   | Open chromatin                 | Where DNA is accessible and likely regulatory   |\n| ChIP-seq   | Protein-DNA binding            | Where transcription factors or histones bind    |\n| Hi-C       | 3D genome architecture         | How DNA is folded and organized in the nucleus  |",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": []
+  },
+  "similarity-network-fusion-(snf)": {
+    "id": "similarity-network-fusion-(snf)",
+    "title": "Similarity Network Fusion (SNF)",
+    "emoji": "🔗",
+    "definition": "• Definition: A computational method that integrates multiple data types to create a unified patient similarity network, enabling more comprehensive analysis than single-data approaches.\n\n• Algorithm principles:\n  - Constructs similarity networks for each data type separately\n  - Iteratively updates each network by fusing information from other networks\n  - Converges to a single integrated network that captures complementary information across data types\n  - Uses spectral clustering for patient stratification and subtype identification\n\n• Applications in multi-omics integration:\n  - Cancer subtyping: Identifying disease subtypes by integrating genomic, transcriptomic, and clinical data\n  - Biomarker discovery: Finding robust biomarkers across multiple data platforms\n  - Patient stratification: Grouping patients with similar molecular profiles across different data types\n  - Drug response prediction: Integrating molecular and pharmacological data to predict treatment outcomes\n\n• Advantages over single-data analysis:\n  - Increased statistical power through data integration\n  - Robustness to noise in individual data types\n  - Ability to capture complementary information across heterogeneous data\n  - Improved prediction accuracy for clinical outcomes\n\n• Implementation considerations:\n  - Parameter selection (number of neighbors, fusion iterations)\n  - Data normalization across different platforms\n  - Computational efficiency for large datasets\n  - Visualization of integrated networks",
+    "tags": ["machine-learning", "computer science"],
+    "linkedTerms": []
+  },
+  "baf-and-pbaf-complexes": {
+    "id": "baf-and-pbaf-complexes",
+    "title": "BAF and PBAF Complexes",
+    "emoji": "🧮",
+    "definition": "• Definition: ATP-dependent chromatin remodeling complexes that alter nucleosome positioning to regulate DNA accessibility and gene expression.\n\n• Composition: Both are variants of the SWI/SNF (SWItch/Sucrose Non-Fermentable) complex family with:\n  - Shared core subunits: BRG1/BRM (ATPase), BAF155, BAF170, BAF60\n  - Distinctive subunits: PBAF contains PBRM1, BAF200, and BRD7; BAF contains BAF250A/B (ARID1A/B)\n\n• Function:\n  - Nucleosome repositioning and ejection to control DNA accessibility\n  - Transcriptional regulation through interaction with transcription factors\n  - Chromatin boundary establishment and maintenance\n  - Cell lineage determination and differentiation\n\n• Disease associations:\n  - Cancer: Mutations in BAF/PBAF subunits occur in ~20% of human cancers\n  - Neurodevelopmental disorders: Mutations linked to autism, intellectual disability\n  - Coffin-Siris and Nicolaides-Baraitser syndromes: Caused by mutations in BAF complex genes\n\n• Therapeutic relevance: Emerging targets for cancer therapy through synthetic lethality approaches and epigenetic modulation.",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "chromatin-remodeling"
+    ]
+  },
+  "transcription-factor-(tf)-networks": {
+    "id": "transcription-factor-(tf)-networks",
+    "title": "Transcription Factor (TF) Networks",
+    "emoji": "🧬",
+    "definition": "• Purpose: Regulatory systems composed of transcription factors that control gene expression by binding to specific DNA sequences.\n\n• Structure: Complex networks where TFs interact with DNA and with each other to form regulatory circuits that determine when and where genes are expressed.\n\n• Key components:\n  - Transcription factors: Proteins that bind to specific DNA sequences to control gene transcription\n  - Binding motifs: Short DNA sequences recognized by specific TFs\n  - Network motifs: Recurring patterns in regulatory networks (e.g., feed-forward loops, feedback loops)\n  - Hierarchical organization: Master regulators controlling other TFs, creating regulatory cascades\n\n• Biological significance: TF networks orchestrate critical processes including cell differentiation, development, and response to environmental signals.\n\n• Applications in bioinformatics:\n  - Network inference: Computational methods to reconstruct TF networks from genomic data\n  - Motif discovery: Identifying DNA sequences bound by TFs\n  - Network analysis: Understanding regulatory relationships and predicting cellular responses\n  - Disease research: Identifying dysregulated TF networks in conditions like cancer and developmental disorders",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "chromatin-remodeling": {
+    "id": "chromatin-remodeling",
+    "title": "Chromatin Remodeling",
+    "emoji": "🧪",
+    "definition": "• Definition: The dynamic process by which specialized protein complexes alter chromatin structure to regulate DNA accessibility for transcription, replication, repair, and recombination.\n\n• Mechanisms:\n  - Nucleosome sliding (moving histone proteins): Repositioning nucleosomes along DNA without disrupting histone-DNA contacts\n  - Histone eviction/replacement: Removing or exchanging histones to alter chromatin composition\n  - Histone modification: Adding or removing chemical groups that affect chromatin compaction\n  - ATP-dependent remodeling: Using energy from ATP hydrolysis to physically restructure chromatin\n\n![Chromatin Structure showing nucleosomes, histones, and the difference between heterochromatin and euchromatin](/img/dna_packaging.jpg)\n\n• Major remodeling complex families:\n  - SWI/SNF family (BAF/PBAF): Nucleosome sliding and ejection\n  - ISWI family: Nucleosome spacing and assembly\n  - CHD family: Nucleosome sliding and histone deacetylation\n  - INO80/SWR1 family: Histone variant exchange (H2A.Z incorporation)\n\n• Biological roles:\n  - Transcriptional regulation: Controlling gene expression by modulating promoter accessibility\n  - DNA replication: Ensuring replication machinery access to DNA\n  - DNA repair: Facilitating repair protein access to damaged DNA\n  - Development: Orchestrating cell fate decisions and differentiation\n\n• Clinical significance:\n  - Cancer: Mutations in chromatin remodelers are frequent in many cancer types\n  - Developmental disorders: Associated with intellectual disability and congenital abnormalities\n  - Aging: Dysregulation of chromatin remodeling contributes to aging phenotypes\n  - Therapeutic targeting: Emerging strategies for modulating chromatin remodeling in disease",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "dalton-(da)": {
+    "id": "dalton-(da)",
+    "title": "Dalton (Da)",
+    "emoji": "⚖️",
+    "definition": "• Definition: A unit of mass used in biochemistry and molecular biology, equivalent to 1/12 the mass of a carbon-12 atom (approximately 1.66 × 10^-24 grams).\n\n• Equivalence: Identical to the atomic mass unit (amu), but preferred in biochemical contexts.\n\n• Applications:\n  - Measuring molecular weights of proteins, nucleic acids, and other biomolecules\n  - Expressing the size of macromolecules (e.g., a 50 kDa protein)\n  - Determining mass shifts in mass spectrometry\n  - Calculating stoichiometry in biochemical reactions\n\n• Context in bioinformatics:\n  - Protein analysis: Used to estimate protein size from amino acid sequence\n  - Mass spectrometry: Critical unit for peptide and protein identification\n  - Structural biology: Important parameter in determining molecular dimensions\n  - Proteomics: Used in database searching algorithms for protein identification\n\n• Historical note: Named after John Dalton, who proposed atomic theory in the early 19th century.",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "pluripotency": {
+    "id": "pluripotency",
+    "title": "Pluripotency",
+    "emoji": "🔄",
+    "definition": "• Definition: The ability of stem cells to differentiate into any cell type derived from the three germ layers (endoderm, mesoderm, and ectoderm) that form during embryonic development.\n\n• Types of pluripotent cells:\n  - Embryonic stem cells (ESCs): Derived from the inner cell mass of blastocysts\n  - Induced pluripotent stem cells (iPSCs): Somatic cells reprogrammed to a pluripotent state\n  - Embryonic germ cells: Derived from primordial germ cells\n  - Embryonal carcinoma cells: Derived from teratocarcinomas\n\n• Molecular mechanisms:\n  - Core transcription factor network: OCT4, SOX2, and NANOG maintain the pluripotent state\n  - Epigenetic regulation: DNA methylation, histone modifications, and chromatin remodeling\n  - Signaling pathways: LIF/STAT3, Wnt/β-catenin, TGF-β/Activin/Nodal, and FGF pathways\n  - MicroRNAs: Regulation of gene expression at the post-transcriptional level\n\n• Applications in research:\n  - Disease modeling: Creating patient-specific cell lines to study disease mechanisms\n  - Drug discovery and toxicity testing: Screening compounds on relevant human cell types\n  - Developmental biology: Understanding cellular differentiation and embryonic development\n  - Regenerative medicine: Source for cell replacement therapies\n\n• Clinical relevance:\n  - Regenerative medicine: Potential treatments for degenerative diseases and injuries\n  - Cancer biology: Understanding similarities between pluripotency and oncogenic transformation\n  - Aging research: Insights into cellular rejuvenation and senescence\n  - Ethical considerations: Debates surrounding embryonic stem cell research and therapeutic cloning",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "chromatin-remodeling"
+    ]
+  },
+  "dimers": {
+    "id": "dimers",
+    "title": "Dimers",
+    "emoji": "🔄",
+    "definition": "• Definition: Molecular structures formed by the combination of two identical or similar subunits (monomers) that are joined by chemical bonds.\n\n• Types of dimers:\n  - Homodimers: Composed of two identical molecular subunits\n  - Heterodimers: Formed from two different molecular subunits\n  - Protein dimers: Two protein subunits bound together (e.g., transcription factor dimers)\n  - Nucleic acid dimers: Paired DNA or RNA structures (e.g., thymine dimers in DNA)\n\n• Formation mechanisms:\n  - Covalent bonding: Strong chemical bonds between monomers\n  - Non-covalent interactions: Hydrogen bonds, hydrophobic interactions, van der Waals forces\n  - Disulfide bridges: Covalent bonds between cysteine residues in proteins\n  - π-stacking: Interactions between aromatic rings\n\n• Biological significance:\n  - Protein function: Many proteins are only functional as dimers\n  - DNA damage: Thymine dimers caused by UV radiation can lead to mutations\n  - Enzyme regulation: Dimerization can activate or inhibit enzymatic activity\n  - Signal transduction: Receptor dimerization often initiates signaling cascades\n\n• Applications in bioinformatics:\n  - Protein structure prediction: Identifying potential dimerization interfaces\n  - Drug design: Targeting protein-protein interactions at dimer interfaces\n  - Sequence analysis: Detecting dimerization motifs in protein sequences\n  - Molecular dynamics: Simulating dimer formation and stability",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "chirality": {
+    "id": "chirality",
+    "title": "Chirality",
+    "emoji": "🔄",
+    "definition": "• Definition: The geometric property where a molecule cannot be superimposed on its mirror image, similar to how left and right hands are non-superimposable mirror images of each other.\n\n• Key concepts:\n  - Chiral center: Typically a carbon atom bonded to four different groups\n  - Enantiomers: Mirror-image forms of a chiral molecule\n  - Optical activity: Chiral molecules rotate plane-polarized light\n  - Racemic mixture: Equal mixture of both enantiomers\n\n• Biological importance:\n  - Enzyme specificity: Most enzymes interact with only one enantiomer of a substrate\n  - Drug efficacy and safety: Different enantiomers can have dramatically different biological effects\n  - Protein structure: All natural amino acids (except glycine) are chiral\n  - Nucleic acid structure: The sugar component in DNA and RNA is chiral\n\n• Nomenclature systems:\n  - R/S system: Based on Cahn-Ingold-Prelog priority rules\n  - D/L system: Based on the configuration of glyceraldehyde\n  - (+)/(-) system: Based on the direction of rotation of plane-polarized light\n\n• Applications in bioinformatics and computational chemistry:\n  - Molecular modeling: Accurate representation of 3D molecular structures\n  - Drug discovery: Virtual screening of specific enantiomers\n  - Protein-ligand interactions: Predicting binding affinities of chiral molecules\n  - Cheminformatics: Algorithms for detecting and representing chirality",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "stereoisomers": {
+    "id": "stereoisomers",
+    "title": "Stereoisomers",
+    "emoji": "🔄",
+    "definition": "• Definition: Isomers that have the same molecular formula and sequence of bonded atoms but differ in the three-dimensional orientation of their atoms in space.\n\n• Major types:\n  - Enantiomers: Mirror-image stereoisomers that are non-superimposable\n  - Diastereomers: Non-mirror-image stereoisomers\n  - Conformational isomers: Stereoisomers that can interconvert by rotation around single bonds\n  - Geometric isomers (cis-trans): Differ in the arrangement of groups around a double bond or ring\n\n• Biological significance:\n  - Molecular recognition: Biological systems can distinguish between stereoisomers\n  - Pharmacology: Different stereoisomers can have different pharmacological properties\n  - Metabolism: Enzymes often process only specific stereoisomers\n  - Structural biology: Protein folding and nucleic acid structure depend on specific stereochemistry\n\n• Analytical methods:\n  - X-ray crystallography: Determining absolute configuration",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "zinc-fingers": {
+    "id": "zinc-fingers",
+    "title": "Zinc Fingers",
+    "emoji": "🧬",
+    "definition": "• Definition: Protein structural motifs that coordinate one or more zinc ions to stabilize their fold and facilitate interactions with other molecules, particularly DNA, RNA, or proteins.\n\n• Structure and classification:\n  - Classical C2H2 zinc fingers: Contain two cysteines and two histidines that coordinate a zinc ion\n  - C4 zinc fingers: Four cysteine residues coordinate the zinc ion (e.g., nuclear hormone receptors)\n  - C3H zinc fingers: Three cysteines and one histidine coordinate the zinc ion\n  - RING finger domains: Cross-brace arrangement of cysteines and histidines coordinating two zinc ions\n\n• Biological functions:\n  - Transcription regulation: Binding to specific DNA sequences to control gene expression\n  - RNA binding: Recognizing specific RNA structures or sequences\n  - Protein-protein interactions: Mediating interactions between proteins in cellular processes\n  - Chromatin remodeling: Contributing to changes in chromatin structure and accessibility\n\n• Applications in biotechnology:\n  - Zinc finger nucleases (ZFNs): Engineered proteins combining zinc finger domains with nuclease activity for genome editing\n  - Artificial transcription factors: Custom-designed zinc fingers fused to regulatory domains\n  - Protein engineering: Creating novel binding specificities for research and therapeutic applications\n  - Diagnostic tools: Zinc finger-based probes for detecting specific nucleic acid sequences\n\n• Clinical relevance:\n  - Cancer biology: Mutations in zinc finger proteins associated with various cancers\n  - Developmental disorders: Defects in zinc finger proteins linked to congenital abnormalities\n  - Therapeutic targets: Potential for targeting disease-associated zinc finger proteins\n  - Gene therapy: ZFN-based approaches for correcting genetic mutations\n  - Circular dichroism: Measuring optical activity\n  - NMR spectroscopy: Distinguishing stereoisomers based on chemical environment\n  - Computational methods: Predicting and analyzing stereochemical properties\n\n• Applications in bioinformatics:\n  - Molecular docking: Accounting for stereochemistry in protein-ligand interactions\n  - Structure-based drug design: Optimizing stereochemistry for target binding\n  - Conformational analysis: Predicting energetically favorable stereoisomers\n  - Cheminformatics: Representing and searching stereochemical information in databases\n\n![Zinc finger protein structure showing DNA binding domain](/img/zinc_finger.png)",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "stereoisomers",
+      "chromatin-remodeling"
+    ]
+  },
+  "at-hooks": {
+    "id": "at-hooks",
+    "title": "AT-hooks",
+    "emoji": "🧬",
+    "definition": "• Definition: Small DNA-binding motifs that recognize and bind to the minor groove of AT-rich DNA sequences.\n\n• Structure:\n  - Characterized by a conserved core sequence of Arg-Gly-Arg-Pro (RGRP)\n  - Typically flanked by positively charged amino acids (lysine or arginine)\n  - Intrinsically disordered regions that adopt a defined structure upon DNA binding\n  - Often present in multiple copies within a single protein\n\n• Biological functions:\n  - Chromatin architecture: Contributing to higher-order chromatin structure organization\n  - Transcriptional regulation: Modulating gene expression by altering DNA accessibility\n  - Enhancer binding: Recognizing AT-rich enhancer elements\n  - Protein-protein interactions: Serving as platforms for recruiting other regulatory proteins\n\n• Notable AT-hook containing proteins:\n  - HMGA family (High Mobility Group A): Non-histone chromosomal proteins involved in gene regulation\n  - PRC1 complex components: Involved in Polycomb-mediated gene silencing\n  - Various transcription factors: Including SOX2, OCT4, and other developmental regulators\n\n• Clinical relevance:\n  - Cancer: Aberrant expression of AT-hook proteins (especially HMGA) in various tumors\n  - Developmental disorders: Mutations in AT-hook proteins linked to growth abnormalities\n  - Potential therapeutic targets: Emerging strategies targeting AT-hook/DNA interactions",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "chromodomains-and-bromodomains": {
+    "id": "chromodomains-and-bromodomains",
+    "title": "Chromodomains and Bromodomains",
+    "emoji": "🔍",
+    "definition": "• Definition: Specialized protein domains that recognize specific histone modifications and mediate chromatin-based processes.\n\n• Chromodomains:\n  - Structure: ~60 amino acid modules that fold into a three-stranded anti-parallel β-sheet and an α-helix\n  - Recognition specificity: Primarily bind to methylated lysine residues on histone tails\n  - Key interactions: Form an aromatic cage that accommodates the methylated lysine\n  - Notable examples: HP1 (binds H3K9me3), Polycomb proteins (bind H3K27me3), CHD family proteins\n\n• Bromodomains:\n  - Structure: ~110 amino acid modules consisting of four α-helices forming a hydrophobic pocket\n  - Recognition specificity: Recognize and bind to acetylated lysine residues on histone tails\n  - Key interactions: Hydrogen bonding and hydrophobic interactions with the acetyl-lysine\n  - Notable examples: BRD family proteins, TAF1, PCAF, BRG1/BRM (in SWI/SNF complexes)\n\n• Biological functions:\n  - Epigenetic regulation: Translating histone modifications into functional outcomes\n  - Transcriptional control: Recruiting transcriptional machinery to specific chromatin regions\n  - Chromatin remodeling: Directing remodeling complexes to appropriate genomic locations\n  - DNA repair: Facilitating access of repair machinery to damaged DNA\n\n• Applications in research and medicine:\n  - Epigenetic inhibitors: Bromodomain inhibitors (BETi) as emerging cancer therapeutics\n  - Drug discovery: Structure-based design of small molecules targeting these domains\n  - Biomarkers: Expression patterns as diagnostic or prognostic indicators\n  - Synthetic biology: Engineered chromatin readers for targeted gene regulation",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "chromatin-remodeling"
+    ]
+  },
+  "cis-dna-regulatory-elements": {
+    "id": "cis-dna-regulatory-elements",
+    "title": "Cis DNA Regulatory Elements",
+    "emoji": "🧬",
+    "definition": "• Definition: Non-coding DNA sequences that control the transcription of nearby genes on the same chromosome by serving as binding sites for transcription factors and other regulatory proteins.\n\n• Major types:\n  - Promoters: Core sequences located near transcription start sites that direct RNA polymerase binding and initiation\n  - Enhancers: Distal elements that increase transcription rates, often in a tissue-specific manner\n  - Silencers: Sequences that repress gene expression by binding negative regulatory factors\n  - Insulators: Boundary elements that block enhancer-promoter interactions or prevent heterochromatin spreading\n  - Response elements: Specific sequences that respond to environmental signals or cellular states\n\n• Structural and functional characteristics:\n  - Contain specific DNA motifs recognized by transcription factors\n  - Can function over variable distances from target genes\n  - Often exhibit evolutionary conservation across species\n  - Frequently organized into clusters called cis-regulatory modules (CRMs)\n  - Can be tissue-specific, developmental stage-specific, or condition-responsive\n\n• Identification methods:\n  - Comparative genomics: Identifying conserved non-coding sequences\n  - ChIP-seq: Mapping transcription factor binding sites genome-wide\n  - ATAC-seq: Identifying regions of open chromatin\n  - Reporter assays: Testing regulatory activity of candidate sequences\n  - Massively parallel reporter assays (MPRAs): High-throughput functional screening\n\n• Biological significance:\n  - Orchestrate spatiotemporal gene expression patterns during development\n  - Mediate cellular responses to environmental stimuli\n  - Contribute to cell type-specific gene expression profiles\n  - Form the physical basis for gene regulatory networks\n\n• Clinical and evolutionary relevance:\n  - Mutations in regulatory elements contribute to human disease\n  - Regulatory variation drives phenotypic diversity within and between species\n  - Therapeutic targeting of transcription factor-DNA interactions\n  - Synthetic biology applications in designing artificial gene circuits",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "paralogs": {
+    "id": "paralogs",
+    "title": "Paralogs",
+    "emoji": "🧬",
+    "definition": "• Definition: Genes within the same organism that arose from gene duplication events and have subsequently diverged in function.\n\n• Key characteristics:\n  - Share sequence similarity due to common ancestry\n  - Often develop distinct but related functions (subfunctionalization or neofunctionalization)\n  - May exhibit different expression patterns across tissues or developmental stages\n  - Can have varying degrees of sequence conservation depending on duplication age\n\n• Evolutionary mechanisms:\n  - Whole genome duplication (polyploidization)\n  - Segmental duplication of chromosomal regions\n  - Tandem duplication of individual genes\n  - Retrotransposition (RNA-mediated duplication)\n\n• Biological significance:\n  - Source of genetic redundancy providing robustness to mutations\n  - Platform for evolutionary innovation through functional divergence\n  - Contribute to species-specific adaptations and phenotypic diversity\n  - Allow specialization of protein functions for different cellular contexts\n\n• Examples in humans:\n  - Hemoglobin subunits (α, β, γ, δ)\n  - Myosin heavy chain isoforms\n  - Hox gene clusters\n  - Olfactory receptor gene family\n\n• Applications in bioinformatics:\n  - Phylogenetic analysis to determine duplication timing\n  - Functional prediction of uncharacterized genes\n  - Identification of lineage-specific gene expansions\n  - Drug target discovery and specificity assessment",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "isoforms"
+    ]
+  },
+  "orthologs": {
+    "id": "orthologs",
+    "title": "Orthologs",
+    "emoji": "🧬",
+    "definition": "• Definition: Genes in different species that evolved from a common ancestral gene following a speciation event.\n\n• Key characteristics:\n  - Typically maintain similar functions across species\n  - Sequence similarity reflects evolutionary distance between species\n  - Usually present as single copies in each genome (except after lineage-specific duplications)\n  - Conserved genomic context (synteny) in closely related species\n  - Often used as evolutionary markers for phylogenetic studies\n\n• Evolutionary significance:\n  - Enable comparative genomic studies across species\n  - Provide insights into gene function conservation and divergence\n  - Allow reconstruction of species phylogenies\n  - Help identify core genes essential for life\n\n• Identification methods:\n  - Sequence similarity: BLAST, HMMER, and other alignment tools\n  - Phylogenetic analysis: Tree-based methods to distinguish orthologs from paralogs\n  - Synteny analysis: Examining conservation of gene order and chromosomal context\n  - Reciprocal best hits (RBH): Identifying mutual best matches between genomes\n\n• Applications in bioinformatics:\n  - Functional annotation: Transferring knowledge from well-studied to newly sequenced organisms\n  - Comparative genomics: Understanding genome evolution and species relationships\n  - Identification of conserved regulatory elements\n  - Drug target discovery across model organisms",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "paralogs"
+    ]
+  },
+  "deconvolution-analysis": {
+    "id": "deconvolution-analysis",
+    "title": "Deconvolution Analysis",
+    "emoji": "🔬",
+    "definition": "• Definition: Computational methods used to separate mixed biological signals from heterogeneous samples into their constituent components.\n\n• Applications:\n  - Cell type composition estimation from bulk tissue transcriptomics data\n  - Tumor microenvironment characterization from mixed tumor samples\n  - Immune cell profiling from complex tissue samples\n  - Epigenetic signal deconvolution from mixed cell populations\n\n• Key methodologies:\n  - Reference-based deconvolution: Uses known cell type-specific signatures as reference\n  - Reference-free deconvolution: Identifies cell types without prior knowledge using statistical approaches\n  - Semi-supervised approaches: Combines reference data with unsupervised learning\n  - Spatial deconvolution: Incorporates spatial information to resolve cellular heterogeneity\n\n• Algorithms and tools:\n  - CIBERSORT: Estimating immune cell fractions from gene expression profiles\n  - CellMix: R package for linear unmixing of heterogeneous tissue samples\n  - MuSiC: Multi-subject single cell deconvolution\n  - DSA (Digital Sorting Algorithm): Marker-free deconvolution for transcriptomics\n\n• Challenges and considerations:\n  - Reference dataset quality and comprehensiveness\n  - Assumption of linear mixing in most algorithms\n  - Handling of technical and biological noise\n  - Validation of deconvolution results with orthogonal methods",
+    "tags": ["machine-learning", "bioinformatics"],
+    "linkedTerms": [
+      "unsupervised-learning"
+    ]
+  },
+  "mosaicism-detection": {
+    "id": "mosaicism-detection",
+    "title": "Mosaicism Detection",
+    "emoji": "🧩",
+    "definition": "• Definition: Identification of genetic variations present in only a subset of cells within an individual, resulting from post-zygotic mutations during development.\n\n• Types of mosaicism:\n  - Somatic mosaicism: Mutations present in somatic cells but not germline\n  - Gonadal mosaicism: Mutations present in germ cells that can be transmitted to offspring\n  - Chromosomal mosaicism: Presence of cells with different chromosomal compositions\n  - Mitochondrial heteroplasmy: Varying proportions of mutant mitochondrial DNA\n\n• Detection methods:\n  - Deep sequencing: High-depth targeted sequencing to detect low-frequency variants\n  - Single-cell sequencing: Analyzing genetic material from individual cells\n  - Digital PCR: Highly sensitive detection of rare variants\n  - SNP arrays: Detection of mosaic copy number variations and loss of heterozygosity\n\n• Bioinformatic challenges:\n  - Distinguishing true mosaic variants from sequencing errors\n  - Determining variant allele frequency thresholds\n  - Computational efficiency for large-scale analyses\n  - Integration of multiple data types for comprehensive detection\n\n• Clinical significance:\n  - Cancer: Tumor heterogeneity and clonal evolution\n  - Developmental disorders: Explaining variable phenotypes\n  - Aging: Accumulation of somatic mutations throughout life\n  - Precision medicine: Tailoring treatments based on subclonal genetic profiles",
+    "tags": ["biology", "bioinformatics"],
+    "linkedTerms": [
+      "somatic-mutations"
+    ]
+  },
+  "hla-imputation": {
+    "id": "hla-imputation",
+    "title": "HLA Imputation",
+    "emoji": "🧬",
+    "definition": "• Definition: Computational methods to predict human leukocyte antigen (HLA) genotypes from SNP data or low-coverage sequencing, leveraging linkage disequilibrium patterns.\n\n• Importance of HLA:\n  - Critical role in immune response and self/non-self recognition\n  - Highly polymorphic gene family with thousands of alleles\n  - Strong association with autoimmune diseases, transplant outcomes, and drug hypersensitivity\n  - Relevant for vaccine development and immunotherapy response prediction\n\n• Imputation approaches:\n  - Statistical methods: Using reference panels and linkage disequilibrium patterns\n  - Machine learning: Neural networks and other ML approaches for HLA type prediction\n  - Graph-based methods: Leveraging haplotype structures and population-specific patterns\n  - Hybrid approaches: Combining multiple methods for improved accuracy\n\n• Tools and resources:\n  - SNP2HLA: Imputes classical HLA alleles and amino acid polymorphisms\n  - HIBAG: HLA genotype imputation with attribute bagging\n  - HLA*IMP: Statistical HLA imputation using reference panels\n  - T1DGC and 1000 Genomes reference panels: Population-specific HLA haplotype references\n\n• Applications:\n  - GWAS: Fine-mapping of disease associations in the HLA region\n  - Pharmacogenomics: Predicting adverse drug reactions\n  - Transplantation medicine: Virtual crossmatching and donor selection\n  - Population genetics: Studying HLA diversity across human populations",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning"
+    ]
+  },
+  "isoforms": {
+    "id": "isoforms",
+    "title": "Isoforms",
+    "emoji": "🧬",
+    "definition": "• Definition: Different forms of a protein that arise from the same gene through alternative splicing, alternative promoter usage, or alternative polyadenylation.\n\n• Generation mechanisms:\n  - Alternative splicing: Inclusion or exclusion of specific exons\n  - Alternative promoter usage: Transcription initiation from different start sites\n  - Alternative polyadenylation: Different 3' end processing of mRNA\n  - RNA editing: Post-transcriptional modification of nucleotides\n\n• Biological significance:\n  - Increases proteome diversity without expanding the genome\n  - Enables tissue-specific or developmental stage-specific protein functions\n  - Allows fine-tuning of protein activity, localization, or interaction partners\n  - Contributes to phenotypic complexity in higher organisms\n\n• Characteristics:\n  - Share some sequence regions but differ in others\n  - May have different functional domains, subcellular localization signals, or regulatory sites\n  - Often exhibit tissue-specific or condition-specific expression patterns\n  - Can have distinct or overlapping functions\n\n• Detection methods:\n  - RNA-seq with isoform-specific analysis\n  - Long-read sequencing (PacBio, Nanopore)\n  - Isoform-specific RT-PCR\n  - Mass spectrometry-based proteomics\n\n• Clinical relevance:\n  - Aberrant isoform expression associated with various diseases\n  - Cancer-specific isoforms as potential biomarkers or therapeutic targets\n  - Genetic variants affecting splicing linked to hereditary disorders\n  - Isoform-specific drug targeting strategies",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "fine-tuning",
+      "alternative-splicing"
+    ]
+  },
+  "alternative-splicing": {
+    "id": "alternative-splicing",
+    "title": "Alternative Splicing",
+    "emoji": "🧬",
+    "definition": "• Definition: A post-transcriptional process where different exons from a pre-mRNA are included in or excluded from the mature mRNA, generating multiple transcript variants from a single gene.\n\n• Major types:\n  - Exon skipping: Exclusion of an exon from the final transcript\n  - Mutually exclusive exons: Inclusion of one exon from a set of possible exons\n  - Alternative 5' splice sites: Use of different 5' splice junctions\n  - Alternative 3' splice sites: Use of different 3' splice junctions\n  - Intron retention: Inclusion of an intron in the mature transcript\n\n• Regulatory mechanisms:\n  - Cis-regulatory elements: Exonic/intronic splicing enhancers or silencers\n  - Trans-acting factors: SR proteins, hnRNPs, and other splicing regulators\n  - RNA secondary structure: Affects accessibility of splice sites\n  - Epigenetic marks: Histone modifications and DNA methylation\n  - Transcription rate: Kinetic coupling between transcription and splicing\n\n• Biological importance:\n  - Expands transcriptome and proteome diversity\n  - Enables tissue-specific and developmental stage-specific gene expression\n  - Contributes to evolutionary adaptation and species complexity\n  - Allows rapid cellular responses to environmental changes\n\n• Detection and analysis methods:\n  - RNA-seq with splice junction analysis\n  - Exon microarrays\n  - RT-PCR with isoform-specific primers\n  - Computational tools: MISO, rMATS, SUPPA, Whippet\n\n• Clinical significance:\n  - Splicing dysregulation in cancer and neurodegenerative diseases\n  - Mutations affecting splice sites cause ~15% of human genetic diseases\n  - Therapeutic approaches targeting splicing (antisense oligonucleotides, small molecules)\n  - Splicing patterns as diagnostic or prognostic biomarkers",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "isoforms"
+    ]
+  },
+  "gene-fusion-events": {
+    "id": "gene-fusion-events",
+    "title": "Gene Fusion Events",
+    "emoji": "🧬",
+    "definition": "• Definition: Hybrid genes formed by the joining of two previously separate genes, typically resulting from chromosomal rearrangements such as translocations, inversions, or deletions.\n\n• Formation mechanisms:\n  - Chromosomal translocations: Exchange of genetic material between non-homologous chromosomes\n  - Chromosomal inversions: Reversal of a DNA segment within a chromosome\n  - Tandem duplications: Duplication of a segment followed by fusion\n  - Transcription-mediated gene fusion: Read-through transcription between adjacent genes\n  - Trans-splicing: Joining of exons from separate pre-mRNA molecules\n\n• Structural characteristics:\n  - Breakpoint junctions: Points where the two genes are joined\n  - Fusion domains: Protein domains contributed by each partner gene\n  - Reading frame: Determines if the fusion produces a functional protein\n  - Regulatory elements: Promoters and enhancers that control fusion gene expression\n\n• Detection methods:\n  - RNA-seq with fusion-detection algorithms (STAR-Fusion, FusionCatcher)\n  - Whole genome sequencing to identify genomic breakpoints\n  - FISH (Fluorescence In Situ Hybridization) for known fusions\n  - RT-PCR with fusion-specific primers\n  - Mass spectrometry for fusion protein detection\n\n• Biological and clinical significance:\n  - Oncogenic drivers in many cancer types (e.g., BCR-ABL in chronic myeloid leukemia)\n  - Diagnostic biomarkers for cancer classification\n  - Therapeutic targets for precision medicine approaches\n  - Evolutionary mechanism for new gene function\n  - Contribution to genetic diversity and adaptation\n\n• Notable examples:\n  - BCR-ABL1 in chronic myeloid leukemia (Phil Philadelphia chromosome)\n  - EML4-ALK in non-small cell lung cancer\n  - TMPRSS2-ERG in prostate cancer\n  - PML-RARA in acute promyelocytic leukemia\n  - SYT-SSX in synovial sarcoma",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "homologs": {
+    "id": "homologs",
+    "title": "Homologs",
+    "emoji": "🧬",
+    "definition": "• Definition: Genes that share a common evolutionary ancestry, regardless of whether they arose through speciation (orthologs) or duplication (paralogs).\n\n• Types of homology relationships:\n  - Orthologs: Genes separated by speciation\n  - Paralogs: Genes separated by duplication\n  - Xenologs: Genes acquired through horizontal gene transfer\n  - Ohnologs: Paralogs resulting from whole genome duplication\n\n• Detection methods:\n  - Sequence similarity searches (BLAST, HMMER)\n  - Protein domain architecture analysis\n  - 3D structural comparison\n  - Combined phylogenetic and genomic approaches\n\n• Degrees of homology:\n  - Complete homology: Similarity across entire sequence length\n  - Partial homology: Similarity in specific domains or regions\n  - Remote homology: Detectable only through sensitive methods or structural analysis\n\n• Applications in research:\n  - Inferring protein function and structure\n  - Reconstructing gene and genome evolution\n  - Understanding protein family expansion and contraction\n  - Identifying conserved functional sites",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "paralogs",
+      "orthologs",
+      "xenologs"
+    ]
+  },
+  "xenologs": {
+    "id": "xenologs",
+    "title": "Xenologs",
+    "emoji": "🧬",
+    "definition": "• Definition: Homologous genes acquired through horizontal gene transfer (HGT) between different species rather than through vertical inheritance.\n\n• Key characteristics:\n  - Phylogenetic incongruence with species tree\n  - Often have nucleotide composition or codon usage distinct from host genome\n  - May be flanked by mobile genetic elements\n  - Frequently confer novel adaptive functions\n\n• Common mechanisms of transfer:\n  - Transformation: Uptake of environmental DNA\n  - Conjugation: Direct cell-to-cell transfer\n  - Transduction: Virus-mediated transfer\n  - Endosymbiotic gene transfer: From organelles to nucleus\n\n• Prevalence across life:\n  - Common in prokaryotes (bacteria and archaea)\n  - Less frequent but significant in unicellular eukaryotes\n  - Rare but documented in multicellular eukaryotes\n  - Extensive in certain lineages (e.g., bdelloid rotifers)\n\n• Biological and evolutionary significance:\n  - Rapid acquisition of adaptive traits (e.g., antibiotic resistance)\n  - Metabolic innovation and niche expansion\n  - Acceleration of evolutionary change\n  - Complication of phylogenetic reconstruction\n\n• Applications:\n  - Tracking antibiotic resistance spread\n  - Identifying potential bioremediation genes\n  - Understanding microbial genome evolution\n  - Developing novel antimicrobial strategies",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "myelodysplastic-syndrome-(mds)": {
+    "id": "myelodysplastic-syndrome-(mds)",
+    "title": "Myelodysplastic Syndrome (MDS)",
+    "emoji": "🩸",
+    "definition": "• Definition: A heterogeneous group of clonal hematopoietic stem cell disorders characterized by dysplasia and ineffective hematopoiesis in the bone marrow, leading to peripheral blood cytopenias and a variable risk of progression to acute myeloid leukemia (AML).\n\n• Classification systems:\n  - World Health Organization (WHO) classification: Based on morphology, blast percentage, cytogenetics, and specific genetic abnormalities\n  - French-American-British (FAB) classification: Historical system based on morphological features\n  - International Prognostic Scoring System (IPSS) and revised IPSS (R-IPSS): Risk stratification tools that guide treatment decisions\n\n• Molecular characteristics:\n  - Recurrent somatic mutations in genes involved in RNA splicing (SF3B1, SRSF2, U2AF1)\n  - Epigenetic regulators (TET2, DNMT3A, IDH1/2, ASXL1)\n  - Transcription factors (RUNX1, ETV6)\n  - Tumor suppressor genes (TP53)\n  - Chromosomal abnormalities (del(5q), del(7q), trisomy 8, complex karyotype)\n\n• Clinical manifestations:\n  - Anemia: Fatigue, weakness, pallor, dyspnea\n  - Neutropenia: Increased susceptibility to infections\n  - Thrombocytopenia: Bleeding, bruising, petechiae\n  - Autoimmune phenomena in 10-20% of patients\n  - Potential transformation to acute myeloid leukemia\n\n• Diagnostic approach:\n  - Peripheral blood smear: Cytopenias, dysplastic features in blood cells\n  - Bone marrow aspiration and biopsy: Dysplasia, blast percentage, cellularity\n  - Cytogenetic analysis: Chromosomal abnormalities\n  - Next-generation sequencing: Detection of somatic mutations\n  - Flow cytometry: Immunophenotypic abnormalities\n\n• Bioinformatic applications:\n  - Mutational profiling to identify driver mutations and clonal architecture\n  - Prediction of disease progression and treatment response\n  - Integration of multi-omics data (genomics, transcriptomics, epigenomics)\n  - Development of machine learning algorithms for risk stratification\n  - Identification of novel therapeutic targets through pathway analysis\n\n• Clinical significance:\n  - Prognosis varies widely based on subtype, cytogenetics, and molecular features\n  - Treatment approaches range from supportive care to targeted therapies and stem cell transplantation\n  - Molecular features increasingly guide personalized treatment decisions\n  - Model disease for studying clonal evolution and pre-leukemic states\n  - Emerging role of genetic predisposition in disease development",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "machine-learning",
+      "somatic-mutations"
+    ]
+  },
+  "somatic-mutations": {
+    "id": "somatic-mutations",
+    "title": "Somatic Mutations",
+    "emoji": "🧬",
+    "definition": "• Definition: Alterations in DNA that occur after conception in somatic (non-germline) cells of the body and are not inherited from parents or passed to offspring. These mutations accumulate throughout an individual's lifetime in various tissues due to environmental exposures, replication errors, or endogenous processes.\n\n• Comparison with germline mutations:\n  - Somatic mutations: Present only in specific cells/tissues, not in every cell of the body, not heritable\n  - Germline mutations: Present in germ cells (sperm or eggs), found in every cell of the body, can be passed to offspring\n  - Distribution: Somatic mutations show tissue-specific patterns and increase with age, while germline variants are uniformly distributed across tissues\n\n• Types of somatic mutations:\n  - Driver mutations: Confer selective growth advantage to cells, contribute directly to cancer development by affecting oncogenes or tumor suppressor genes\n  - Passenger mutations: Do not provide growth advantage, occur coincidentally in cells that already have driver mutations\n  - Based on DNA change: Single nucleotide variants (SNVs), insertions/deletions (indels), copy number alterations (CNAs), structural variants (SVs), and chromosomal rearrangements\n\n• Mutational signatures:\n  - Characteristic patterns of mutations caused by specific mutational processes\n  - Examples: UV light exposure (C>T transitions), tobacco smoke (G>T transversions), APOBEC enzyme activity, defective DNA repair mechanisms\n  - Provide insights into cancer etiology and progression mechanisms\n\n• Detection methods:\n  - Next-generation sequencing (NGS): Whole-genome, whole-exome, or targeted panel sequencing\n  - Tumor-normal comparison: Sequencing both tumor and matched normal tissue to identify somatic-specific variants\n  - Deep sequencing: Required to detect low-frequency mutations in heterogeneous samples\n  - Single-cell sequencing: For analyzing intratumoral heterogeneity and clonal evolution\n  - Liquid biopsy: Detection of circulating tumor DNA (ctDNA) in blood for non-invasive monitoring\n\n• Clinical significance:\n  - Cancer diagnosis: Identifying driver mutations that define cancer subtypes\n  - Prognostic biomarkers: Mutations associated with disease progression or survival outcomes\n  - Predictive biomarkers: Mutations that predict response to specific therapies\n  - Therapeutic targets: Basis for precision medicine approaches in cancer treatment\n  - Monitoring: Tracking treatment response and disease recurrence through serial sampling\n\n• Applications in precision oncology:\n  - Targeted therapies: Drugs designed to target specific mutations (e.g., EGFR inhibitors for EGFR mutations)\n  - Immunotherapy selection: Tumor mutational burden (TMB) as a biomarker for immunotherapy response\n  - Pan-cancer approaches: Targeting mutations across multiple cancer types regardless of tissue of origin\n  - Resistance mechanisms: Identifying secondary mutations that confer treatment resistance\n  - Minimal residual disease detection: Using somatic mutations as personalized biomarkers\n\n• Computational challenges:\n  - Distinguishing driver from passenger mutations\n  - Accounting for tumor heterogeneity and normal cell contamination\n  - Identifying mutations in low-frequency subclones\n  - Integrating multiple data types for comprehensive mutational profiling\n  - Interpreting variants of unknown significance",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "endogenous"
+    ]
+  },
+  "ubiquitin-proteasome-system-(ups)": {
+    "id": "ubiquitin-proteasome-system-(ups)",
+    "title": "Ubiquitin Proteasome System (UPS)",
+    "emoji": "🔄",
+    "definition": "• Definition: A major intracellular protein degradation pathway that selectively tags proteins with ubiquitin molecules for subsequent degradation by the 26S proteasome complex, playing a crucial role in protein homeostasis and cellular quality control.\n\n• Key components:\n  - Ubiquitin: A 76-amino acid protein that serves as the tag for protein degradation\n  - E1 (ubiquitin-activating enzymes): Activate ubiquitin in an ATP-dependent manner\n  - E2 (ubiquitin-conjugating enzymes): Transfer activated ubiquitin from E1\n  - E3 (ubiquitin ligases): Recognize specific substrates and facilitate ubiquitin transfer\n  - Proteasome: A large multi-subunit complex that degrades ubiquitinated proteins\n  - Deubiquitinating enzymes (DUBs): Remove ubiquitin tags, providing regulation\n\n• Ubiquitination process:\n  - Activation: E1 activates ubiquitin in an ATP-dependent reaction\n  - Conjugation: E2 accepts the activated ubiquitin from E1\n  - Ligation: E3 catalyzes the transfer of ubiquitin to lysine residues on target proteins\n  - Polyubiquitination: Multiple ubiquitin molecules form chains (K48-linked chains target for degradation)\n\n• Proteasomal degradation:\n  - Recognition: Polyubiquitinated proteins are recognized by the 19S regulatory particle\n  - Unfolding: Proteins are unfolded and deubiquitinated\n  - Degradation: Unfolded proteins enter the 20S core particle and are cleaved into peptides\n  - Recycling: Amino acids are recycled for new protein synthesis\n\n• Biological significance:\n  - Protein quality control: Elimination of misfolded or damaged proteins\n  - Regulation of protein abundance: Control of cellular levels of regulatory proteins\n  - Cell cycle control: Degradation of cyclins and cell cycle inhibitors\n  - Signal transduction: Regulation of signaling pathway components\n  - Immune response: Antigen processing for MHC class I presentation\n\n• Clinical relevance:\n  - Cancer: Proteasome inhibitors (e.g., bortezomib) approved for multiple myeloma\n  - Neurodegenerative diseases: Accumulation of protein aggregates due to UPS dysfunction\n  - Inflammatory disorders: UPS involvement in NF-κB pathway regulation\n  - Emerging target for drug development: Targeted protein degradation approaches",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "targeted-protein-degradation"
+    ]
+  },
+  "targeted-protein-degradation": {
+    "id": "targeted-protein-degradation",
+    "title": "Targeted Protein Degradation",
+    "emoji": "🎯",
+    "definition": "• Definition: A therapeutic strategy that harnesses the cell's endogenous protein degradation machinery to selectively eliminate disease-causing proteins, particularly those considered \"undruggable\" by traditional approaches.\n\n• Major degradation pathways utilized:\n  - Ubiquitin-proteasome system (UPS): Primary pathway for degradation of intracellular proteins\n  - Lysosomal pathway: Alternative route for degradation of membrane proteins and aggregates\n  - Autophagy: Bulk degradation of cellular components including organelles and protein aggregates\n\n• Key technologies:\n  - PROteolysis TArgeting Chimeras (PROTACs): Bifunctional molecules linking target proteins to E3 ligases\n  - Molecular glues: Monovalent molecules that enhance protein-protein interactions with E3 ligases\n  - Lysosome-targeting chimeras (LYTACs): Direct proteins to lysosomal degradation\n  - Autophagy-targeting chimeras (AUTACs): Target proteins for autophagic degradation\n  - dTAGs: Degradation tags for rapid protein elimination\n\n• Advantages over traditional inhibitors:\n  - Catalytic mode of action: One degrader molecule can process multiple target proteins\n  - Event-driven rather than occupancy-driven: Prolonged effect after drug clearance\n  - Ability to target non-enzymatic protein functions and scaffolding proteins\n  - Potential to overcome resistance mechanisms\n  - Lower required drug concentrations for efficacy\n\n• Challenges and limitations:\n  - Tissue distribution and intracellular penetration\n  - Identification of appropriate E3 ligases for specific tissues\n  - Potential for off-target effects\n  - Complex pharmacokinetic and pharmacodynamic relationships\n\n• Clinical applications:\n  - Oncology: Degradation of oncoproteins and transcription factors\n  - Neurodegenerative diseases: Clearance of protein aggregates\n  - Inflammatory disorders: Degradation of inflammatory mediators\n  - Infectious diseases: Elimination of viral proteins",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "endogenous"
+    ]
+  },
+  "svedberg-sedimentation-coefficient": {
+    "id": "svedberg-sedimentation-coefficient",
+    "title": "Svedberg Sedimentation Coefficient",
+    "emoji": "🧪",
+    "definition": "• Definition: A unit of measurement (symbol S) that characterizes the sedimentation rate of particles under centrifugal force, defined as the ratio of a particle's sedimentation velocity to the applied acceleration. One Svedberg unit equals exactly 10⁻¹³ seconds (100 femtoseconds).\n\n• Key principles:\n- Named after Swedish chemist Theodor Svedberg, who won the 1926 Nobel Prize for his work on colloids and invention of the ultracentrifuge\n- Represents how quickly a particle settles in solution during centrifugation\n- Determined by a particle's mass, density, and shape\n- Larger, heavier particles generally have higher S values\n- Svedberg values are not additive; when two particles bind together, their combined S value is not the sum of their individual values\n\n• Mathematical basis:\n- Described by the Svedberg equation: s = m(1-νρ)/f\n- Where m is the particle mass, ν is the partial specific volume, ρ is the solvent density, and f is the frictional coefficient\n- For a spherical particle, the frictional coefficient is related to its radius by Stokes' law\n- A particle with a sedimentation coefficient of 26S will travel at 26 micrometers per second under an acceleration of 1 million gravities\n\n• Applications in bioinformatics and molecular biology:\n- Classification of cellular components like ribosomes (e.g., 70S prokaryotic ribosomes, 80S eukaryotic ribosomes)\n- Characterization of ribosomal subunits (e.g., 30S and 50S in prokaryotes, 40S and 60S in eukaryotes)\n- Identification of protein complexes and determination of their stoichiometry\n- Analysis of macromolecular interactions and binding affinities\n- Determination of size distributions in heterogeneous samples\n\n• Analytical techniques:\n- Analytical ultracentrifugation (AUC) is the primary method for measuring sedimentation coefficients\n- Sedimentation velocity experiments track boundary movement over time\n- Sedimentation equilibrium experiments analyze concentration gradients at equilibrium\n- Modern analysis uses computational software to fit data to the Lamm equation\n- Detection methods include absorbance, interference, and fluorescence optics\n\n• Significance in structural biology:\n- Provides hydrodynamic information complementary to other structural techniques\n- Helps determine molecular weight, shape, and conformational changes\n- Enables study of macromolecules in their native state without interaction with matrices or surfaces\n- Applicable to a wide range of molecular weights (from hundreds to millions of Daltons)\n- Allows analysis of complex biological samples including cell lysates and bodily fluids",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": []
+  },
+  "monovalent-molecular-glue-degraders": {
+    "id": "monovalent-molecular-glue-degraders",
+    "title": "Monovalent Molecular Glue Degraders",
+    "emoji": "🔄",
+    "definition": "• Definition: Small, monofunctional molecules (`<500 Da`) that induce or stabilize protein-protein interactions between an E3 ubiquitin ligase and a target protein, leading to ubiquitination and subsequent proteasomal degradation of the target.\n\n• Mechanism of action:\n  - Surface modification: Alter the surface of E3 ligases to create binding interfaces for target proteins\n  - Neo-substrate recruitment: Induce recognition of proteins not normally targeted by the E3 ligase\n  - Ternary complex formation: Stabilize the interaction between E3 ligase and target protein\n  - Catalytic activity: Function in a substoichiometric manner to degrade multiple copies of target proteins\n\n• Types of molecular glues:\n  - Type I: Induce non-native protein-protein interactions\n  - Type II: Stabilize endogenous protein-protein interactions\n\n• Advantages over PROTACs:\n  - Lower molecular weight: Typically `<500 Da` compared to `>700` Da for PROTACs\n  - Improved drug-like properties: Better cell permeability and bioavailability\n  - Simpler chemical structure: Easier synthesis and optimization\n  - Potential for oral administration: Better pharmacokinetic properties\n\n• Notable examples:\n  - Immunomodulatory imide drugs (IMiDs): Thalidomide, lenalidomide, pomalidomide\n  - Indisulam: Targets RBM39 via DCAF15\n  - CR8: Degrades cyclin K\n  - Sulfonamides: Target RBM39 through DCAF15\n\n• Clinical significance:\n  - FDA-approved drugs: Thalidomide, lenalidomide, and pomalidomide for multiple myeloma\n  - Clinical trials: Multiple candidates in development for various cancers\n  - Potential for targeting previously undruggable proteins\n  - Emerging approach for precision medicine",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": [
+      "endogenous"
+    ]
+  },
+  "proteolysis-targeting-chimeras-(protacs)": {
+    "id": "proteolysis-targeting-chimeras-(protacs)",
+    "title": "PROteolysis TArgeting Chimeras (PROTACs)",
+    "emoji": "🧬",
+    "definition": "• Definition: Bifunctional molecules designed to induce targeted protein degradation by simultaneously binding to a protein of interest and an E3 ubiquitin ligase, bringing them into proximity to facilitate ubiquitination and subsequent proteasomal degradation of the target protein.\n\n• Structural components:\n  - Target protein-binding ligand: Binds specifically to the protein of interest\n  - E3 ligase-binding ligand: Recruits an E3 ubiquitin ligase (e.g., CRBN, VHL, IAP, MDM2)\n  - Linker: Connects the two ligands and optimizes their spatial arrangement\n\n• Mechanism of action:\n  - Target engagement: Binding to both the target protein and E3 ligase\n  - Ternary complex formation: Creation of a three-molecule complex (target-PROTAC-E3 ligase)\n  - Ubiquitination: Transfer of ubiquitin molecules to the target protein\n  - Proteasomal degradation: Recognition and degradation of the polyubiquitinated target\n  - Recycling: Release of the PROTAC for additional rounds of target degradation\n\n• Advantages over traditional inhibitors:\n  - Event-driven pharmacology: Effect persists after drug clearance\n  - Catalytic mechanism: One PROTAC can facilitate degradation of multiple target proteins\n  - Broader target scope: Can address previously undruggable proteins\n  - Potential to overcome resistance: Complete protein removal versus functional inhibition\n  - Degradation of all protein functions: Not limited to active site inhibition\n\n• Design considerations:\n  - E3 ligase selection: Tissue expression, binding affinity, and substrate compatibility\n  - Linker optimization: Length, composition, and flexibility\n  - Target ligand selection: Binding affinity, selectivity, and attachment point\n  - Ternary complex geometry: Spatial arrangement for optimal ubiquitination\n\n• Clinical development status:\n  - Multiple candidates in clinical trials for various cancers\n  - ARV-110 (androgen receptor degrader) for prostate cancer\n  - ARV-471 (estrogen receptor degrader) for breast cancer\n  - DT2216 (BCL-xL degrader) for hematologic malignancies\n\n• Challenges and limitations:\n  - High molecular weight: Potential issues with cell permeability and oral bioavailability\n  - Complex structure: Synthetic challenges and potential metabolic instability\n  - Hook effect: Decreased efficacy at high concentrations\n  - Tissue-specific E3 ligase expression: Potential limitations in tissue selectivity",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": [
+      "targeted-protein-degradation"
+    ]
+  },
+  "cytotoxicity": {
+    "id": "cytotoxicity",
+    "title": "Cytotoxicity",
+    "emoji": "🧪",
+    "definition": "• Definition: The degree to which a substance or agent can damage or kill living cells, typically through disruption of cellular structures, interference with metabolic pathways, or triggering of cell death mechanisms.\n\n• Mechanisms of cytotoxicity:\n  - Necrosis: Uncontrolled cell death characterized by cell swelling, membrane rupture, and inflammatory response\n  - Apoptosis: Programmed cell death involving cell shrinkage, chromatin condensation, and formation of apoptotic bodies\n  - Autophagy: Self-degradation process that can lead to cell death when excessive\n  - Mitochondrial dysfunction: Disruption of energy production and release of pro-apoptotic factors\n  - DNA damage: Direct or indirect damage to genetic material leading to cell cycle arrest or death\n\n• Detection methods:\n  - Membrane integrity assays: LDH release, trypan blue exclusion, propidium iodide staining\n  - Metabolic activity assays: MTT, MTS, XTT, WST-1, resazurin reduction\n  - ATP content assays: Luminescence-based detection of cellular ATP levels\n  - Apoptosis assays: Annexin V binding, caspase activation, TUNEL assay\n  - High-content imaging: Automated microscopy with multiple fluorescent markers\n  - Flow cytometry: Multiparametric analysis of cell death markers\n\n• Applications in bioinformatics:\n  - Toxicogenomics: Computational analysis of gene expression changes in response to toxic compounds\n  - QSAR modeling: Predicting cytotoxicity based on chemical structure\n  - Pathway analysis: Identifying molecular mechanisms of toxicity\n  - Machine learning approaches: Developing predictive models for cytotoxicity screening\n  - Systems biology: Integrating multi-omics data to understand cellular responses to toxicants\n\n• Clinical and research significance:\n  - Drug development: Screening compounds for safety and efficacy\n  - Cancer research: Evaluating potential anticancer agents\n  - Immunology: Assessing immune cell-mediated cytotoxicity\n  - Environmental toxicology: Evaluating potential hazards of chemicals\n  - Nanomaterial safety assessment: Determining biocompatibility of engineered materials",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "machine-learning"
+    ]
+  },
+  "sgrna-(single-guide-rna)": {
+    "id": "sgrna-(single-guide-rna)",
+    "title": "sgRNA (Single Guide RNA)",
+    "emoji": "🧬",
+    "definition": "• Definition: A synthetic RNA molecule that combines the functions of crRNA (CRISPR RNA) and tracrRNA (trans-activating crRNA) into a single chimeric structure, used to guide Cas nucleases to specific DNA targets in CRISPR-Cas genome editing systems.\n\n• Structure and components:\n  - Spacer sequence (20 nucleotides): Complementary to the target DNA sequence\n  - Scaffold sequence (~80 nucleotides): Forms secondary structures necessary for Cas protein binding\n  - PAM (Protospacer Adjacent Motif): DNA sequence required for target recognition (not part of sgRNA but essential for targeting)\n\n• Design considerations:\n  - Target specificity: Minimizing off-target effects through careful sequence selection\n  - GC content: Optimal range of 40-60% for efficient binding\n  - Secondary structure: Avoiding self-complementarity that could interfere with target binding\n  - Position effects: Targeting the beginning of genes or critical functional domains\n  - PAM proximity: Selecting targets with appropriate PAM sequences for the Cas variant used\n\n• Bioinformatic tools for sgRNA design:\n  - CHOPCHOP: Web tool for CRISPR/Cas9 target prediction and off-target evaluation\n  - CRISPOR: Comprehensive tool for guide selection and off-target prediction\n  - E-CRISP: Design tool with evaluation of on-target efficiency and off-target effects\n  - Cas-Designer: Tool for designing guide RNAs for various CRISPR systems\n  - CRISPRscan: Algorithm for predicting sgRNA efficiency in vivo\n\n• Applications in genome editing:\n  - Gene knockout: Introducing frameshift mutations through NHEJ repair\n  - Gene knock-in: Precise sequence insertion via HDR pathway\n  - Base editing: Creating specific nucleotide changes without double-strand breaks\n  - Epigenetic modification: Targeting chromatin modifiers to specific genomic loci\n  - Transcriptional regulation: Activating or repressing gene expression (CRISPRa/CRISPRi)\n  - Multiplexed editing: Simultaneous modification of multiple genomic targets\n\n• Computational challenges:\n  - Off-target prediction: Algorithms to identify potential unintended targets\n  - Efficiency prediction: Machine learning models to estimate editing efficiency\n  - Repair outcome prediction: Predicting the spectrum of editing outcomes\n  - Visualization tools: Representing complex genomic targeting information\n  - Data integration: Combining sgRNA design with functional genomics data",
+    "tags": ["biology", "lab-techniques"],
+    "linkedTerms": [
+      "chimeric",
+      "machine-learning"
+    ]
+  },
+  "pleiotropy": {
+    "id": "pleiotropy",
+    "title": "Pleiotropy",
+    "emoji": "🧬",
+    "definition": "• Definition: The phenomenon in which a single gene or genetic variant influences multiple phenotypic traits. The term was coined by Ludwig Plate in 1910, derived from Greek words \"pleíōn\" (more) and \"trópos\" (turn, way, manner). 1\n\n• Types of pleiotropy:\n\n- Biological (horizontal) pleiotropy: A genetic variant directly affects multiple traits through independent biological pathways 1\n- Mediated (vertical/relational) pleiotropy: A variant influences one trait, which in turn causes changes in secondary traits 1 4\n- Spurious pleiotropy: Statistical or methodological biases create false associations between a variant and multiple traits 1\n- Selectional pleiotropy: When a single phenotype influences evolutionary fitness in multiple ways depending on factors like age and sex 1 4\n• Molecular mechanisms:\n\n- Multiple protein interactions: A gene product interacts with multiple proteins or catalyzes different reactions 4\n- Alternative splicing: One gene produces different protein isoforms with varied structures and functions 1\n- Regulatory effects: A variant alters the expression of many genes or influences chromosome 3D structure 1\n- Signaling cascades: A primary gene product initiates multiple downstream effects 2\n• Biological significance:\n\n- Evolutionary constraints: Pleiotropic genes can limit the rate of multivariate evolution when selection on different traits favors different alleles 1\n- Genetic disorders: Many genetic diseases exhibit pleiotropy, such as phenylketonuria (PKU) affecting both nervous and integumentary systems 1\n- Development: Pleiotropic genes often play crucial roles in developmental processes and cell fate decisions 5\n- Stabilizing selection: Highly pleiotropic genes typically experience strong stabilizing selection as they affect multiple phenotypes 5\n• Applications in bioinformatics:\n\n- Genome-wide association studies (GWAS): Identifying variants linked to multiple traits or diseases 1\n- Multivariate analysis methods: Statistical approaches like multivariate functional linear models to analyze pleiotropic effects on quantitative traits 3\n- Network biology: Mapping gene interaction networks to understand pleiotropic effects 4\n- Disease gene discovery: Using pleiotropy patterns to identify novel disease genes and understand complex disorders 5\n- Pharmacogenomics: Understanding how genetic variants may affect multiple drug responses or side effects\n• Clinical relevance:\n\n- Syndromic diseases: Understanding the diverse manifestations of genetic disorders affecting multiple systems 5\n- Drug development: Considering pleiotropic effects when targeting specific genes to minimize unintended consequences\n- Personalized medicine: Accounting for pleiotropic effects when predicting disease risk or treatment outcomes\n- Aging research: Antagonistic pleiotropy model explains how genes beneficial early in life may have detrimental effects later",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "isoforms",
+      "alternative-splicing"
+    ]
+  },
+  "kinases": {
+    "id": "kinases",
+    "title": "Kinases",
+    "emoji": "🧪",
+    "definition": "• Definition: Enzymes that catalyze the transfer of phosphate groups from high-energy, phosphate-donating molecules (typically ATP) to specific substrates, including proteins, lipids, and nucleic acids, in a process known as phosphorylation.\n\n• Types and classification:\n  - Protein kinases: Phosphorylate proteins on serine, threonine, or tyrosine residues\n  - Lipid kinases: Add phosphate groups to lipids (e.g., phosphoinositide kinases)\n  - Carbohydrate kinases: Phosphorylate sugars during metabolic processes\n  - Nucleotide kinases: Add phosphate groups to nucleosides to form nucleotides\n\n• Protein kinase families:\n  - Serine/threonine kinases: Phosphorylate the hydroxyl groups of serine or threonine residues\n  - Tyrosine kinases: Phosphorylate tyrosine residues (e.g., receptor tyrosine kinases like EGFR, PDGFR)\n  - Dual-specificity kinases: Can phosphorylate serine, threonine, and tyrosine residues\n  - Histidine kinases: Primarily found in prokaryotes and plants, phosphorylate histidine residues\n\n• Biological functions:\n  - Signal transduction: Transmitting signals from cell surface receptors to intracellular targets\n  - Metabolic regulation: Controlling enzymatic activity in metabolic pathways\n  - Cell cycle control: Regulating progression through different phases of the cell cycle\n  - Gene expression: Modifying transcription factors to alter gene expression patterns\n  - Protein function: Altering protein activity, stability, localization, or interactions\n\n• Mechanism of action:\n  - Binding of ATP and substrate within the catalytic domain\n  - Transfer of the γ-phosphate group from ATP to the target molecule\n  - Release of the phosphorylated substrate and ADP\n  - Regulation through various mechanisms including phosphorylation, protein interactions, and conformational changes\n\n• Structural features:\n  - Conserved catalytic domain with glycine-rich ATP-binding region\n  - Activation loop that regulates kinase activity\n  - Substrate-binding regions that determine specificity\n  - Regulatory domains that control kinase function\n\n• Clinical significance:\n  - Dysregulation implicated in numerous diseases including cancer, inflammatory disorders, and neurological conditions\n  - Important drug targets with over 50 FDA-approved kinase inhibitors\n  - Examples include imatinib (targets Abelson tyrosine kinase in chronic myelogenous leukemia)\n  - Emerging approaches include targeted degradation of kinases using PROTACs or molecular glue degraders\n\n• Bioinformatic applications:\n  - Kinome analysis: Computational study of the complete set of kinases in an organism\n  - Prediction of phosphorylation sites using machine learning algorithms\n  - Structural modeling to design selective kinase inhibitors\n  - Network analysis of kinase signaling pathways in disease states",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "machine-learning"
+    ]
+  },
+  "moiety": {
+    "id": "moiety",
+    "title": "Moiety",
+    "emoji": "🧬",
+    "definition": "Refers to a distinct part or portion of a molecule that has characteristic chemical properties and can be identified in other molecules as well. In biochemistry and organic chemistry, moieties are typically larger structural units that may contain functional groups. In pharmacology, an active moiety is the part of a molecule responsible for the physiological or pharmacological action of a drug.",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "hebbian-theory": {
+    "id": "hebbian-theory",
+    "title": "Hebbian Theory",
+    "emoji": "🧠",
+    "definition": "• Definition: A neurobiological theory that explains how synaptic connections between neurons are strengthened through repeated and persistent stimulation, often summarized as \"cells that fire together, wire together.\"\n\n• Core principle:\n  - Synaptic plasticity: When two neurons are repeatedly active at the same time, the synaptic connection between them becomes stronger\n  - Activity-dependent modification: The strength of neural connections depends on the correlation of activity between pre- and post-synaptic neurons\n  - Learning mechanism: Forms the basis for associative learning and memory formation\n\n• Mathematical formulation:\n  - Hebbian learning rule: Δw = η × x × y (where Δw is the change in synaptic weight, η is the learning rate, x is pre-synaptic activity, y is post-synaptic activity)\n  - Long-term potentiation (LTP): Persistent strengthening of synapses based on recent patterns of activity\n  - Long-term depression (LTD): Weakening of synaptic connections when neurons fire out of sync\n\n• Applications in computational neuroscience:\n  - Artificial neural networks: Hebbian learning algorithms for unsupervised learning\n  - Self-organizing maps: Neural network architectures that use Hebbian principles for pattern recognition\n  - Spike-timing dependent plasticity (STDP): Refined models that consider the precise timing of neural spikes\n  - Memory models: Computational frameworks for understanding how memories are stored and retrieved\n\n• Biological significance:\n  - Development: Critical for proper neural circuit formation during brain development\n  - Learning and memory: Fundamental mechanism underlying associative learning and memory consolidation\n  - Adaptation: Allows neural circuits to adapt to environmental changes and experiences\n  - Pathology: Dysregulation implicated in neurodevelopmental disorders and neurodegenerative diseases\n\n• Modern extensions:\n  - Spike-timing dependent plasticity: Considers the precise timing of pre- and post-synaptic spikes\n  - Homeostatic plasticity: Mechanisms that maintain overall neural activity within functional ranges\n  - Metaplasticity: Changes in the ability to induce synaptic plasticity based on prior synaptic activity\n  - Computational implementations: Machine learning algorithms inspired by Hebbian principles",
+    "tags": ["biology"],
+    "linkedTerms": [
+      "neural-network",
+      "machine-learning",
+      "unsupervised-learning"
+    ]
+  },
+  "verilog": {
+    "id": "verilog",
+    "title": "Verilog",
+    "emoji": "🔌💻",
+    "definition": "Verilog is a hardware description language (HDL) used primarily for modeling, simulating, and synthesizing digital circuits and systems. It allows engineers to describe electronic systems at various levels of abstraction, from high-level behavioral descriptions to detailed gate-level implementations. Verilog is widely used in the semiconductor industry for designing application-specific integrated circuits (ASICs), field-programmable gate arrays (FPGAs), and other digital hardware. It supports both concurrent and sequential execution models, reflecting the parallel nature of hardware operations. Along with VHDL, Verilog is one of the two major HDLs used in electronic design automation (EDA) workflows for digital circuit design, verification, and implementation.",
+    "tags": ["biology"],
+    "linkedTerms": []
+  },
+  "p-(polynomial-time)": {
+    "id": "p-(polynomial-time)",
+    "title": "P (Polynomial Time)",
+    "emoji": "⏱️✓",
+    "definition": "P is the complexity class of decision problems that can be solved by a deterministic Turing machine in polynomial time. In simpler terms, these are problems for which efficient algorithms exist that can find a solution in a reasonable amount of time, even as the input size grows. The time required to solve these problems grows as a polynomial function of the input size. Examples include sorting algorithms, searching in ordered lists, and determining if a number is prime using modern primality tests. P represents the class of problems that are considered computationally tractable.",
+    "tags": ["computer science", "math"],
+    "linkedTerms": []
+  },
+  "np-(nondeterministic-polynomial-time)": {
+    "id": "np-(nondeterministic-polynomial-time)",
+    "title": "NP (Nondeterministic Polynomial Time)",
+    "emoji": "🔍⏱️",
+    "definition": "NP is the complexity class of decision problems for which a solution can be verified in polynomial time, even if finding that solution might take longer. More formally, these are problems solvable by a nondeterministic Turing machine in polynomial time. Every problem in P is also in NP (since if you can solve a problem quickly, you can certainly verify a solution quickly), but the famous open question in computer science is whether P = NP, which asks if every problem whose solution can be quickly verified can also be quickly solved. Examples of NP problems include the Boolean satisfiability problem, the traveling salesman decision problem, and the subset sum problem.",
+    "tags": ["computer science", "math"],
+    "linkedTerms": []
+  },
+  "np-complete": {
+    "id": "np-complete",
+    "title": "NP-Complete",
+    "emoji": "🧩🔄",
+    "definition": "NP-Complete problems are the hardest problems in the NP class, in the sense that if an efficient (polynomial time) algorithm exists for any NP-Complete problem, then efficient algorithms would exist for all problems in NP. A problem is NP-Complete if it is in NP and every other problem in NP can be reduced to it in polynomial time. The first problem proven to be NP-Complete was the Boolean satisfiability problem (SAT), through Cook's theorem. Other examples include the traveling salesman decision problem, the graph coloring problem, and the subset sum problem. The P vs NP question essentially asks whether NP-Complete problems can be solved efficiently.",
+    "tags": ["computer science", "math"],
+    "linkedTerms": []
+  },
+  "np-hard": {
+    "id": "np-hard",
+    "title": "NP-Hard",
+    "emoji": "🏋️‍♂️🧠",
+    "definition": "NP-Hard problems are at least as hard as the hardest problems in NP, but they might not be in NP themselves. A problem is NP-Hard if every problem in NP can be reduced to it in polynomial time, but the problem itself might not be verifiable in polynomial time. NP-Hard problems can be decision problems, search problems, or optimization problems. All NP-Complete problems are NP-Hard, but not all NP-Hard problems are NP-Complete. Examples of NP-Hard problems include the traveling salesman optimization problem (finding the shortest route), the graph isomorphism problem, and the halting problem. Many important optimization problems in various fields like operations research, bioinformatics, and artificial intelligence are NP-Hard, which is why approximation algorithms and heuristics are often used to find good-enough solutions in practice.",
+    "tags": ["computer science", "math"],
+    "linkedTerms": [
+      "np-complete"
+    ]
+  },
+  "sha-256-checksum": {
+    "id": "sha-256-checksum",
+    "title": "SHA-256 Checksum",
+    "emoji": "🔒🧮",
+    "definition": "SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that generates a fixed-size 256-bit (32-byte) hash value, typically rendered as a 64-character hexadecimal string. It belongs to the SHA-2 family of hash functions, designed by the National Security Agency (NSA). SHA-256 is widely used for data integrity verification through checksums, which allow users to verify that a file or message hasn't been altered during transmission or storage. It possesses several critical properties: it's deterministic (the same input always produces the same output), fast to compute, designed to be collision-resistant (extremely difficult to find two different inputs that produce the same hash), and exhibits the avalanche effect (a small change in input drastically changes the output). SHA-256 is extensively used in digital signatures, blockchain technology (particularly Bitcoin), password storage, SSL/TLS certificates, and file verification systems. Unlike encryption, SHA-256 is a one-way function, meaning it's computationally infeasible to reverse the process and derive the original input from the hash value.",
+    "tags": ["computer science"],
+    "linkedTerms": []
+  },
+  "tcp-(transmission-control-protocol)": {
+    "id": "tcp-(transmission-control-protocol)",
+    "title": "TCP (Transmission Control Protocol)",
+    "emoji": "🤝📬",
+    "definition": "TCP is a connection-oriented protocol that operates at the transport layer of the Internet Protocol Suite. It provides reliable, ordered, and error-checked delivery of data between applications running on hosts communicating over an IP network. TCP establishes a full-duplex communication channel between sender and receiver through a process called a three-way handshake (SYN, SYN-ACK, ACK) before any data exchange begins. It implements flow control through a sliding window mechanism, congestion control to prevent network overload, and retransmission of lost packets to ensure data integrity. TCP segments data into packets, assigns sequence numbers for proper ordering, and requires acknowledgment of received packets. Due to these reliability features, TCP is used for applications where accurate data delivery is critical, such as web browsing (HTTP/HTTPS), email (SMTP), file transfers (FTP), and remote administration (SSH). The trade-off for this reliability is increased latency and overhead compared to connectionless protocols like UDP.",
+    "tags": ["computer science"],
+    "linkedTerms": []
+  },
+  "udp-(user-datagram-protocol)": {
+    "id": "udp-(user-datagram-protocol)",
+    "title": "UDP (User Datagram Protocol)",
+    "emoji": "🚀📨",
+    "definition": "UDP is a connectionless transport layer protocol in the Internet Protocol Suite that operates with minimal overhead and no guaranteed delivery. Unlike TCP, UDP does not establish a connection before sending data, does not provide reliability mechanisms like acknowledgments or retransmissions, and does not guarantee that packets (called datagrams) arrive in the same order they were sent. UDP simply transmits datagrams without verifying receipt, making it significantly faster and more efficient than TCP but less reliable. The protocol includes only basic error checking through checksums but does not attempt to recover from errors. UDP is ideal for applications where speed is more important than perfect reliability, such as real-time applications that can tolerate some data loss: video streaming, voice over IP (VoIP), online gaming, DNS lookups, and IoT communications. Its low overhead makes it particularly suitable for applications that send small amounts of data or require minimal latency.",
+    "tags": ["computer science"],
+    "linkedTerms": []
+  },
+  "ssh-(secure-shell)": {
+    "id": "ssh-(secure-shell)",
+    "title": "SSH (Secure Shell)",
+    "emoji": "🔐💻",
+    "definition": "SSH is a cryptographic network protocol that provides secure communication over an unsecured network by establishing an encrypted connection between two computers. Developed as a replacement for insecure protocols like Telnet and rsh, SSH uses public-key cryptography for authentication and symmetric encryption for confidentiality and integrity of data transmission. The protocol operates primarily on TCP port 22 and supports multiple authentication methods, including password-based authentication, public key authentication, host-based authentication, and keyboard-interactive authentication. SSH enables several secure network services: remote command-line login, remote command execution, secure file transfer (via SFTP or SCP), port forwarding (tunneling), and X11 forwarding for running graphical applications remotely. It's widely used by system administrators for secure remote server management, by developers for secure access to version control systems, and as a fundamental component in automated deployment pipelines. SSH's architecture consists of three major components: the transport layer protocol (providing encryption and server authentication), the user authentication protocol, and the connection protocol (multiplexing the encrypted tunnel into multiple logical channels). Modern implementations like OpenSSH have become the de facto standard for secure remote access across Unix-like operating systems, Windows, and network devices.",
+    "tags": ["computer science"],
+    "linkedTerms": []
+  },
+  "float-(floating-point-number)": {
+    "id": "float-(floating-point-number)",
+    "title": "Float (Floating-Point Number)",
+    "emoji": "🔢🔍",
+    "definition": "A float, or floating-point number, is a data type used in computer programming to represent real numbers that can have a fractional part. Unlike integers, which represent whole numbers, floats can represent a wide range of values, including very small and very large numbers, as well as numbers with decimal points. Floating-point numbers are typically stored in a format defined by the IEEE 754 standard, which specifies how to represent the number using a sign bit, an exponent, and a significand (or mantissa). Common floating-point types include single-precision (usually 32-bit) and double-precision (usually 64-bit), offering different ranges and levels of precision. While versatile, floating-point arithmetic can introduce small inaccuracies due to the finite way real numbers are approximated, leading to potential rounding errors or loss of precision in calculations.\n\n**Reference:** [How floating point works - jan Misali](https://www.youtube.com/watch?v=dQhj5RGtag0&ab_channel=janMisali)",
+    "tags": ["computer science", "math"],
+    "linkedTerms": []
+  },
+  "floating-point-precision": {
+    "id": "floating-point-precision",
+    "title": "Floating-Point Precision",
+    "emoji": "🔬📊",
+    "definition": "Floating-point precision refers to the number of significant digits that can be accurately represented by a floating-point data type. It determines how close the stored floating-point number can be to the true mathematical value. Precision is limited because computers store numbers in a finite number of bits. The IEEE 754 standard defines common formats like single-precision (float) and double-precision (double). Single-precision typically offers about 7 decimal digits of precision, while double-precision offers about 15-17 decimal digits. \n\nWhat this means in practice is that calculations involving floating-point numbers may not always be exact. For example, representing 0.1 in binary floating-point is not perfectly accurate, similar to how 1/3 cannot be perfectly represented as a finite decimal. This can lead to:\n- **Rounding Errors**: Small discrepancies that occur when a number is rounded to fit the available precision.\n- **Loss of Significance**: When subtracting two nearly equal numbers, significant digits can be lost, leading to a result with much lower relative accuracy.\n- **Comparison Issues**: Directly comparing two floating-point numbers for equality (e.g., `a == b`) can be unreliable due to these small precision differences. It's often better to check if their absolute difference is within a small tolerance (epsilon).\n\nUnderstanding floating-point precision is crucial in scientific computing, financial calculations, and any domain where numerical accuracy is important, as ignoring these limitations can lead to incorrect results or unexpected behavior in programs.\n\n**Reference:** [How floating point works - jan Misali](https://www.youtube.com/watch?v=dQhj5RGtag0&ab_channel=janMisali)",
+    "tags": ["computer science", "math"],
+    "linkedTerms": []
+  },
+  "western-blot/immunoblot": {
+    "id": "western-blot/immunoblot",
+    "title": "Western Blot/Immunoblot",
+    "emoji": "🧫🔬",
+    "definition": "Definition\nWestern blotting (immunoblotting) is a powerful analytical technique used in molecular biology and proteomics to detect, identify, and semi-quantify specific proteins within a complex mixture of proteins extracted from cells or tissues [1](https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034). The technique derives its name from its position in the \"blotting\" family, following Southern blotting (for DNA) and Northern blotting (for RNA) [1](https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034).\n\nPrinciple\nWestern blotting uses three key elements to accomplish protein detection [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC3456489/):\n1. **Separation by size**: Proteins are separated based on molecular weight through gel electrophoresis\n2. **Transfer to solid support**: Separated proteins are transferred to a protein-binding membrane\n3. **Immunodetection**: Target proteins are marked using specific primary and secondary antibodies for visualization\n\nProtocol\nThe Western blot procedure typically involves the following steps [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC3456489/) [4](https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/overview-western-blotting.html):\n\n1. **Sample preparation**: Proteins are extracted from cells or tissues using mechanical disruption, chemical extraction, or enzymatic methods\n2. **Gel electrophoresis**: Proteins are separated based on molecular weight using polyacrylamide gel electrophoresis (PAGE), typically with sodium dodecyl sulfate (SDS-PAGE)\n3. **Protein transfer**: Separated proteins are transferred from the gel to a membrane (nitrocellulose or PVDF) using electrophoresis (electroblotting)\n4. **Blocking**: The membrane is blocked with a protein solution (often non-fat dry milk or BSA) to prevent non-specific antibody binding\n5. **Primary antibody incubation**: The membrane is incubated with a primary antibody specific to the target protein\n6. **Washing**: Unbound primary antibodies are washed away\n7. **Secondary antibody incubation**: The membrane is incubated with a labeled secondary antibody that binds to the primary antibody\n8. **Detection**: The protein-antibody complex is visualized using various detection methods\n\nDetection Methods\nSeveral detection methods can be used in Western blotting [1](https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034) [4](https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/overview-western-blotting.html):\n\n1. **Chromogenic detection**: Uses enzyme-conjugated secondary antibodies (like HRP or AP) that produce a colored precipitate when exposed to a substrate\n2. **Chemiluminescent detection**: Uses enzyme-conjugated antibodies that produce light when exposed to a substrate, captured on film or by digital imaging systems\n3. **Fluorescent detection**: Uses fluorophore-conjugated antibodies that emit light when excited at specific wavelengths\n4. **Radioactive detection**: Historically used radioactive probes and autoradiography film (less common today)\n\nApplications\nWestern blotting has numerous applications in research and clinical settings [5](https://microbenotes.com/western-blot/) [3](https://en.wikipedia.org/wiki/Western_blot):\n\n1. **Protein identification and characterization**: Detecting specific proteins in complex mixtures\n2. **Post-translational modifications**: Identifying modifications like phosphorylation, glycosylation, and ubiquitination\n3. **Protein expression analysis**: Measuring relative protein levels in different samples\n4. **Clinical diagnostics**: Confirming diseases like HIV through antibody detection\n5. **Drug development**: Evaluating protein targets and drug effects\n6. **Epitope mapping**: Identifying antibody binding sites on proteins\n7. **Anti-doping testing**: Detecting prohibited substances in sports\n\nAdvantages\n1. Requires only small amounts of reagents [5](https://microbenotes.com/western-blot/)\n2. High specificity due to antibody-antigen interactions [4](https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-biology-learning-center/protein-biology-resource-library/pierce-protein-methods/overview-western-blotting.html)\n3. Provides information about protein molecular weight [1](https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034)\n4. Same protein transfer can be used for multiple analyses [5](https://microbenotes.com/western-blot/)\n5. Can detect proteins at picogram levels with optimized protocols\n\nLimitations\n1. Requires specific antibodies for target proteins [5](https://microbenotes.com/western-blot/)\n2. Potential for antibody cross-reactivity and off-target effects [5](https://microbenotes.com/western-blot/)\n3. Time-consuming procedure (typically 1-2 days) [1](https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034)\n4. Semi-quantitative rather than fully quantitative [1](https://www.tandfonline.com/doi/full/10.2144/btn-2022-0034)\n5. Relatively costly due to antibody expenses and detection reagents [5](https://microbenotes.com/western-blot/)",
+    "tags": ["lab-techniques", "biology"],
+    "linkedTerms": []
+  },
+  "chimeric": {
+    "id": "chimeric",
+    "title": "Chimeric",
+    "emoji": "🧬",
+    "definition": "Refers to something that is made from parts originating from different sources—combined into a single entity.",
+    "tags": ["dictionary", "biology"],
+    "linkedTerms": []
+  },
+  "endogenous": {
+    "id": "endogenous",
+    "title": "Endogenous",
+    "emoji": "🧬",
+    "definition": "Refers to something that originates or is produced from within an organism, tissue, or cell",
+    "tags": ["dictionary"],
+    "linkedTerms": []
+  },
+  "abrogated": {
+    "id": "abrogated",
+    "title": "Abrogated",
+    "emoji": "🧬",
+    "definition": "Refers to something that has been abolished, terminated, or suppressed. In molecular biology and immunology, it specifically describes the blocking or suppression of a biological function or process, particularly an immune response. When a gene, protein, or cellular pathway is abrogated, its normal function has been inhibited or eliminated.",
+    "tags": ["dictionary"],
+    "linkedTerms": []
+  },
+  "edify": {
+    "id": "edify",
+    "title": "Edify",
+    "emoji": "📚",
+    "definition": "To instruct or enlighten someone in a way that improves their mind, character, or understanding. The term comes from the Latin \"aedificare,\" meaning \"to build,\" and implies constructive learning that builds up knowledge, wisdom, or moral character. In academic and intellectual contexts, edifying content is designed to be both informative and morally or intellectually uplifting, helping individuals develop better understanding or judgment.",
+    "tags": ["dictionary"],
+    "linkedTerms": []
   }
 }

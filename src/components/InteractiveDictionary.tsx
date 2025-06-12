@@ -38,28 +38,44 @@ interface InteractiveDictionaryProps {
 const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag, title }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDefinition, setSelectedDefinition] = useState<string | null>(null);
+  const [selectedTag, setSelectedTag] = useState<string | null>(filterTag || null);
   
   // Multiple Linked Lists - one for each root definition
   const [definitionChains, setDefinitionChains] = useState<Record<string, DefinitionChain>>({});
   
   // Track which chain is currently being displayed
   const [activeChainId, setActiveChainId] = useState<string | null>(null);
+  
+  // Extract all unique tags from definitions
+  const allTags = useMemo(() => {
+    const tagSet = new Set<string>();
+    
+    Object.values(definitionsData).forEach(def => {
+      if (def.tags && Array.isArray(def.tags)) {
+        def.tags.forEach(tag => tagSet.add(tag));
+      }
+    });
+    
+    return Array.from(tagSet).sort();
+  }, []);
 
-  // Only load basic info initially (id, title, tags) for performance
+  // Only load basic info initially (id, title, tags) for performance and sort alphabetically
   const definitionsList = useMemo(() => {
-    return Object.keys(definitionsData).map(key => ({
-      id: key,
-      title: definitionsData[key].title,
-      emoji: definitionsData[key].emoji,
-      definition: definitionsData[key].definition,
-      tags: definitionsData[key].tags || [],
-      linkedTerms: definitionsData[key].linkedTerms || []
-    }));
+    return Object.keys(definitionsData)
+      .map(key => ({
+        id: key,
+        title: (definitionsData as Record<string, Definition>)[key].title,
+        emoji: (definitionsData as Record<string, Definition>)[key].emoji,
+        definition: (definitionsData as Record<string, Definition>)[key].definition,
+        tags: (definitionsData as Record<string, Definition>)[key].tags || [],
+        linkedTerms: (definitionsData as Record<string, Definition>)[key].linkedTerms || []
+      }))
+      .sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically by title
   }, []);
 
   // Get full definition data when needed
   const getFullDefinition = (id: string): Definition | null => {
-    const defData = definitionsData[id];
+    const defData = (definitionsData as Record<string, Definition>)[id];
     if (!defData) return null;
     
     return {
@@ -72,15 +88,17 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
     };
   };
 
-  // Filter definitions based on search and tag
+  // Filter definitions based on search and tag and sort alphabetically
   const filteredDefinitions = useMemo(() => {
-    return definitionsList.filter(def => {
-      const matchesSearch = def.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    return definitionsList
+      .filter(def => {
+        const matchesSearch = def.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            def.definition.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesTag = !filterTag || def.tags.includes(filterTag);
-      return matchesSearch && matchesTag;
-    });
-  }, [definitionsList, searchTerm, filterTag]);
+        const matchesTag = !selectedTag || def.tags.includes(selectedTag);
+        return matchesSearch && matchesTag;
+      })
+      .sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically by title
+  }, [definitionsList, searchTerm, selectedTag]);
 
   // Convert chain to array for easier rendering
   const getChainAsArray = (chainId: string): DefinitionNode[] => {
@@ -91,7 +109,11 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
     let current = chain.head;
     while (current) {
       result.push(current);
-      current = current.next;
+      if (current.next) {
+        current = current.next;
+      } else {
+        break;
+      }
     }
     return result;
   };
@@ -103,7 +125,11 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
     
     let current = chain.head;
     for (let i = 0; i < position && current; i++) {
-      current = current.next;
+      if (current.next) {
+        current = current.next;
+      } else {
+        break;
+      }
     }
     return current;
   };
@@ -116,7 +142,11 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
     let current = chain.head;
     while (current) {
       if (current.id === definitionId) return true;
-      current = current.next;
+      if (current.next) {
+        current = current.next;
+      } else {
+        break;
+      }
     }
     return false;
   };
@@ -241,6 +271,14 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
     setSelectedDefinition(null);
     setActiveChainId(null);
   };
+  
+  // Handle tag filter button click
+  const handleTagFilter = (tag: string) => {
+    setSelectedTag(tag === selectedTag ? null : tag);
+    setDefinitionChains({});
+    setActiveChainId(null);
+    setSelectedDefinition(null);
+  };
 
   // Clear chains when filter changes
   useEffect(() => {
@@ -292,6 +330,64 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
               borderRadius: '4px'
             }}
           />
+        </div>
+        
+        {/* Tag Filter Buttons */}
+        <div style={{ marginBottom: '20px' }}>
+          <div style={{ 
+            fontSize: '14px', 
+            color: 'var(--ifm-color-content-secondary)', 
+            marginBottom: '8px' 
+          }}>
+            Filter by tag:
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {allTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => handleTagFilter(tag)}
+                style={{
+                  padding: '6px 12px',
+                  backgroundColor: selectedTag === tag ? 'var(--ifm-color-primary)' : 'var(--ifm-color-emphasis-200)',
+                  color: selectedTag === tag ? 'white' : 'var(--ifm-color-content)',
+                  border: selectedTag === tag ? 'none' : '1px solid var(--ifm-color-emphasis-300)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  if (selectedTag !== tag) {
+                    e.currentTarget.style.backgroundColor = 'var(--ifm-color-emphasis-300)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (selectedTag !== tag) {
+                    e.currentTarget.style.backgroundColor = 'var(--ifm-color-emphasis-200)';
+                  }
+                }}
+              >
+                {tag}
+              </button>
+            ))}
+            {selectedTag && (
+              <button
+                onClick={() => setSelectedTag(null)}
+                style={{
+                  padding: '6px 12px',
+                  backgroundColor: 'var(--ifm-color-danger)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                Clear Filter
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Breadcrumb Navigation - only show when viewing a specific chain */}
@@ -346,6 +442,7 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
         <div>
           {displayNodes.map((node, index) => (
             <DefinitionViewer
+              definitionId={node.id}
               key={`${node.id}-${index}`}
               definition={node.definition}
               onDefinitionClick={handleDefinitionClick}
