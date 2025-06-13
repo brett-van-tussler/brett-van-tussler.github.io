@@ -1,10 +1,14 @@
 # Workflow to automatically convert Python and Jupyter notebook files to markdown
-name: Convert Applied Concepts to Markdown
+name: predeploy_scripts
 
 # Triggered by push events, repository_dispatch, or manually
 on:
   push:
     branches: [ main ]  # Adjust branch names as needed
+    paths:
+      - 'docs/applied_concepts/**'
+      - 'src/data/add_linked_terms.py'
+      - 'src/data/definitions.json'
   repository_dispatch:
     types: [convert_applied_concepts]
   workflow_dispatch:  # Allows manual triggering
@@ -113,14 +117,29 @@ jobs:
           # Set output for next step
           echo "CHANGES_MADE=$CHANGES_MADE" >> $GITHUB_ENV
 
+      # Step 4.5: Update linked terms in definitions
+      - name: Update linked terms
+        run: |
+          echo "Running linked terms update..."
+          cd src/data
+          python add_linked_terms.py
+          
+          # Check if definitions.json was modified
+          if git diff --quiet src/data/definitions.json; then
+            echo "No changes to definitions.json"
+          else
+            echo "definitions.json was updated"
+            echo "CHANGES_MADE=true" >> $GITHUB_ENV
+          fi
+
       # Step 5: Configure git and commit changes only if there were changes
       - name: Commit changes
         run: |
           if [[ "$CHANGES_MADE" == "true" ]]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            git add docs/applied_concepts
-            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-convert applied concepts files to markdown"
+            git add docs/applied_concepts src/data/definitions.json
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-convert applied concepts and update linked terms"
           else
             echo "No changes to commit"
           fi

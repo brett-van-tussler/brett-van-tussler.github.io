@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 # Triggered by pushes to main, after convert workflow completes, repository dispatch, or manual trigger
 on:
   workflow_run:
-    workflows: ["Convert Applied Concepts to Markdown"]
+    workflows: ["predeploy_scripts"]
     types:
       - completed
     branches:
