@@ -1,4 +1,12 @@
 {
+  "cross-entropy-loss": {
+    "id": "cross-entropy-loss",
+    "title": "Cross Entropy Loss",
+    "emoji": "📊",
+    "definition": "A loss function commonly used in classification problems, particularly for multi-class classification and neural networks. Cross entropy loss measures the difference between the predicted probability distribution and the true distribution (one-hot encoded labels). It penalizes confident wrong predictions more heavily than uncertain predictions.\n\nMathematically, for a single sample with true class y and predicted probabilities p, the cross entropy loss is:\n\n$$L = -\\sum_{i=1}^{C} y_i \\log(p_i)$$\n\nwhere C is the number of classes. For binary classification, this simplifies to:\n\n$$L = -[y \\log(p) + (1-y) \\log(1-p)]$$\n\nCross entropy loss is particularly effective because it provides strong gradients when predictions are wrong and approaches zero as predictions become more accurate. It's widely used in deep learning for training neural networks on classification tasks, often combined with softmax activation in the output layer.",
+    "tags": ["machine-learning", "math"],
+    "linkedTerms": ["softmax", "neural-network"]
+  },
   "git-triage": {
     "id": "git-triage",
     "title": "Git Triage:",
