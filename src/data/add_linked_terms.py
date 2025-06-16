@@ -65,7 +65,5 @@ with open("definitions.json", "r", encoding="utf-8") as f:
 updated_definitions = link_terms_in_definitions(definitions)
 
 # Save the updated file
-with open("definitions_linked.json", "w", encoding="utf-8") as f:
+with open("definitions.json", "w", encoding="utf-8") as f:
     json.dump(updated_definitions, f, indent=2, ensure_ascii=False)
-
-print("✅ Updated definitions saved to 'definitions_linked.json'")

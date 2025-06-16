@@ -1,0 +1,7 @@
+# Requirements for SQL Window Functions Jupyter Notebook
+# Install with: pip install -r requirements.txt
+
+pandas>=1.5.0
+sqlite3  # Built-in with Python
+jupyter>=1.0.0
+numpy>=1.21.0

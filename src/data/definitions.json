@@ -7,6 +7,14 @@
     "tags": ["machine-learning", "math"],
     "linkedTerms": ["softmax", "neural-network"]
   },
+  "optimizer": {
+    "id": "optimizer",
+    "title": "Optimizer",
+    "emoji": "⚡🎯",
+    "definition": "An algorithm used to adjust the parameters of machine learning models during training to minimize the loss function. Optimizers determine how the model's weights and biases are updated based on the computed gradients, directly affecting the speed and quality of learning.\n\nCommon optimizers include:\n\n**Gradient Descent (SGD)**: The fundamental optimizer that updates parameters in the direction opposite to the gradient.\n\n**Adam (Adaptive Moment Estimation)**: Combines momentum and adaptive learning rates, widely used for its robustness and efficiency.\n\n**RMSprop**: Adapts learning rates based on recent gradient magnitudes, effective for non-stationary objectives.\n\n**AdaGrad**: Adapts learning rates based on historical gradients, useful for sparse data.\n\n**Momentum**: Accelerates SGD by adding a fraction of the previous update to the current one.\n\n**AdamW**: A variant of Adam with decoupled weight decay for better regularization.\n\nThe choice of optimizer significantly impacts training convergence, stability, and final model performance. Modern deep learning frameworks typically default to Adam or its variants due to their adaptive nature and robust performance across various tasks.",
+    "tags": ["machine-learning", "math"],
+    "linkedTerms": []
+  },
   "git-triage": {
     "id": "git-triage",
     "title": "Git Triage:",
@@ -202,11 +210,12 @@
     "id": "gradient-descent",
     "title": "Gradient Descent",
     "emoji": "⬇️",
-    "definition": "A fundamental optimization algorithm used to train machine learning models. It iteratively adjusts the model's parameters to minimize errors, like finding the bottom of a valley by taking small steps downhill. This process is crucial for training neural networks effectively.",
-    "tags": ["machine-learning"],
+    "definition": "A fundamental optimization algorithm used to train machine learning models by iteratively adjusting parameters to minimize a loss function. The algorithm computes the gradient (partial derivatives) of the loss function with respect to each parameter and updates parameters in the direction opposite to the gradient, effectively moving downhill toward a minimum.\n\nMathematically, the update rule is:\n$$\\theta_{t+1} = \\theta_t - \\alpha \\nabla J(\\theta_t)$$\n\nwhere θ represents parameters, α is the learning rate, and ∇J(θ) is the gradient of the loss function.\n\n**Main Variants:**\n\n**Batch Gradient Descent**: Uses the entire dataset to compute gradients at each step. Provides stable convergence but can be computationally expensive for large datasets.\n\n**Stochastic Gradient Descent (SGD)**: Uses a single random sample to compute gradients at each step. Much faster per iteration and can escape local minima due to noise, but convergence is more erratic.\n\n**Mini-batch Gradient Descent**: Uses small batches of samples (typically 32-256) to compute gradients. Balances the stability of batch gradient descent with the efficiency of SGD, making it the most commonly used variant in practice.\n\nGradient descent is the foundation of most machine learning optimization and is essential for training neural networks, linear regression, logistic regression, and many other models.",
+    "tags": ["machine-learning", "math"],
     "linkedTerms": [
       "neural-network",
-      "machine-learning"
+      "machine-learning",
+      "optimizer"
     ]
   },
   "backpropagation": {
@@ -578,7 +587,7 @@
     "id": "chromatin-remodeling",
     "title": "Chromatin Remodeling",
     "emoji": "🧪",
-    "definition": "• Definition: The dynamic process by which specialized protein complexes alter chromatin structure to regulate DNA accessibility for transcription, replication, repair, and recombination.\n\n• Mechanisms:\n  - Nucleosome sliding (moving histone proteins): Repositioning nucleosomes along DNA without disrupting histone-DNA contacts\n  - Histone eviction/replacement: Removing or exchanging histones to alter chromatin composition\n  - Histone modification: Adding or removing chemical groups that affect chromatin compaction\n  - ATP-dependent remodeling: Using energy from ATP hydrolysis to physically restructure chromatin\n\n![Chromatin Structure showing nucleosomes, histones, and the difference between heterochromatin and euchromatin](/img/dna_packaging.jpg)\n\n• Major remodeling complex families:\n  - SWI/SNF family (BAF/PBAF): Nucleosome sliding and ejection\n  - ISWI family: Nucleosome spacing and assembly\n  - CHD family: Nucleosome sliding and histone deacetylation\n  - INO80/SWR1 family: Histone variant exchange (H2A.Z incorporation)\n\n• Biological roles:\n  - Transcriptional regulation: Controlling gene expression by modulating promoter accessibility\n  - DNA replication: Ensuring replication machinery access to DNA\n  - DNA repair: Facilitating repair protein access to damaged DNA\n  - Development: Orchestrating cell fate decisions and differentiation\n\n• Clinical significance:\n  - Cancer: Mutations in chromatin remodelers are frequent in many cancer types\n  - Developmental disorders: Associated with intellectual disability and congenital abnormalities\n  - Aging: Dysregulation of chromatin remodeling contributes to aging phenotypes\n  - Therapeutic targeting: Emerging strategies for modulating chromatin remodeling in disease",
+    "definition": "• Definition: The dynamic process by which specialized protein complexes alter chromatin structure to regulate DNA accessibility for transcription, replication, repair, and recombination.\n\n• Mechanisms:\n  - Nucleosome sliding (moving histone proteins): Repositioning nucleosomes along DNA without disrupting histone-DNA contacts\n  - Histone eviction/replacement: Removing or exchanging histones to alter chromatin composition\n  - Histone modification: Adding or removing chemical groups that affect chromatin compaction\n  - ATP-dependent remodeling: Using energy from ATP hydrolysis to physically restructure chromatin\n\n [Chromatin Structure showing nucleosomes, histones, and the difference between heterochromatin and euchromatin](/img/dna_packaging.jpg)\n\n• Major remodeling complex families:\n  - SWI/SNF family (BAF/PBAF): Nucleosome sliding and ejection\n  - ISWI family: Nucleosome spacing and assembly\n  - CHD family: Nucleosome sliding and histone deacetylation\n  - INO80/SWR1 family: Histone variant exchange (H2A.Z incorporation)\n\n• Biological roles:\n  - Transcriptional regulation: Controlling gene expression by modulating promoter accessibility\n  - DNA replication: Ensuring replication machinery access to DNA\n  - DNA repair: Facilitating repair protein access to damaged DNA\n  - Development: Orchestrating cell fate decisions and differentiation\n\n• Clinical significance:\n  - Cancer: Mutations in chromatin remodelers are frequent in many cancer types\n  - Developmental disorders: Associated with intellectual disability and congenital abnormalities\n  - Aging: Dysregulation of chromatin remodeling contributes to aging phenotypes\n  - Therapeutic targeting: Emerging strategies for modulating chromatin remodeling in disease",
     "tags": ["biology"],
     "linkedTerms": []
   },
@@ -1020,6 +1029,46 @@
     "emoji": "📚",
     "definition": "To instruct or enlighten someone in a way that improves their mind, character, or understanding. The term comes from the Latin \"aedificare,\" meaning \"to build,\" and implies constructive learning that builds up knowledge, wisdom, or moral character. In academic and intellectual contexts, edifying content is designed to be both informative and morally or intellectually uplifting, helping individuals develop better understanding or judgment.",
     "tags": ["dictionary"],
+    "linkedTerms": []
+  },
+  "monotonic": {
+    "id": "monotonic",
+    "title": "Monotonic",
+    "emoji": "📈",
+    "definition": "Describing a sequence, function, or process that consistently moves in one direction without reversing. In mathematics, a monotonic function is either entirely non-decreasing (monotonically increasing) or entirely non-increasing (monotonically decreasing). For example, a monotonically increasing function satisfies f(x₁) ≤ f(x₂) whenever x₁ ≤ x₂.\n\nIn computer science and algorithms, monotonic properties are valuable for optimization and ensuring predictable behavior. Monotonic sequences are also important in analysis and calculus, where they guarantee convergence under certain conditions.\n\nThe term derives from Greek \"monos\" (single) and \"tonos\" (tone), literally meaning \"single tone\" or unchanging in direction.",
+    "tags": ["dictionary"],
+    "linkedTerms": []
+  },
+  "restful-api": {
+    "id": "restful-api",
+    "title": "RESTful API",
+    "emoji": "🌐",
+    "definition": "An architectural style for designing web services that follows REST (Representational State Transfer) principles. RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources identified by URLs. They are stateless, meaning each request contains all necessary information, and typically return data in JSON format.\n\nKey characteristics include:\n\n**Resource-based**: Everything is treated as a resource with a unique URL\n**HTTP Methods**: Uses standard HTTP verbs for different operations\n**Stateless**: Each request is independent and contains all needed information\n**Cacheable**: Responses can be cached to improve performance\n**Uniform Interface**: Consistent way of interacting with resources\n\nRESTful APIs are widely used for web applications, mobile apps, and microservices due to their simplicity, scalability, and compatibility with web standards.",
+    "tags": ["computer science"],
+    "linkedTerms": []
+  },
+  "deno": {
+    "id": "deno",
+    "title": "Deno",
+    "emoji": "🦕",
+    "definition": "A modern runtime for JavaScript and TypeScript built by Ryan Dahl, the original creator of Node.js. Deno was designed to address perceived shortcomings in Node.js and provides a more secure and developer-friendly environment.\n\nKey features include:\n\n**Security by Default**: Requires explicit permissions for file, network, and environment access\n**TypeScript Support**: Built-in TypeScript support without additional configuration\n**Modern APIs**: Uses web-standard APIs and modern JavaScript features\n**No Package Manager**: Imports modules directly from URLs, eliminating the need for package.json\n**Built-in Tools**: Includes formatter, linter, test runner, and bundler\n**Single Executable**: Distributed as a single binary with no dependencies\n\nDeno aims to provide a more secure, simple, and modern development experience while maintaining compatibility with web standards and modern JavaScript/TypeScript practices.",
+    "tags": ["computer science"],
+    "linkedTerms": []
+  },
+  "nodejs": {
+    "id": "nodejs",
+    "title": "Node.js",
+    "emoji": "🟢",
+    "definition": "A JavaScript runtime environment built on Chrome's V8 JavaScript engine that allows developers to run JavaScript code outside of web browsers. Created by Ryan Dahl in 2009, Node.js enables server-side JavaScript development and has become fundamental to modern web development.\n\nKey characteristics include:\n\n**Event-Driven Architecture**: Uses an event loop for handling asynchronous operations\n**Non-blocking I/O**: Efficiently handles multiple concurrent operations\n**NPM Ecosystem**: Access to the world's largest package repository\n**Cross-Platform**: Runs on Windows, macOS, and Linux\n**Single-Threaded**: Uses one main thread with worker threads for CPU-intensive tasks\n**Fast Execution**: Leverages V8's just-in-time compilation\n\nNode.js is widely used for building web servers, APIs, real-time applications, microservices, and command-line tools. Its unified JavaScript environment allows developers to use the same language for both frontend and backend development.",
+    "tags": ["computer science"],
+    "linkedTerms": []
+  },
+  "ansi-sql": {
+    "id": "ansi-sql",
+    "title": "ANSI SQL",
+    "emoji": "📊",
+    "definition": "The American National Standards Institute (ANSI) standard for the Structured Query Language (SQL), which defines a standardized syntax and functionality for relational database management systems. ANSI SQL ensures portability and consistency across different database platforms by establishing common rules for data definition, manipulation, and querying.\n\nKey features of ANSI SQL include:\n\n**Data Definition Language (DDL)**: CREATE, ALTER, DROP statements for database schema\n**Data Manipulation Language (DML)**: SELECT, INSERT, UPDATE, DELETE for data operations\n**Data Control Language (DCL)**: GRANT, REVOKE for access control\n**Transaction Control**: COMMIT, ROLLBACK for data integrity\n**Standard Functions**: Aggregate functions (SUM, COUNT, AVG), string functions, date functions\n**Join Operations**: INNER, LEFT, RIGHT, FULL OUTER joins\n**Subqueries and CTEs**: Common Table Expressions for complex queries\n\nANSI SQL has evolved through several versions (SQL-86, SQL-89, SQL-92, SQL:1999, SQL:2003, SQL:2006, SQL:2008, SQL:2011, SQL:2016) with each adding new features like window functions, JSON support, and advanced analytics. While most database systems support core ANSI SQL, they often include proprietary extensions for enhanced functionality.",
+    "tags": ["computer science"],
     "linkedTerms": []
   }
 }
