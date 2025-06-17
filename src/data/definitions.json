@@ -1408,7 +1408,8 @@
       "web-development"
     ],
     "linkedTerms": [
-      "subdomain"
+      "subdomain",
+      "ip-address"
     ]
   },
   "url": {
@@ -1453,17 +1454,6 @@
     "linkedTerms": [
       "url"
     ]
-  },
-  "ip-address": {
-    "id": "ip-address",
-    "title": "IP Address (Internet Protocol Address)",
-    "emoji": "🌐",
-    "definition": "A unique numerical identifier assigned to every device connected to a computer network that uses the Internet Protocol for communication. IP addresses serve as the fundamental addressing system that enables devices to locate and communicate with each other across networks.\n\nIP addresses function like postal addresses for the internet, allowing data packets to be routed from source to destination. They are essential for all internet communication, from web browsing to email to file transfers.\n\n**IPv4 (Internet Protocol version 4):**\n- **Format**: Four decimal numbers (0-255) separated by dots\n- **Example**: 192.168.1.1 or 8.8.8.8\n- **Address Space**: ~4.3 billion unique addresses (2³²)\n- **Structure**: 32-bit addresses written in dotted decimal notation\n- **Status**: Widely used but address space is nearly exhausted\n\n**IPv6 (Internet Protocol version 6):**\n- **Format**: Eight groups of four hexadecimal digits separated by colons\n- **Example**: 2001:0db8:85a3:0000:0000:8a2e:0370:7334\n- **Address Space**: ~340 undecillion addresses (2¹²⁸)\n- **Structure**: 128-bit addresses with shorthand notation support\n- **Status**: Designed to replace IPv4 and solve address exhaustion\n\n**Types of IP Addresses:**\n- **Public**: Globally unique, routable on the internet\n- **Private**: Used within local networks (192.168.x.x, 10.x.x.x, 172.16-31.x.x)\n- **Static**: Permanently assigned to a device\n- **Dynamic**: Temporarily assigned by DHCP servers\n\n**Key Functions:**\n- Device identification and location\n- Network routing and packet delivery\n- Network security and access control\n- Geolocation and content delivery optimization",
-    "tags": [
-      "networking",
-      "internet-protocol"
-    ],
-    "linkedTerms": []
   },
   "ip-address": {
     "id": "ip-address",
