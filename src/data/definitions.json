@@ -515,7 +515,8 @@
     ],
     "linkedTerms": [
       "neural-network",
-      "machine-learning"
+      "machine-learning",
+      "domain"
     ]
   },
   "tensor-decomposition": {
@@ -708,7 +709,9 @@
       "biology",
       "lab-techniques"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "domain"
+    ]
   },
   "similarity-network-fusion-(snf)": {
     "id": "similarity-network-fusion-(snf)",
@@ -815,7 +818,8 @@
     ],
     "linkedTerms": [
       "stereoisomers",
-      "chromatin-remodeling"
+      "chromatin-remodeling",
+      "domain"
     ]
   },
   "at-hooks": {
@@ -837,7 +841,8 @@
       "biology"
     ],
     "linkedTerms": [
-      "chromatin-remodeling"
+      "chromatin-remodeling",
+      "domain"
     ]
   },
   "cis-dna-regulatory-elements": {
@@ -923,7 +928,8 @@
     ],
     "linkedTerms": [
       "fine-tuning",
-      "alternative-splicing"
+      "alternative-splicing",
+      "domain"
     ]
   },
   "alternative-splicing": {
@@ -946,7 +952,9 @@
     "tags": [
       "biology"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "domain"
+    ]
   },
   "homologs": {
     "id": "homologs",
@@ -959,7 +967,8 @@
     "linkedTerms": [
       "paralogs",
       "orthologs",
-      "xenologs"
+      "xenologs",
+      "domain"
     ]
   },
   "xenologs": {
@@ -1081,7 +1090,8 @@
     ],
     "linkedTerms": [
       "chimeric",
-      "machine-learning"
+      "machine-learning",
+      "domain"
     ]
   },
   "pleiotropy": {
@@ -1106,7 +1116,8 @@
       "biology"
     ],
     "linkedTerms": [
-      "machine-learning"
+      "machine-learning",
+      "domain"
     ]
   },
   "moiety": {
@@ -1227,7 +1238,9 @@
     "tags": [
       "computer science"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "ports"
+    ]
   },
   "float-(floating-point-number)": {
     "id": "float-(floating-point-number)",
@@ -1249,7 +1262,9 @@
       "computer science",
       "math"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "domain"
+    ]
   },
   "western-blot/immunoblot": {
     "id": "western-blot/immunoblot",
@@ -1321,7 +1336,9 @@
     "tags": [
       "computer science"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "url"
+    ]
   },
   "deno": {
     "id": "deno",
@@ -1331,7 +1348,9 @@
     "tags": [
       "computer science"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "url"
+    ]
   },
   "nodejs": {
     "id": "nodejs",
@@ -1362,7 +1381,9 @@
       "networking",
       "web-development"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "url"
+    ]
   },
   "subdomain": {
     "id": "subdomain",
@@ -1373,7 +1394,9 @@
       "networking",
       "web-development"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "domain"
+    ]
   },
   "domain": {
     "id": "domain",
@@ -1384,7 +1407,9 @@
       "networking",
       "web-development"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "subdomain"
+    ]
   },
   "url": {
     "id": "url",
@@ -1395,7 +1420,12 @@
       "networking",
       "web-development"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "subdomain",
+      "domain",
+      "ports",
+      "anchors"
+    ]
   },
   "ports": {
     "id": "ports",
@@ -1406,7 +1436,10 @@
       "networking",
       "system-administration"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "domain",
+      "url"
+    ]
   },
   "anchors": {
     "id": "anchors",
@@ -1417,6 +1450,8 @@
       "web-development",
       "html"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "url"
+    ]
   }
 }
