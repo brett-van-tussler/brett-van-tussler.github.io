@@ -1352,5 +1352,71 @@
       "computer science"
     ],
     "linkedTerms": []
+  },
+  "protocol-scheme": {
+    "id": "protocol-scheme",
+    "title": "Protocol/Scheme",
+    "emoji": "🔗",
+    "definition": "The first part of a URL that specifies the communication protocol or method used to access a resource on the internet. Common protocols include HTTP (Hypertext Transfer Protocol), HTTPS (HTTP Secure), FTP (File Transfer Protocol), and others.\n\nThe protocol/scheme appears at the beginning of a URL followed by a colon and two forward slashes (://). For example, in 'https://www.example.com', 'https' is the protocol that indicates secure HTTP communication should be used.\n\n**Common Protocols:**\n- **HTTP**: Standard web protocol for transferring web pages\n- **HTTPS**: Secure version of HTTP with encryption\n- **FTP**: File Transfer Protocol for uploading/downloading files\n- **SMTP**: Simple Mail Transfer Protocol for email\n- **SSH**: Secure Shell for remote server access\n- **FILE**: Local file system access\n\nThe protocol determines how the client (browser) will communicate with the server to retrieve the requested resource.",
+    "tags": [
+      "networking",
+      "web-development"
+    ],
+    "linkedTerms": []
+  },
+  "subdomain": {
+    "id": "subdomain",
+    "title": "Subdomain",
+    "emoji": "🌐",
+    "definition": "A prefix added to a domain name that creates a separate section or service within the main domain. Subdomains allow organizations to organize different services, departments, or geographical regions under their primary domain.\n\nSubdomains appear before the main domain name, separated by a dot. For example, in 'blog.example.com', 'blog' is the subdomain of 'example.com'.\n\n**Common Subdomain Examples:**\n- **www**: Traditional web server (www.example.com)\n- **mail**: Email services (mail.example.com)\n- **blog**: Blog or news section (blog.example.com)\n- **api**: API endpoints (api.example.com)\n- **cdn**: Content delivery network (cdn.example.com)\n- **staging**: Development/testing environment (staging.example.com)\n\nSubdomains can have their own DNS records, SSL certificates, and can point to different servers or IP addresses than the main domain. They're useful for organizing content, load balancing, and creating logical separations within a website's architecture.",
+    "tags": [
+      "networking",
+      "web-development"
+    ],
+    "linkedTerms": []
+  },
+  "domain": {
+    "id": "domain",
+    "title": "Domain",
+    "emoji": "🏠",
+    "definition": "A human-readable address that identifies a specific location on the internet, serving as an alias for an IP address. Domains make it easier for users to access websites without memorizing complex numerical IP addresses.\n\nA domain consists of multiple parts separated by dots, read from right to left in order of hierarchy:\n- **Top-Level Domain (TLD)**: The rightmost part (.com, .org, .net, .gov, etc.)\n- **Second-Level Domain**: The main part of the domain name (example in example.com)\n- **Subdomain**: Optional prefix (www in www.example.com)\n\n**Domain Structure Example:**\n'subdomain.second-level.top-level' → 'www.example.com'\n\n**Common TLDs:**\n- **.com**: Commercial (most common)\n- **.org**: Organizations\n- **.net**: Network-related\n- **.edu**: Educational institutions\n- **.gov**: Government\n- **.io**: Input/Output (popular with tech companies)\n\nDomains are managed through the Domain Name System (DNS), which translates domain names into IP addresses that computers use to locate and connect to web servers.",
+    "tags": [
+      "networking",
+      "web-development"
+    ],
+    "linkedTerms": []
+  },
+  "url": {
+    "id": "url",
+    "title": "URL (Uniform Resource Locator)",
+    "emoji": "🔗",
+    "definition": "A complete web address that specifies the exact location of a resource on the internet. URLs provide a standardized way to access web pages, files, images, and other resources across the web.\n\n**URL Structure:**\n`protocol://subdomain.domain.tld:port/path?query=value#anchor`\n\n**Components Breakdown:**\n- **Protocol/Scheme**: How to access the resource (http, https, ftp)\n- **Subdomain**: Optional prefix to the domain (www, api, blog)\n- **Domain**: The main website address (example.com)\n- **Port**: Optional network port number (default: 80 for HTTP, 443 for HTTPS)\n- **Path**: Specific page or resource location (/about/team)\n- **Query Parameters**: Additional data sent to the server (?search=term&page=2)\n- **Anchor/Fragment**: Specific section within a page (#section1)\n\n**Example URL:**\n`https://www.example.com:443/products/shoes?color=blue&size=10#reviews`\n\nURLs are essential for web navigation, linking, bookmarking, and API endpoints. They must follow specific encoding rules to handle special characters and spaces.",
+    "tags": [
+      "networking",
+      "web-development"
+    ],
+    "linkedTerms": []
+  },
+  "ports": {
+    "id": "ports",
+    "title": "Ports",
+    "emoji": "🚪",
+    "definition": "Numerical identifiers (0-65535) that specify which service or application should handle network communication on a server. Ports act like doors or channels that allow multiple network services to run simultaneously on the same computer.\n\nPorts are specified in URLs after the domain name, separated by a colon (e.g., example.com:8080). If no port is specified, default ports are used based on the protocol.\n\n**Common Default Ports:**\n- **80**: HTTP (web traffic)\n- **443**: HTTPS (secure web traffic)\n- **21**: FTP (file transfer)\n- **22**: SSH (secure shell)\n- **25**: SMTP (email sending)\n- **53**: DNS (domain name resolution)\n- **3306**: MySQL database\n- **5432**: PostgreSQL database\n- **8080**: Alternative HTTP (often for development)\n\n**Port Categories:**\n- **Well-known ports (0-1023)**: Reserved for system services\n- **Registered ports (1024-49151)**: Assigned to specific applications\n- **Dynamic/Private ports (49152-65535)**: Available for general use\n\nPorts enable network traffic routing and allow servers to host multiple services simultaneously, such as a web server on port 80 and an email server on port 25.",
+    "tags": [
+      "networking",
+      "system-administration"
+    ],
+    "linkedTerms": []
+  },
+  "anchors": {
+    "id": "anchors",
+    "title": "Anchors (URL Fragments)",
+    "emoji": "⚓",
+    "definition": "The part of a URL that comes after the hash symbol (#) and refers to a specific section or element within a web page. Anchors allow users to jump directly to particular content on a page without scrolling through the entire document.\n\nAnchors are also called fragments, hash fragments, or URL fragments. They are processed by the browser and typically don't get sent to the server as part of the HTTP request.\n\n**Anchor Examples:**\n- `https://example.com/page#section1` - Jumps to element with id=\"section1\"\n- `https://example.com/docs#installation` - Jumps to installation section\n- `https://example.com/article#conclusion` - Jumps to conclusion\n\n**Common Use Cases:**\n- **Table of Contents**: Quick navigation to different sections\n- **Documentation**: Linking to specific topics or API methods\n- **Long Articles**: Jumping to particular paragraphs or chapters\n- **Single Page Applications**: Navigation without page reloads\n- **Form Validation**: Scrolling to error fields\n\n**Technical Notes:**\n- Anchors target HTML elements with matching `id` attributes\n- They don't trigger new HTTP requests\n- Can be used with JavaScript for dynamic behavior\n- Useful for SEO and user experience\n- Supported by all modern browsers",
+    "tags": [
+      "web-development",
+      "html"
+    ],
+    "linkedTerms": []
   }
 }
