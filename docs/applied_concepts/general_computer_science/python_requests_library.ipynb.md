@@ -30,7 +30,7 @@ import requests
 import json
 from pprint import pprint
 
-print(f"Requests version: {requests.__version__}")
+print(f"Requests version: {{requests.__version__}}")
 ```
 
     Requests version: 2.32.4
@@ -49,16 +49,16 @@ GET requests are used to retrieve data from a server:
 # Basic GET request
 response = requests.get('https://httpbin.org/get')
 
-print(f"Status Code: {response.status_code}")
-print(f"Content Type: {response.headers['content-type']}")
-print(f"Response Text (first 200 chars): {response.text[:200]}...")
+print(f"Status Code: {{response.status_code}}")
+print(f"Content Type: {{response.headers['content-type']}}")
+print(f"Response Text (first 200 chars): {{response.text[:200]}}...")
 ```
 
     Status Code: 200
     Content Type: application/json
-    Response Text (first 200 chars): {
-      "args": {}, 
-      "headers": {
+    Response Text (first 200 chars): \{
+      "args": \{\}, 
+      "headers": \{
         "Accept": "*/*", 
         "Accept-Encoding": "gzip, deflate, br, zstd", 
         "Host": "httpbin.org", 
@@ -132,16 +132,15 @@ The requests library supports all HTTP methods:
 # PUT request (update resource)
 put_data = {'name': 'Updated Name', 'status': 'active'}
 put_response = requests.put('https://httpbin.org/put', json=put_data)
-print(f"PUT Status: {put_response.status_code}")
+print(f"PUT Status: {{put_response.status_code}}")
 
-# DELETE request
 delete_response = requests.delete('https://httpbin.org/delete')
-print(f"DELETE Status: {delete_response.status_code}")
+print(f"DELETE Status: {{delete_response.status_code}}")
 
-# PATCH request (partial update)
+# PATCH request
 patch_data = {'status': 'inactive'}
 patch_response = requests.patch('https://httpbin.org/patch', json=patch_data)
-print(f"PATCH Status: {patch_response.status_code}")
+print(f"PATCH Status: {{patch_response.status_code}}")
 ```
 
 ## Working with Headers {#headers}
@@ -172,7 +171,7 @@ response = requests.get('https://httpbin.org/get')
 
 print("Response Headers:")
 for header, value in response.headers.items():
-    print(f"{header}: {value}")
+    print(f"{{header}}: {{value}}")
 ```
 
 ## Authentication {#authentication}
@@ -199,9 +198,9 @@ response2 = requests.get(
     auth=('user', 'pass')
 )
 
-print(f"Basic Auth Status: {response1.status_code}")
-print(f"Authenticated user: {response1.json()['authenticated']}")
-print(f"User: {response1.json()['user']}")
+print(f"Basic Auth Status: {{response1.status_code}}")
+print(f"Authenticated user: {{response1.json()['authenticated']}}")
+print(f"User: {{response1.json()['user']}}")
 ```
 
 ### Bearer Token Authentication
@@ -214,7 +213,7 @@ Many modern APIs use Bearer tokens for authentication:
 token = 'your-api-token-here'
 
 headers = {
-    'Authorization': f'Bearer {token}',
+    'Authorization': f'Bearer {{token}}',
     'Content-Type': 'application/json'
 }
 
@@ -225,7 +224,7 @@ if response.status_code == 200:
     print("✅ Bearer token authentication successful")
     pprint(response.json())
 else:
-    print(f"❌ Authentication failed: {response.status_code}")
+    print(f"❌ Authentication failed: {{response.status_code}}")
 ```
 
 ## Sessions and Cookies {#sessions}
@@ -268,8 +267,8 @@ with requests.Session() as session:
     response1 = session.get('https://httpbin.org/get')
     response2 = session.post('https://httpbin.org/post', json={'data': 'test'})
     
-    print(f"Request 1 status: {response1.status_code}")
-    print(f"Request 2 status: {response2.status_code}")
+    print(f"Request 1 status: {{response1.status_code}}")
+    print(f"Request 2 status: {{response2.status_code}}")
     
 # Session is automatically closed here
 ```
@@ -315,17 +314,17 @@ def safe_request(url, **kwargs):
 # Test the safe request function
 print("Testing successful request:")
 result1 = safe_request('https://httpbin.org/get')
-print(f"Success: {result1['success']}")
+print(f"Success: {{result1['success']}}")
 
 print("\nTesting 404 error:")
 result2 = safe_request('https://httpbin.org/status/404')
-print(f"Success: {result2['success']}")
-print(f"Error: {result2['error']}")
+print(f"Success: {{result2['success']}}")
+print(f"Error: {{result2['error']}}")
 
 print("\nTesting timeout:")
 result3 = safe_request('https://httpbin.org/delay/10', timeout=2)
-print(f"Success: {result3['success']}")
-print(f"Error: {result3['error']}")
+print(f"Success: {{result3['success']}}")
+print(f"Error: {{result3['error']}}")
 ```
 
 ## Working with JSON {#json}
@@ -342,11 +341,11 @@ if response.status_code == 200:
     post = response.json()
     
     print("Post details:")
-    print(f"Title: {post['title']}")
-    print(f"User ID: {post['userId']}")
-    print(f"Body: {post['body'][:100]}...")
+    print(f"Title: {{post['title']}}")
+    print(f"User ID: {{post['userId']}}")
+    print(f"Body: {{post['body'][:100]}}...")
 else:
-    print(f"Error: {response.status_code}")
+    print(f"Error: {{response.status_code}}")
 ```
 
 
@@ -365,10 +364,10 @@ response = requests.post(
 
 if response.status_code == 201:
     created_post = response.json()
-    print(f"✅ Post created with ID: {created_post['id']}")
-    print(f"Title: {created_post['title']}")
+    print(f"✅ Post created with ID: {{created_post['id']}}")
+    print(f"Title: {{created_post['title']}}")
 else:
-    print(f"❌ Failed to create post: {response.status_code}")
+    print(f"❌ Failed to create post: {{response.status_code}}")
 ```
 
 ## File Operations {#files}
@@ -403,13 +402,12 @@ def download_file(url, filename):
                     # Show progress for large files
                     if total_size &gt; 0:
                         percent = (downloaded / total_size) * 100
-                        print(f"\rDownloading: {percent:.1f}%", end='', flush=True)
-        
-        print(f"\n✅ Downloaded {filename} ({downloaded} bytes)")
-        return True
+                        print(f"\rDownloading: {{percent:.1f}}%", end='', flush=True)
+                    
+        print(f"\n✅ Downloaded {{filename}} ({{downloaded}} bytes)")
         
     except Exception as e:
-        print(f"❌ Download failed: {e}")
+        print(f"❌ Download failed: {{e}}")
         return False
 
 # Example: Download a small image
@@ -418,7 +416,7 @@ success = download_file(image_url, 'sample_image.png')
 
 if success and os.path.exists('sample_image.png'):
     file_size = os.path.getsize('sample_image.png')
-    print(f"File saved successfully: {file_size} bytes")
+    print(f"File saved successfully: {{file_size}} bytes")
 ```
 
 ### Uploading Files
@@ -450,10 +448,10 @@ with open('sample_upload.txt', 'rb') as file:
 if response.status_code == 200:
     result = response.json()
     print("✅ File uploaded successfully!")
-    print(f"Filename: {result['files']['file'][:50]}...")
-    print(f"Form data: {result['form']}")
+    print(f"Filename: {{result['files']['file'][:50]}}...")
+    print(f"Form data: {{result['form']}}")
 else:
-    print(f"❌ Upload failed: {response.status_code}")
+    print(f"❌ Upload failed: {{response.status_code}}")
 
 # Clean up
 import os
@@ -502,9 +500,9 @@ session = create_session_with_retries()
 try:
     # This will retry automatically on failure
     response = session.get('https://httpbin.org/status/500', timeout=5)
-    print(f"Response status: {response.status_code}")
+    print(f"Response status: {{response.status_code}}")
 except Exception as e:
-    print(f"Request failed after retries: {e}")
+    print(f"Request failed after retries: {{e}}")
 
 session.close()
 ```
@@ -552,7 +550,7 @@ for url in urls:
     sequential_results.append(result)
 sequential_time = time.time() - start_time
 
-print(f"Sequential requests took: {sequential_time:.2f} seconds")
+print(f"Sequential requests took: {{sequential_time:.2f}} seconds")
 
 # Concurrent requests
 start_time = time.time()
@@ -560,16 +558,16 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
     concurrent_results = list(executor.map(fetch_url, urls))
 concurrent_time = time.time() - start_time
 
-print(f"Concurrent requests took: {concurrent_time:.2f} seconds")
-print(f"Speed improvement: {sequential_time/concurrent_time:.1f}x faster")
+print(f"Concurrent requests took: {{concurrent_time:.2f}} seconds")
+print(f"Speed improvement: {{sequential_time/concurrent_time:.1f}}x faster")
 
 # Show results
 print("\nResults:")
 for result in concurrent_results:
     if result['success']:
-        print(f"✅ {result['url']}: {result['status']} ({result['size']} bytes)")
+        print(f"✅ {{result['url']}}: {{result['status']}} ({{result['size']}} bytes)")
     else:
-        print(f"❌ {result['url']}: {result['error']}")
+        print(f"❌ {{result['url']}}: {{result['error']}}")
 ```
 
 ## Practice Questions {#practice}
@@ -590,7 +588,7 @@ Create a function that fetches user information from the JSONPlaceholder API and
 
 ```python
 def get_user_info(user_id):
-    url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+    url = f"https://jsonplaceholder.typicode.com/users/{{user_id}}"
     # Your code here
     # 1. Make GET request
     # 2. Check status code
@@ -618,7 +616,7 @@ def get_user_info(user_id):
 # Solution
 def get_user_info(user_id):
     try:
-        url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+        url = f"https://jsonplaceholder.typicode.com/users/{{user_id}}"
         response = requests.get(url)
         response.raise_for_status()
         
@@ -627,12 +625,12 @@ def get_user_info(user_id):
         email = user['email']
         company = user['company']['name']
         
-        return f"{name} ({email}) works at {company}"
+        return f"{{name}} ({{email}}) works at {{company}}"
         
     except requests.exceptions.RequestException as e:
-        return f"Error fetching user data: {e}"
+        return f"Error fetching user data: {{e}}"
     except KeyError as e:
-        return f"Missing data in response: {e}"
+        return f"Missing data in response: {{e}}"
 
 # Test the solution
 result = get_user_info(1)
@@ -687,7 +685,7 @@ def create_post(title, body, user_id, token):
         url = "https://jsonplaceholder.typicode.com/posts"
         
         headers = {
-            'Authorization': f'Bearer {token}',
+            'Authorization': f'Bearer {{token}}',
             'Content-Type': 'application/json'
         }
         
@@ -701,10 +699,10 @@ def create_post(title, body, user_id, token):
         response.raise_for_status()
         
         post = response.json()
-        return f"Post created successfully with ID: {post['id']}"
+        return f"Post created successfully with ID: {{post['id']}}"
         
     except requests.exceptions.RequestException as e:
-        return f"Error creating post: {e}"
+        return f"Error creating post: {{e}}"
 
 # Test the solution
 result = create_post("My Test Post", "This is a test post body", 1, "fake-token-123")
@@ -787,7 +785,7 @@ class APIClient:
     
     def get(self, endpoint):
         try:
-            url = f"{self.base_url}{endpoint}"
+            url = f"{{self.base_url}}{{endpoint}}"
             response = self.session.get(url)
             response.raise_for_status()
             
@@ -804,7 +802,7 @@ class APIClient:
     
     def post(self, endpoint, data=None):
         try:
-            url = f"{self.base_url}{endpoint}"
+            url = f"{{self.base_url}}{{endpoint}}"
             response = self.session.post(url, json=data)
             response.raise_for_status()
             
@@ -828,13 +826,13 @@ client = APIClient('https://jsonplaceholder.typicode.com')
 # Test GET request
 result1 = client.get('/posts/1')
 if result1['success']:
-    print(f"✅ GET request: {result1['data']['title']}")
+    print(f"✅ GET request: {{result1['data']['title']}}")
 
 # Test POST request
 post_data = {'title': 'Test Post', 'body': 'Test content', 'userId': 1}
 result2 = client.post('/posts', data=post_data)
 if result2['success']:
-    print(f"✅ POST request: Created post with ID {result2['data']['id']}")
+    print(f"✅ POST request: Created post with ID {{result2['data']['id']}}")
 
 client.close()
 print("APIClient test completed!")
@@ -934,14 +932,14 @@ class AdvancedAPIClient:
         
         if time_since_last &lt; min_interval:
             sleep_time = min_interval - time_since_last
-            print(f"Rate limiting: sleeping for {sleep_time:.2f} seconds")
+            print(f"Rate limiting: sleeping for {{sleep_time:.2f}} seconds")
             time.sleep(sleep_time)
         
         self.last_request_time = time.time()
     
     def _get_cache_key(self, method, url, params=None):
         """Generate a cache key for the request."""
-        cache_data = f"{method}:{url}:{json.dumps(params, sort_keys=True) if params else ''}"
+        cache_data = f"{{method}}:{{url}}:{{json.dumps(params, sort_keys=True) if params else ''}}"
         return hashlib.md5(cache_data.encode()).hexdigest()
     
     def _get_from_cache(self, cache_key):
@@ -962,7 +960,7 @@ class AdvancedAPIClient:
     
     def request(self, method, endpoint, use_cache=True, max_retries=3, **kwargs):
         """Make a request with rate limiting, caching, and retries."""
-        url = f"{self.base_url}{endpoint}"
+        url = f"{{self.base_url}}{{endpoint}}"
         
         # Check cache for GET requests
         if method.upper() == 'GET' and use_cache:

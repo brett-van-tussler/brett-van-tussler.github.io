@@ -47,9 +47,9 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
   const parseMarkdownLinks = (text: string): React.ReactNode[] => {
     if (!text) return [];
     
-    // Combined regex to match links, math expressions, and bold text
+    // Combined regex to match images, links, LaTeX math expressions, and basic formatting (bold)
     // Using named capture groups to identify the type of match
-    const combinedRegex = /(?:\[([^\]]+)\]\(([^)]+)\))|(?:\$\$([^$]+)\$\$)|(?:\*\*([^*]+)\*\*)/g;
+    const combinedRegex = /(?:!\[([^\]]*)\]\(([^)]+)\))|(?:\[([^\]]+)\]\(([^)]+)\))|(?:\$\$([^$]+)\$\$)|(?:\*\*([^*]+)\*\*)/g;
     const parts: React.ReactNode[] = [];
     let lastIndex = 0;
     let match;
@@ -62,9 +62,28 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
 
       // Determine which type of element was matched
       if (match[1] !== undefined && match[2] !== undefined) {
+        // This is an image
+        const altText = match[1];
+        const imageUrl = match[2];
+        parts.push(
+          <img
+            key={`image-${match.index}`}
+            src={imageUrl}
+            alt={altText}
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+              margin: '1em 0',
+              borderRadius: '8px',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              display: 'block'
+            }}
+          />
+        );
+      } else if (match[3] !== undefined && match[4] !== undefined) {
         // This is a link
-        const linkText = match[1];
-        const linkUrl = match[2];
+        const linkText = match[3];
+        const linkUrl = match[4];
         parts.push(
           <a
             key={`link-${match.index}`}
@@ -86,9 +105,9 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
             {linkText}
           </a>
         );
-      } else if (match[3] !== undefined) {
+      } else if (match[5] !== undefined) {
         // This is a math expression
-        const mathExpression = match[3];
+        const mathExpression = match[5];
         parts.push(
           <span
             key={`math-${match.index}`}
@@ -110,9 +129,9 @@ const DefinitionViewer: React.FC<DefinitionViewerProps> = ({
             }}
           />
         );
-      } else if (match[4] !== undefined) {
+      } else if (match[6] !== undefined) {
         // This is bold text
-        const boldText = match[4];
+        const boldText = match[6];
         parts.push(
           <strong key={`bold-${match.index}`}>
             {boldText}

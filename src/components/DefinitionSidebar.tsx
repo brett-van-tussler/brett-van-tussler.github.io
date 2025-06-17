@@ -26,14 +26,18 @@ const DefinitionSidebar: React.FC<DefinitionSidebarProps> = ({
 }) => {
   return (
     <div style={{
+      position: 'fixed',
+      left: 0,
+      top: '60px',
       width: '280px',
       minWidth: '280px', // Prevent shrinking
-      height: '100vh',
+      height: 'calc(100vh - 60px)',
       backgroundColor: 'var(--ifm-background-surface-color)',
       borderRight: '1px solid var(--ifm-color-emphasis-300)',
       padding: '20px',
       overflowY: 'auto',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      zIndex: 100
     }}>
       <div style={{ marginBottom: '20px' }}>
         <h3 style={{ 

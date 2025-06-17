@@ -311,7 +311,7 @@ const InteractiveDictionary: React.FC<InteractiveDictionaryProps> = ({ filterTag
         onShowAll={handleShowAll}
       />
       
-      <div style={{ flex: 1, padding: '20px', overflow: 'auto' }}>
+      <div style={{ flex: 1, padding: '20px', overflow: 'auto', marginLeft: '280px' }}>
         <div style={{ marginBottom: '20px' }}>
           <h1>{title || 'Interactive Dictionary'}</h1>
         </div>
