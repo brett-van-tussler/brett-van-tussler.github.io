@@ -1,0 +1,6 @@
+# Requirements for Python Requests Library Jupyter Notebook
+# Install with: pip install -r requests_requirements.txt
+
+requests>=2.25.0
+jupyter>=1.0.0
+notebook>=6.0.0
