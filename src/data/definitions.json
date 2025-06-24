@@ -9,7 +9,12 @@
       "web development",
       "networking"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "embedding",
+      "subdomain",
+      "domain",
+      "ports"
+    ]
   },
   "tls": {
     "id": "tls",
@@ -20,7 +25,9 @@
       "computer science",
       "security"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "ports"
+    ]
   },
   "cross-entropy-loss": {
     "id": "cross-entropy-loss",
@@ -103,7 +110,9 @@
       "computer science",
       "math"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "tls"
+    ]
   },
   "small-subgroup-vulnerabilities": {
     "id": "small-subgroup-vulnerabilities",
@@ -1231,7 +1240,9 @@
     "tags": [
       "computer science"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "tls"
+    ]
   },
   "tcp-(transmission-control-protocol)": {
     "id": "tcp-(transmission-control-protocol)",
@@ -1241,7 +1252,9 @@
     "tags": [
       "computer science"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "internet-protocol"
+    ]
   },
   "udp-(user-datagram-protocol)": {
     "id": "udp-(user-datagram-protocol)",
@@ -1251,7 +1264,10 @@
     "tags": [
       "computer science"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "dns",
+      "internet-protocol"
+    ]
   },
   "ssh-(secure-shell)": {
     "id": "ssh-(secure-shell)",
@@ -1420,7 +1436,8 @@
       "web-development"
     ],
     "linkedTerms": [
-      "domain"
+      "domain",
+      "dns"
     ]
   },
   "dns": {
@@ -1436,7 +1453,8 @@
     "linkedTerms": [
       "domain",
       "ip-address",
-      "subdomain"
+      "subdomain",
+      "tls"
     ]
   },
   "domain": {
@@ -1450,7 +1468,8 @@
     ],
     "linkedTerms": [
       "subdomain",
-      "ip-address"
+      "ip-address",
+      "dns"
     ]
   },
   "url": {
@@ -1480,7 +1499,8 @@
     ],
     "linkedTerms": [
       "domain",
-      "url"
+      "url",
+      "dns"
     ]
   },
   "anchors": {
@@ -1515,6 +1535,8 @@
     "tags": [
       "networking"
     ],
-    "linkedTerms": []
+    "linkedTerms": [
+      "internet-protocol"
+    ]
   }
 }
