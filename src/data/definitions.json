@@ -1,4 +1,27 @@
 {
+  "cors": {
+    "id": "cors",
+    "title": "CORS (Cross-Origin Resource Sharing)",
+    "emoji": "🌐",
+    "definition": "A security mechanism implemented by web browsers that allows or restricts web pages from making requests to a different domain, protocol, or port than the one serving the web page. CORS is a relaxation of the Same-Origin Policy, which by default blocks cross-origin requests for security reasons.\n\n**How CORS Works:**\n\nWhen a web application running on one domain (e.g., https://example.com) tries to access resources from another domain (e.g., https://api.service.com), the browser initiates a CORS check. For simple requests, the browser adds an Origin header and checks the response for appropriate CORS headers. For complex requests, the browser first sends a preflight request (OPTIONS method) to determine if the actual request is allowed.\n\n**Key CORS Headers:**\n\n- **Access-Control-Allow-Origin**: Specifies which origins can access the resource\n- **Access-Control-Allow-Methods**: Lists allowed HTTP methods (GET, POST, PUT, etc.)\n- **Access-Control-Allow-Headers**: Specifies allowed request headers\n- **Access-Control-Allow-Credentials**: Indicates if credentials can be included\n- **Access-Control-Max-Age**: Sets how long preflight responses can be cached\n\n**Common CORS Scenarios:**\n\n1. **API Requests**: Frontend applications calling REST APIs on different domains\n2. **CDN Resources**: Loading fonts, images, or scripts from content delivery networks\n3. **Microservices**: Services communicating across different subdomains\n4. **Third-party Integrations**: Embedding widgets or accessing external services\n\n**CORS vs Same-Origin Policy:**\n\nThe Same-Origin Policy is a fundamental security concept that restricts how documents or scripts from one origin can interact with resources from another origin. CORS provides a controlled way to relax this restriction, allowing servers to specify which cross-origin requests are permitted while maintaining security.\n\n**Security Considerations:**\n\nWhile CORS enables legitimate cross-origin requests, misconfiguration can create security vulnerabilities. Using wildcards (*) for Access-Control-Allow-Origin with credentials, or overly permissive CORS policies can expose applications to attacks. Proper CORS configuration should follow the principle of least privilege, only allowing necessary origins and methods.",
+    "tags": [
+      "computer science",
+      "web development",
+      "networking"
+    ],
+    "linkedTerms": []
+  },
+  "tls": {
+    "id": "tls",
+    "title": "TLS (Transport Layer Security)",
+    "emoji": "🔒",
+    "definition": "A cryptographic protocol that provides secure communication over a computer network. TLS is the successor to SSL (Secure Sockets Layer) and is widely used to secure internet communications, including web browsing, email, instant messaging, and voice over IP (VoIP).\n\nTLS works by establishing an encrypted connection between a client and server through a process called the TLS handshake. During this handshake, the client and server:\n\n1. **Negotiate protocol version and cipher suites**\n2. **Authenticate the server** (and optionally the client) using digital certificates\n3. **Exchange cryptographic keys** to establish a secure session\n4. **Begin encrypted communication** using symmetric encryption\n\n**HTTPS = HTTP + TLS**\n\nWhen TLS is applied to HTTP (Hypertext Transfer Protocol), it creates HTTPS (HTTP Secure). This combination ensures that all data transmitted between a web browser and web server is encrypted and authenticated. The 'S' in HTTPS specifically indicates that the HTTP connection is secured using TLS/SSL encryption.\n\nHTTPS operates on port 443 (compared to HTTP's port 80) and provides three key security benefits:\n- **Confidentiality**: Data is encrypted and cannot be read by eavesdroppers\n- **Integrity**: Data cannot be modified without detection\n- **Authentication**: Verifies the identity of the communicating parties\n\nTLS is essential for protecting sensitive information like passwords, credit card numbers, and personal data transmitted over the internet. Modern web browsers display security indicators (like a padlock icon) to show when a connection is secured with TLS.",
+    "tags": [
+      "computer science",
+      "security"
+    ],
+    "linkedTerms": []
+  },
   "cross-entropy-loss": {
     "id": "cross-entropy-loss",
     "title": "Cross Entropy Loss",
@@ -1332,9 +1355,11 @@
     "id": "restful-api",
     "title": "RESTful API",
     "emoji": "🌐",
-    "definition": "An architectural style for designing web services that follows REST (Representational State Transfer) principles. RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources identified by URLs. They are stateless, meaning each request contains all necessary information, and typically return data in JSON format.\n\nKey characteristics include:\n\n**Resource-based**: Everything is treated as a resource with a unique URL\n**HTTP Methods**: Uses standard HTTP verbs for different operations\n**Stateless**: Each request is independent and contains all needed information\n**Cacheable**: Responses can be cached to improve performance\n**Uniform Interface**: Consistent way of interacting with resources\n\nRESTful APIs are widely used for web applications, mobile apps, and microservices due to their simplicity, scalability, and compatibility with web standards.",
+    "definition": "An architectural style for designing web services that follows REST (Representational State Transfer) principles. RESTful APIs use standard HTTP methods to perform operations on resources identified by URLs. They are stateless, meaning each request contains all necessary information, and typically return data in JSON format.\n\n**HTTP Methods:**\n\n**GET**: Retrieves data from a resource without modifying it. Safe and idempotent operation used for reading data.\n- Example: `GET /users/123` - Retrieve user with ID 123\n\n**POST**: Creates new resources or submits data for processing. Not idempotent, as multiple requests may create multiple resources.\n- Example: `POST /users` - Create a new user\n\n**PUT**: Updates or replaces an entire resource. Idempotent operation that overwrites the complete resource.\n- Example: `PUT /users/123` - Replace user 123 with new data\n\n**PATCH**: Partially updates a resource by modifying only specified fields. More efficient than PUT for small changes.\n- Example: `PATCH /users/123` - Update only specific fields of user 123\n\n**DELETE**: Removes a resource from the server. Idempotent operation for resource deletion.\n- Example: `DELETE /users/123` - Delete user with ID 123\n\n**HEAD**: Retrieves only the headers of a resource without the body content. Useful for checking resource existence or metadata.\n- Example: `HEAD /users/123` - Check if user 123 exists\n\n**Key Characteristics:**\n\n**Resource-based**: Everything is treated as a resource with a unique URL\n**Stateless**: Each request is independent and contains all needed information\n**Cacheable**: Responses can be cached to improve performance\n**Uniform Interface**: Consistent way of interacting with resources\n**Layered System**: Can include intermediary layers like proxies and gateways\n\nRESTful APIs are widely used for web applications, mobile apps, and microservices due to their simplicity, scalability, and compatibility with web standards.",
     "tags": [
-      "computer science"
+      "computer science",
+      "networking",
+      "web development"
     ],
     "linkedTerms": [
       "url"
@@ -1398,6 +1423,22 @@
       "domain"
     ]
   },
+  "dns": {
+    "id": "dns",
+    "title": "DNS (Domain Name System)",
+    "emoji": "🌐",
+    "definition": "A hierarchical and distributed naming system that translates human-readable domain names into IP addresses that computers use to identify and communicate with each other on the internet. DNS acts as the internet's phone book, allowing users to access websites using memorable names instead of numerical IP addresses.\n\n**How DNS Works:**\n\nWhen you type a domain name into your browser, a DNS lookup process occurs:\n1. **Browser Cache**: First checks if the IP address is already cached\n2. **Operating System Cache**: Checks the local system's DNS cache\n3. **Router Cache**: Queries the local router's DNS cache\n4. **ISP DNS Server**: Contacts your Internet Service Provider's DNS server\n5. **Root Name Servers**: If not found, queries one of 13 root name servers worldwide\n6. **TLD Name Servers**: Directed to Top-Level Domain servers (.com, .org, etc.)\n7. **Authoritative Name Servers**: Finally queries the authoritative server for the specific domain\n\n**DNS Record Types:**\n\n- **A Record**: Maps domain to IPv4 address\n- **AAAA Record**: Maps domain to IPv6 address\n- **CNAME Record**: Creates an alias pointing to another domain\n- **MX Record**: Specifies mail exchange servers for email delivery\n- **TXT Record**: Stores text information (often for verification)\n- **NS Record**: Identifies authoritative name servers for a domain\n- **PTR Record**: Reverse DNS lookup (IP to domain)\n- **SOA Record**: Start of Authority, contains administrative information\n\n**DNS Security:**\n\nDNS was originally designed without security in mind, leading to vulnerabilities like DNS spoofing and cache poisoning. Modern security extensions include:\n- **DNSSEC**: Cryptographic signatures to verify DNS responses\n- **DNS over HTTPS (DoH)**: Encrypts DNS queries using HTTPS\n- **DNS over TLS (DoT)**: Encrypts DNS queries using TLS\n\n**Performance and Reliability:**\n\nDNS uses caching at multiple levels to improve performance and reduce load on authoritative servers. TTL (Time To Live) values determine how long DNS records can be cached. The distributed nature of DNS provides redundancy and fault tolerance, making it one of the most resilient systems on the internet.",
+    "tags": [
+      "networking",
+      "computer science",
+      "web development"
+    ],
+    "linkedTerms": [
+      "domain",
+      "ip-address",
+      "subdomain"
+    ]
+  },
   "domain": {
     "id": "domain",
     "title": "Domain",
@@ -1454,14 +1495,14 @@
       "url"
     ]
   },
-  "ip-address": {
-    "id": "ip-address",
-    "title": "IP Address (Internet Protocol Address)",
+  "internet-protocol": {
+    "id": "internet-protocol",
+    "title": "Internet Protocol (IP)",
     "emoji": "🌐",
-    "definition": "A unique numerical identifier assigned to every device connected to a computer network that uses the Internet Protocol for communication. IP addresses serve as the fundamental addressing system that enables devices to locate and communicate with each other across networks.\n\nIP addresses function like postal addresses for the internet, allowing data packets to be routed from source to destination. They are essential for all internet communication, from web browsing to email to file transfers.\n\n**IPv4 (Internet Protocol version 4):**\n- **Format**: Four decimal numbers (0-255) separated by dots\n- **Example**: 192.168.1.1 or 8.8.8.8\n- **Address Space**: ~4.3 billion unique addresses (2³²)\n- **Structure**: 32-bit addresses written in dotted decimal notation\n- **Status**: Widely used but address space is nearly exhausted\n\n**IPv6 (Internet Protocol version 6):**\n- **Format**: Eight groups of four hexadecimal digits separated by colons\n- **Example**: 2001:0db8:85a3:0000:0000:8a2e:0370:7334\n- **Address Space**: ~340 undecillion addresses (2¹²⁸)\n- **Structure**: 128-bit addresses with shorthand notation support\n- **Status**: Designed to replace IPv4 and solve address exhaustion\n\n**Types of IP Addresses:**\n- **Public**: Globally unique, routable on the internet\n- **Private**: Used within local networks (192.168.x.x, 10.x.x.x, 172.16-31.x.x)\n- **Static**: Permanently assigned to a device\n- **Dynamic**: Temporarily assigned by DHCP servers\n\n**Key Functions:**\n- Device identification and location\n- Network routing and packet delivery\n- Network security and access control\n- Geolocation and content delivery optimization",
+    "definition": "A fundamental communication protocol that governs how data is transmitted across networks, including the internet. The Internet Protocol is part of the Internet Protocol Suite (TCP/IP) and operates at the network layer (Layer 3) of the OSI model.\n\nIP is responsible for addressing, routing, and delivering data packets between devices across interconnected networks. It provides a standardized method for devices to communicate regardless of their underlying hardware or network technologies.\n\n**Key Functions:**\n- **Addressing**: Assigns unique IP addresses to identify devices on networks\n- **Routing**: Determines the best path for data packets to travel from source to destination\n- **Packet Forwarding**: Moves data packets through intermediate routers and networks\n- **Fragmentation and Reassembly**: Breaks large data into smaller packets and reconstructs them at the destination\n\n**IP Versions:**\n\n**IPv4 (Internet Protocol version 4):**\n- **Address Format**: 32-bit addresses (e.g., 192.168.1.1)\n- **Address Space**: ~4.3 billion unique addresses\n- **Status**: Widely deployed but facing address exhaustion\n- **Header Size**: 20-60 bytes\n\n**IPv6 (Internet Protocol version 6):**\n- **Address Format**: 128-bit addresses (e.g., 2001:db8::1)\n- **Address Space**: ~340 undecillion addresses\n- **Status**: Designed to replace IPv4 and solve scalability issues\n- **Header Size**: 40 bytes (fixed)\n- **Features**: Built-in security, better QoS support, simplified header structure\n\n**IP Characteristics:**\n- **Connectionless**: Each packet is treated independently\n- **Best Effort**: No guarantee of delivery, ordering, or error correction\n- **Unreliable**: Higher-layer protocols (like TCP) provide reliability when needed\n\nIP forms the foundation of internet communication, enabling global connectivity and the modern digital world.",
     "tags": [
       "networking",
-      "internet-protocol"
+      "computer science"
     ],
     "linkedTerms": []
   },
@@ -1471,8 +1512,7 @@
     "emoji": "🌐",
     "definition": "A unique numerical identifier assigned to every device connected to a computer network that uses the Internet Protocol for communication. IP addresses serve as the fundamental addressing system that enables devices to locate and communicate with each other across networks.\n\nIP addresses function like postal addresses for the internet, allowing data packets to be routed from source to destination. They are essential for all internet communication, from web browsing to email to file transfers.\n\n**IPv4 (Internet Protocol version 4):**\n- **Format**: Four decimal numbers (0-255) separated by dots\n- **Example**: 192.168.1.1 or 8.8.8.8\n- **Address Space**: ~4.3 billion unique addresses (2³²)\n- **Structure**: 32-bit addresses written in dotted decimal notation\n- **Status**: Widely used but address space is nearly exhausted\n\n**IPv6 (Internet Protocol version 6):**\n- **Format**: Eight groups of four hexadecimal digits separated by colons\n- **Example**: 2001:0db8:85a3:0000:0000:8a2e:0370:7334\n- **Address Space**: ~340 undecillion addresses (2¹²⁸)\n- **Structure**: 128-bit addresses with shorthand notation support\n- **Status**: Designed to replace IPv4 and solve address exhaustion\n\n**Types of IP Addresses:**\n- **Public**: Globally unique, routable on the internet\n- **Private**: Used within local networks (192.168.x.x, 10.x.x.x, 172.16-31.x.x)\n- **Static**: Permanently assigned to a device\n- **Dynamic**: Temporarily assigned by DHCP servers\n\n**Key Functions:**\n- Device identification and location\n- Network routing and packet delivery\n- Network security and access control\n- Geolocation and content delivery optimization",
     "tags": [
-      "networking",
-      "internet-protocol"
+      "networking"
     ],
     "linkedTerms": []
   }
